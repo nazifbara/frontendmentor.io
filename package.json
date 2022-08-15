@@ -1,0 +1,12 @@
+{
+  "name": "frontendmentor.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:nazifbara/frontendmentor.io.git",
+  "author": "Nazif Barassounon",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "solutions/*"
+  ]
+}
