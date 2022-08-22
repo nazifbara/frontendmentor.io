@@ -1,4 +1,17 @@
+import { globalCss } from '../stitches.config';
+
+const globalStyles = globalCss({
+  body: {
+    fontFamily: '$body, sans-serif',
+    fontSize: '$body',
+    bgC: '$primaryBg',
+    color: '$contrast',
+  },
+});
+
 export function App() {
+  globalStyles();
+
   return (
     <main>
       {/** Header */}
