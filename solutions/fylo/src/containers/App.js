@@ -1,3 +1,4 @@
+import { Typography } from '../components';
 import { globalCss, styled } from '../stitches.config';
 
 const globalStyles = globalCss({
@@ -27,7 +28,9 @@ export function App() {
         <nav>
           <ul>
             <li>
-              <a href="/#features">Features</a>
+              <Typography element="a" href="/#features">
+                Features
+              </Typography>
             </li>
             <li>
               <a href="/#team">Team</a>
@@ -43,13 +46,15 @@ export function App() {
       <section id="features">
         <span>illustration</span>
 
-        <h1>All your files in one secure location, accessible anywhere.</h1>
+        <Typography element="h1">
+          All your files in one secure location, accessible anywhere.
+        </Typography>
 
-        <p>
+        <Typography>
           Fylo stores all your most important files in one secure location.
           Access them wherever you need, share and collaborate with friends
           family, and co-workers.
-        </p>
+        </Typography>
 
         <button>Get Started</button>
       </section>
@@ -58,7 +63,7 @@ export function App() {
       <section id="team">
         <article>
           <span>icon</span>
-          <h3>Access your files, anywhere</h3>
+          <Typography element="h3">Access your files, anywhere</Typography>
           <p>
             The ability to use a smartphone, tablet, or computer to access your
             account means your files follow you everywhere.
@@ -67,7 +72,7 @@ export function App() {
 
         <article>
           <span>icon</span>
-          <h3>Security you can trust</h3>
+          <Typography element="h3">Security you can trust</Typography>
           <p>
             2-factor authentication and user-controlled encryption are just a
             couple of the security features we allow to help secure your files.
@@ -76,7 +81,7 @@ export function App() {
 
         <article>
           <span>icon</span>
-          <h3>Real-time collaboration</h3>
+          <Typography element="h3">Real-time collaboration</Typography>
           <p>
             Securely share files and folders with friends, family and colleagues
             for live collaboration. No email attachments required.
@@ -85,7 +90,7 @@ export function App() {
 
         <article>
           <span>icon</span>
-          <h3>Store any type of file</h3>
+          <Typography element="h3">Store any type of file</Typography>
           <p>
             Whether you're sharing holidays photos or work documents, Fylo has
             you covered allowing for all file types to be securely stored and
@@ -98,7 +103,9 @@ export function App() {
       <section id="sign-in">
         <span>illustration</span>
         <article>
-          <h2>Stay productive, wherever you are</h2>
+          <Typography element="h2">
+            Stay productive, wherever you are
+          </Typography>
           <p>
             Never let location be an issue when accessing your files. Fylo has
             you covered for all of your file storage needs.
@@ -122,7 +129,7 @@ export function App() {
           <header>
             <span>photo</span>
             <div>
-              <h3>Satish Patel</h3>
+              <Typography element="h3">Satish Patel</Typography>
               <p>Founder & CEO, Huddle</p>
             </div>
           </header>
@@ -136,7 +143,7 @@ export function App() {
           <header>
             <span>photo</span>
             <div>
-              <h3>Bruce McKenzie</h3>
+              <Typography element="h3">Bruce McKenzie</Typography>
               <p>Founder & CEO, Huddle</p>
             </div>
           </header>
@@ -150,7 +157,7 @@ export function App() {
           <header>
             <span>photo</span>
             <div>
-              <h3>Iva Boyd</h3>
+              <Typography element="h3">Iva Boyd</Typography>
               <p>Founder & CEO, Huddle</p>
             </div>
           </header>

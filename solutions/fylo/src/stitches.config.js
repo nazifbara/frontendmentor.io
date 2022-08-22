@@ -24,6 +24,9 @@ export const {
     },
     fontSizes: {
       body: '14px',
+      h1: '21px',
+      h2: '19px',
+      h3: '16px',
     },
     fontWeights: {
       regular: 400,
