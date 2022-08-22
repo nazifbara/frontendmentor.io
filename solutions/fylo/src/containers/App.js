@@ -1,4 +1,4 @@
-import { globalCss } from '../stitches.config';
+import { globalCss, styled } from '../stitches.config';
 
 const globalStyles = globalCss({
   body: {
@@ -9,11 +9,18 @@ const globalStyles = globalCss({
   },
 });
 
+const StyledContainer = styled('main', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  px: '18px',
+});
+
 export function App() {
   globalStyles();
 
   return (
-    <main>
+    <StyledContainer>
       {/** Header */}
       <header>
         <span>logo</span>
@@ -225,6 +232,6 @@ export function App() {
           </ul>
         </div>
       </footer>
-    </main>
+    </StyledContainer>
   );
 }
