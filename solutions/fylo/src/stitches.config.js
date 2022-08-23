@@ -39,7 +39,6 @@ export const {
     sm: '(min-width: 30.063rem)',
     md: '(min-width: 48.063rem)',
     lg: '(min-width: 64.063rem)',
-    xlg: '(min-width: 75.063rem)',
   },
 
   utils: {

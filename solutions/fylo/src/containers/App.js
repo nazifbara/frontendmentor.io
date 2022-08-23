@@ -1,4 +1,4 @@
-import { Typography } from '../components';
+import { Typography, Header } from '../components';
 import { globalCss, styled } from '../stitches.config';
 
 const globalStyles = globalCss({
@@ -12,9 +12,21 @@ const globalStyles = globalCss({
 
 const StyledContainer = styled('main', {
   display: 'flex',
+  maxWidth: '1440px',
+  m: '0 auto',
   flexDirection: 'column',
   alignItems: 'center',
   px: '18px',
+
+  '@sm': {
+    px: '25px',
+  },
+  '@md': {
+    px: '50px',
+  },
+  '@lg': {
+    px: '80px',
+  },
 });
 
 export function App() {
@@ -22,25 +34,7 @@ export function App() {
 
   return (
     <StyledContainer>
-      {/** Header */}
-      <header>
-        <span>logo</span>
-        <nav>
-          <ul>
-            <li>
-              <Typography element="a" href="/#features">
-                Features
-              </Typography>
-            </li>
-            <li>
-              <a href="/#team">Team</a>
-            </li>
-            <li>
-              <a href="/#sign-in">Sign In</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
 
       {/** Hero Section */}
       <section id="features">
