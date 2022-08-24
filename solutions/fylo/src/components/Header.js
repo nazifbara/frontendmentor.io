@@ -6,6 +6,7 @@ const StyledHeader = styled('header', {
   display: 'grid',
   gridTemplateColumns: 'repeat(2, auto)',
   py: '22px',
+  px: '18px',
 
   '& ul': {
     display: 'flex',
@@ -30,12 +31,15 @@ const StyledHeader = styled('header', {
 
   '@sm': {
     py: '30px',
+    px: '25px',
   },
   '@md': {
     py: '40px',
+    px: '50px',
   },
   '@lg': {
     py: '50px',
+    px: '80px',
   },
 });
 

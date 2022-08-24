@@ -1,12 +1,15 @@
-import { Typography, Header } from '../components';
+import { Typography, Header, IntroSection } from '../components';
 import { globalCss, styled } from '../stitches.config';
 
 const globalStyles = globalCss({
   body: {
     fontFamily: '$body, sans-serif',
     fontSize: '$body',
-    bgC: '$primaryBg',
+    bgC: '$primaryBgSubtle',
     color: '$contrast',
+  },
+  img: {
+    width: '100%',
   },
 });
 
@@ -16,17 +19,6 @@ const StyledContainer = styled('main', {
   m: '0 auto',
   flexDirection: 'column',
   alignItems: 'center',
-  px: '18px',
-
-  '@sm': {
-    px: '25px',
-  },
-  '@md': {
-    px: '50px',
-  },
-  '@lg': {
-    px: '80px',
-  },
 });
 
 export function App() {
@@ -36,22 +28,7 @@ export function App() {
     <StyledContainer>
       <Header />
 
-      {/** Hero Section */}
-      <section id="features">
-        <span>illustration</span>
-
-        <Typography element="h1">
-          All your files in one secure location, accessible anywhere.
-        </Typography>
-
-        <Typography>
-          Fylo stores all your most important files in one secure location.
-          Access them wherever you need, share and collaborate with friends
-          family, and co-workers.
-        </Typography>
-
-        <button>Get Started</button>
-      </section>
+      <IntroSection />
 
       {/** Features Section */}
       <section id="team">

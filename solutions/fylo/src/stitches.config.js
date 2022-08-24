@@ -17,6 +17,9 @@ export const {
       primaryBg: 'hsl(218, 28%, 13%)',
       primarySolid: 'hsl(219, 30%, 18%)',
       contrast: 'hsl(0, 0%, 100%)',
+
+      accent1: 'hsl(176, 68%, 64%)',
+      accent2: 'hsl(198, 60%, 50%)',
     },
     fonts: {
       body: 'Open Sans',
@@ -24,9 +27,19 @@ export const {
     },
     fontSizes: {
       body: '14px',
-      h1: '21px',
+      h1: '25px',
       h2: '19px',
       h3: '16px',
+
+      'body-sm': '15px',
+      'h1-sm': '30px',
+      'h2-sm': '22px',
+      'h3-sm': '17px',
+
+      'body-md': '16px',
+      'h1-md': '35px',
+      'h2-md': '25px',
+      'h3-md': '18px',
     },
     fontWeights: {
       regular: 400,
@@ -42,6 +55,9 @@ export const {
   },
 
   utils: {
+    linearGradient: (value) => ({
+      backgroundImage: `linear-gradient(${value})`,
+    }),
     bgC: (value) => ({ backgroundColor: value }),
     m: (value) => ({ margin: value }),
     mx: (value) => ({ marginLeft: value, marginRight: value }),
