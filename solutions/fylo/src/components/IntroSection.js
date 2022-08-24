@@ -5,7 +5,7 @@ import { Typography, Button, Box } from '.';
 
 export function IntroSection() {
   return (
-    <StyledSection id="features">
+    <StyledSection>
       <Box
         css={{
           display: 'grid',

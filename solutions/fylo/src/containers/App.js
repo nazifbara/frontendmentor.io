@@ -1,6 +1,7 @@
 import { Typography, Header, IntroSection } from '../components';
 import { globalCss, styled } from '../stitches.config';
 import { FeaturesSection } from './FeaturesSection';
+import { HowToSecion } from './HowToSection';
 
 const globalStyles = globalCss({
   body: {
@@ -33,24 +34,7 @@ export function App() {
 
       <FeaturesSection />
 
-      {/** How Section */}
-      <section>
-        <span>illustration</span>
-        <article>
-          <Typography element="h2">
-            Stay productive, wherever you are
-          </Typography>
-          <p>
-            Never let location be an issue when accessing your files. Fylo has
-            you covered for all of your file storage needs.
-          </p>
-          <p>
-            Securely share files and folders with friends, family and colleagues
-            for live collaboration. No email attachments required.
-          </p>
-          <a href="/#">See how Fylo works</a>
-        </article>
-      </section>
+      <HowToSecion />
 
       {/** Testimonials Section */}
       <section id="team">

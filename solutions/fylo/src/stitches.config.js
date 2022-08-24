@@ -48,10 +48,14 @@ export const {
   },
 
   media: {
-    xm: '(max-width: 30rem)',
+    xm: '(min-width: 0rem)',
     sm: '(min-width: 30.063rem)',
     md: '(min-width: 48.063rem)',
     lg: '(min-width: 64.063rem)',
+    // xm: '(min-width: 30rem) and (max-width: 30rem)',
+    // sm: '(min-width: 30.063rem) and (max-width: 48.062rem)',
+    // md: '(min-width: 48.063rem) and (max-width: 64.062rem)',
+    // lg: '(min-width: 64.063rem)',
   },
 
   utils: {

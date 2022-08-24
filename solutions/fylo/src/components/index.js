@@ -1,3 +1,4 @@
+export { Section } from './Section';
 export { Box } from './Box';
 export { Button } from './Button';
 export { IntroSection } from './IntroSection';

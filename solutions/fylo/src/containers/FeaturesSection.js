@@ -1,4 +1,4 @@
-import { Typography } from '../components';
+import { Typography, Section } from '../components';
 import accessIcon from '../images/icon-access-anywhere.svg';
 import securityIcon from '../images/icon-security.svg';
 import collabIcon from '../images/icon-collaboration.svg';
@@ -7,7 +7,7 @@ import { styled } from '../stitches.config';
 
 export function FeaturesSection() {
   return (
-    <StyledSection id="features">
+    <Section id="features">
       <StyledFeaturesBox>
         {features.map((f, i) => (
           <StyledFeature key={`feature-${i}`}>
@@ -17,22 +17,9 @@ export function FeaturesSection() {
           </StyledFeature>
         ))}
       </StyledFeaturesBox>
-    </StyledSection>
+    </Section>
   );
 }
-
-const StyledSection = styled('section', {
-  width: '100%',
-  py: '20px',
-  px: '18px',
-
-  '@sm': {
-    py: '25px',
-  },
-  '@md': {
-    py: '40px',
-  },
-});
 
 const StyledFeaturesBox = styled('div', {
   display: 'grid',
