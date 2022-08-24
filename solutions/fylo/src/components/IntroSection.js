@@ -52,6 +52,7 @@ const StyledSection = styled('section', {
   backgroundRepeat: 'no-repeat',
   backgroundPosition: '60% 100%',
   backgroundSize: '200% 70%',
+  bgC: '$primaryBgSubtle',
 
   '@md': {
     backgroundSize: '150% 60%',

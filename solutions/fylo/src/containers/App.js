@@ -1,11 +1,12 @@
 import { Typography, Header, IntroSection } from '../components';
 import { globalCss, styled } from '../stitches.config';
+import { FeaturesSection } from './FeaturesSection';
 
 const globalStyles = globalCss({
   body: {
     fontFamily: '$body, sans-serif',
     fontSize: '$body',
-    bgC: '$primaryBgSubtle',
+    bgC: '$primaryBg',
     color: '$contrast',
   },
   img: {
@@ -30,48 +31,10 @@ export function App() {
 
       <IntroSection />
 
-      {/** Features Section */}
-      <section id="team">
-        <article>
-          <span>icon</span>
-          <Typography element="h3">Access your files, anywhere</Typography>
-          <p>
-            The ability to use a smartphone, tablet, or computer to access your
-            account means your files follow you everywhere.
-          </p>
-        </article>
+      <FeaturesSection />
 
-        <article>
-          <span>icon</span>
-          <Typography element="h3">Security you can trust</Typography>
-          <p>
-            2-factor authentication and user-controlled encryption are just a
-            couple of the security features we allow to help secure your files.
-          </p>
-        </article>
-
-        <article>
-          <span>icon</span>
-          <Typography element="h3">Real-time collaboration</Typography>
-          <p>
-            Securely share files and folders with friends, family and colleagues
-            for live collaboration. No email attachments required.
-          </p>
-        </article>
-
-        <article>
-          <span>icon</span>
-          <Typography element="h3">Store any type of file</Typography>
-          <p>
-            Whether you're sharing holidays photos or work documents, Fylo has
-            you covered allowing for all file types to be securely stored and
-            shared.
-          </p>
-        </article>
-      </section>
-
-      {/** Features Section */}
-      <section id="sign-in">
+      {/** How Section */}
+      <section>
         <span>illustration</span>
         <article>
           <Typography element="h2">
@@ -90,7 +53,7 @@ export function App() {
       </section>
 
       {/** Testimonials Section */}
-      <section>
+      <section id="team">
         <article>
           <p>
             Fylo has improved our team productivity by an order of magnitude.
@@ -135,8 +98,8 @@ export function App() {
         </article>
       </section>
 
-      {/** Sign Up Section */}
-      <section>
+      {/** Sign in Section */}
+      <section id="sign-in">
         <h2>Get early access today</h2>
         <p>
           It only takes a minute to sign up and our free starter tier is

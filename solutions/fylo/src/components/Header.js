@@ -5,6 +5,7 @@ const StyledHeader = styled('header', {
   width: '100%',
   display: 'grid',
   gridTemplateColumns: 'repeat(2, auto)',
+  bgC: '$primaryBgSubtle',
   py: '22px',
   px: '18px',
 
