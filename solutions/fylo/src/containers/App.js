@@ -1,5 +1,6 @@
-import { Typography, Header, IntroSection } from '../components';
+import { Header, IntroSection } from '../components';
 import { globalCss, styled } from '../stitches.config';
+import { TestimonialsSection } from './TestimonialsSection';
 import { FeaturesSection } from './FeaturesSection';
 import { HowToSecion } from './HowToSection';
 
@@ -36,51 +37,7 @@ export function App() {
 
       <HowToSecion />
 
-      {/** Testimonials Section */}
-      <section id="team">
-        <article>
-          <p>
-            Fylo has improved our team productivity by an order of magnitude.
-            Since making the switch our team has become a well-oiled
-            collaboration machine.
-          </p>
-          <header>
-            <span>photo</span>
-            <div>
-              <Typography element="h3">Satish Patel</Typography>
-              <p>Founder & CEO, Huddle</p>
-            </div>
-          </header>
-        </article>
-        <article>
-          <p>
-            Fylo has improved our team productivity by an order of magnitude.
-            Since making the switch our team has become a well-oiled
-            collaboration machine.
-          </p>
-          <header>
-            <span>photo</span>
-            <div>
-              <Typography element="h3">Bruce McKenzie</Typography>
-              <p>Founder & CEO, Huddle</p>
-            </div>
-          </header>
-        </article>
-        <article>
-          <p>
-            Fylo has improved our team productivity by an order of magnitude.
-            Since making the switch our team has become a well-oiled
-            collaboration machine.
-          </p>
-          <header>
-            <span>photo</span>
-            <div>
-              <Typography element="h3">Iva Boyd</Typography>
-              <p>Founder & CEO, Huddle</p>
-            </div>
-          </header>
-        </article>
-      </section>
+      <TestimonialsSection />
 
       {/** Sign in Section */}
       <section id="sign-in">
