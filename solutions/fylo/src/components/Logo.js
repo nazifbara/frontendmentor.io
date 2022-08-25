@@ -12,6 +12,6 @@ const StyledImg = styled('img', {
   },
 });
 
-export function Logo() {
-  return <StyledImg alt="logo" src={logo} />;
+export function Logo({ css }) {
+  return <StyledImg alt="logo" src={logo} css={css} />;
 }

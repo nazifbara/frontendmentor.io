@@ -1,5 +1,6 @@
 import { Header, IntroSection } from '../components';
 import { globalCss, styled } from '../stitches.config';
+import { Footer } from './Footer';
 import { TestimonialsSection } from './TestimonialsSection';
 import { FeaturesSection } from './FeaturesSection';
 import { HowToSecion } from './HowToSection';
@@ -53,67 +54,7 @@ export function App() {
         </div>
       </section>
 
-      <footer>
-        <span>logo</span>
-        <div>
-          <div>
-            <div>
-              <span>icon</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </p>
-            </div>
-            <ul>
-              <li>
-                <span>icon</span> +1-543-123-4567
-              </li>
-              <li>
-                <span>icon</span>example@fylo.com
-              </li>
-            </ul>
-          </div>
-
-          <ul>
-            <li>
-              <a href="/#">About Us</a>
-            </li>
-            <li>
-              <a href="/#">Jobs</a>
-            </li>
-            <li>
-              <a href="/#">Press</a>
-            </li>
-            <li>
-              <a href="/#">Blog</a>
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              <a href="/#">Contact Us</a>
-            </li>
-            <li>
-              <a href="/#">Terms</a>
-            </li>
-            <li>
-              <a href="/#">Privacy</a>
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              <span>facebook icon</span>
-            </li>
-            <li>
-              <span>twitter icon</span>
-            </li>
-            <li>
-              <span>instagram icon</span>
-            </li>
-          </ul>
-        </div>
-      </footer>
+      <Footer />
     </StyledContainer>
   );
 }
