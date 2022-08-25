@@ -8,7 +8,7 @@ import { styled } from '../stitches.config';
 
 export function TestimonialsSection() {
   return (
-    <Section id="team">
+    <Section id="team" css={{ pb: 0 }}>
       <StyledContainer>
         {testimonials.map((t, i) => (
           <StyledTestimony key={`testimony-${i}`}>
