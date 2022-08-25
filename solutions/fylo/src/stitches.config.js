@@ -20,6 +20,8 @@ export const {
 
       accent1: 'hsl(176, 68%, 64%)',
       accent2: 'hsl(198, 60%, 50%)',
+
+      danger: 'hsl(0, 100%, 63%)',
     },
     fonts: {
       body: 'Open Sans',
