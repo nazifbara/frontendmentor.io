@@ -5,7 +5,7 @@ import { ReactComponent as FacebookIcon } from '../images/facebook-f-brands.svg'
 import { ReactComponent as TwitterIcon } from '../images/twitter-brands.svg';
 import { ReactComponent as InstagramIcon } from '../images/instagram-brands.svg';
 
-import { Typography, Logo, Box, Section } from '../components';
+import { Typography, Logo, Box, Section } from '.';
 import { styled } from '../stitches.config';
 
 export function Footer() {

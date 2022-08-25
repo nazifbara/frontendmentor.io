@@ -3,7 +3,7 @@ import profile2 from '../images/profile-2.jpg';
 import profile3 from '../images/profile-3.jpg';
 import bgQuotes from '../images/bg-quotes.png';
 
-import { Typography, Box, Section } from '../components';
+import { Typography, Box, Section } from '.';
 import { styled } from '../stitches.config';
 
 export function TestimonialsSection() {

@@ -1,9 +1,13 @@
-import { Header, IntroSection, SignIn } from '../components';
-import { globalCss } from '../stitches.config';
-import { Footer } from './Footer';
-import { TestimonialsSection } from './TestimonialsSection';
-import { FeaturesSection } from './FeaturesSection';
-import { HowToSecion } from './HowToSection';
+import { globalCss } from './stitches.config';
+import {
+  Header,
+  IntroSection,
+  SignIn,
+  Footer,
+  TestimonialsSection,
+  FeaturesSection,
+  HowToSecion,
+} from './components';
 
 const globalStyles = globalCss({
   body: {

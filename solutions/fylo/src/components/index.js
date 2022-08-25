@@ -1,3 +1,7 @@
+export { FeaturesSection } from './FeaturesSection';
+export { Footer } from './Footer';
+export { HowToSection } from './HowToSection';
+export { TestimonialsSection } from './TestimonialsSection';
 export { SignIn } from './SignIn';
 export { Section } from './Section';
 export { Box } from './Box';

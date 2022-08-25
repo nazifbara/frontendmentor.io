@@ -1,4 +1,4 @@
-import { Typography, Section } from '../components';
+import { Typography, Section } from '.';
 import accessIcon from '../images/icon-access-anywhere.svg';
 import securityIcon from '../images/icon-security.svg';
 import collabIcon from '../images/icon-collaboration.svg';
