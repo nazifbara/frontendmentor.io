@@ -1,5 +1,5 @@
 import { Header, IntroSection, SignIn } from '../components';
-import { globalCss, styled } from '../stitches.config';
+import { globalCss } from '../stitches.config';
 import { Footer } from './Footer';
 import { TestimonialsSection } from './TestimonialsSection';
 import { FeaturesSection } from './FeaturesSection';
@@ -17,32 +17,24 @@ const globalStyles = globalCss({
   },
 });
 
-const StyledContainer = styled('main', {
-  display: 'flex',
-  maxWidth: '1440px',
-  m: '0 auto',
-  flexDirection: 'column',
-  alignItems: 'center',
-});
-
 export function App() {
   globalStyles();
 
   return (
-    <StyledContainer>
+    <>
       <Header />
+      <main>
+        <IntroSection />
 
-      <IntroSection />
+        <FeaturesSection />
 
-      <FeaturesSection />
+        <HowToSecion />
 
-      <HowToSecion />
+        <TestimonialsSection />
 
-      <TestimonialsSection />
-
-      <SignIn />
-
+        <SignIn />
+      </main>
       <Footer />
-    </StyledContainer>
+    </>
   );
 }
