@@ -6,7 +6,7 @@ import {
   Footer,
   TestimonialsSection,
   FeaturesSection,
-  HowToSecion,
+  HowToSection,
 } from './components';
 
 const globalStyles = globalCss({
@@ -32,7 +32,7 @@ export function App() {
 
         <FeaturesSection />
 
-        <HowToSecion />
+        <HowToSection />
 
         <TestimonialsSection />
 

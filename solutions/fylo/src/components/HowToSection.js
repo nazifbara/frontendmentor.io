@@ -2,7 +2,7 @@ import illustration from '../images/illustration-stay-productive.png';
 import { ReactComponent as ArrowIcon } from '../images/icon-arrow.svg';
 import { Box, Section, Typography } from '.';
 
-export function HowToSecion() {
+export function HowToSection() {
   return (
     <Section>
       <Box
