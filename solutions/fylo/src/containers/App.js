@@ -1,4 +1,4 @@
-import { Header, IntroSection } from '../components';
+import { Header, IntroSection, SignIn } from '../components';
 import { globalCss, styled } from '../stitches.config';
 import { Footer } from './Footer';
 import { TestimonialsSection } from './TestimonialsSection';
@@ -40,19 +40,7 @@ export function App() {
 
       <TestimonialsSection />
 
-      {/** Sign in Section */}
-      <section id="sign-in">
-        <h2>Get early access today</h2>
-        <p>
-          It only takes a minute to sign up and our free starter tier is
-          extremely generous. If you have any questions, our support team would
-          be happy to help you.
-        </p>
-        <div>
-          <input placeholder="example@fylo.com" />
-          <button>Get Started For Free</button>
-        </div>
-      </section>
+      <SignIn />
 
       <Footer />
     </StyledContainer>

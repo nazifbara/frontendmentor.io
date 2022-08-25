@@ -15,7 +15,7 @@ export function Footer() {
       css={{
         display: 'grid',
         backgroundColor: '$primaryBase',
-        pt: '200px',
+        pt: '250px',
         px: '25px',
         '& ul': { listStyle: 'none', m: 0, p: 0 },
         '& p': { m: 0, p: 0 },

@@ -20,7 +20,7 @@ export const Button = styled('button', {
   },
   '@md': {
     fontSize: '16px',
-    py: '18px',
-    px: '20px',
+    py: '17px',
+    px: '19px',
   },
 });
