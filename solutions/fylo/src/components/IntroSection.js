@@ -1,5 +1,6 @@
 import illustration from '../images/illustration-intro.png';
-import bgCurvy from '../images/bg-curvy.svg';
+import bgCurvyDesktop from '../images/bg-curvy-desktop.svg';
+import bgCurvyMobile from '../images/bg-curvy-mobile.svg';
 import { styled } from '../stitches.config';
 import { Typography, Button, Box } from '.';
 
@@ -48,13 +49,13 @@ export function IntroSection() {
 
 const StyledSection = styled('section', {
   width: '100%',
-  backgroundImage: `url("${bgCurvy}")`,
+  backgroundImage: `url("${bgCurvyMobile}")`,
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: '60% 100%',
-  backgroundSize: '200% 70%',
+  backgroundPosition: 'center 100%',
+  backgroundSize: 'contain',
   bgC: '$primaryBgSubtle',
 
   '@md': {
-    backgroundSize: '150% 60%',
+    backgroundImage: `url("${bgCurvyDesktop}")`,
   },
 });
