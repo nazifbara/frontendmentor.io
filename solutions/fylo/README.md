@@ -12,11 +12,7 @@ This is a solution to the [Fylo dark theme landing page challenge on Frontend Me
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -33,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [fylo-nazif.netlify.app](https://fylo-nazif.netlify.app/)
+- [Solution URL](https://www.frontendmentor.io/solutions/fylo-dark-theme-landing-page-with-react-stitches-and-css-grid-z5-Ewrpu6g)
+- [Live Site UR](https://fylo-nazif.netlify.app/)
 
 ## My process
 
@@ -44,59 +40,117 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
+- Theme
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Stitches](https://stitches.dev/) - For styles
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+In this project I defined a theme to represent different CSS values and utilities. I achieved that by using the Stitches configuration function `createStitches`. Here's what it looks like:
 
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉');
-};
+import { createStitches } from '@stitches/react';
+
+export const {
+  styled,
+  // skip
+} = createStitches({
+  theme: {
+    colors: {
+      primaryBase: 'hsl(216, 53%, 9%)',
+      // ...
+    },
+    fonts: {
+      body: 'Open Sans',
+      // ...
+    },
+    fontSizes: {
+      body: '14px',
+      // ...
+    },
+    fontWeights: {
+      regular: 400,
+      // ...
+    },
+  },
+
+  media: {
+    xm: '(min-width: 0rem)',
+    //...
+  },
+
+  utils: {
+    size: (value) => ({ width: value, height: value }),
+    m: (value) => ({ margin: value }),
+    mx: (value) => ({ marginLeft: value, marginRight: value }),
+    // ...
+  },
+});
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+Doing this creates a bunch of tokens I can use when styling my components. Here's
+how I used it to defined some global styles for example:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```js
+const globalStyles = globalCss({
+  body: {
+    fontFamily: '$body, sans-serif',
+    fontSize: '$body',
+    bgC: '$primaryBg',
+    color: '$contrast',
+  },
+  img: {
+    width: '100%',
+  },
+});
+```
+
+To use a token we prepend its name with `$`. I named the tokens relatively to
+their purposes rather than the values they contain. I did this because values
+can change but semantics don't. There will allways be a `primaryBg` but not
+necessarely a `darkBlue`. Plus, if I wanted to change some background colors to dark orange,
+for example, I would have to find all of the places I used `darkBlue` and refactor
+to use `darkOrange`. By naming tokens semantically we can
+update repeatitive stylings from one place.
+
+Overall, this configuration allowed me to keep a consistent styling accross the components.
+
+This project also allowed me to use CSS Grid a lot more than usual. I was
+flexbox-only person but now I see the combination of flexbox and grid as of
+greater value
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I found positioning the curvy background in the intro section to be tough.
+Here's what I came up with:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```js
+const StyledSection = styled('section', {
+  width: '100%',
+  backgroundImage: `url("${bgCurvyMobile}")`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: '70% 300px',
+  backgroundSize: 'cover',
+  bgC: '$primaryBgSubtle',
 
-### Useful resources
+  '@sm': {
+    backgroundPosition: '72% 400px',
+  },
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+  '@md': {
+    backgroundImage: `url("${bgCurvyDesktop}")`,
+    backgroundPosition: 'center 100%',
+    backgroundSize: 'contain',
+  },
+});
+```
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+I can't help but think there is a better way. I will continue my journey
+positionning backgrounds and find new technics
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Nazif Barassounon](https://www.nazifbara.com)
+- Frontend Mentor - [@nazifbara](https://www.frontendmentor.io/profile/nazifbara)
+- Twitter - [@nazifbara](https://www.twitter.com/nazifbara)
