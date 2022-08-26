@@ -15,6 +15,7 @@ export function SignIn() {
   };
   return (
     <Section
+      id="sign-in"
       css={{
         py: 0,
         transform: 'translateY(50%)',

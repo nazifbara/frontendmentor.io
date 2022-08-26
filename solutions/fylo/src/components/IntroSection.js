@@ -49,7 +49,7 @@ export function IntroSection() {
 
 const StyledSection = styled('section', {
   width: '100%',
-  backgroundImage: `url("${bgCurvyDesktop}")`,
+  backgroundImage: `url("${bgCurvyMobile}")`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: '70% 300px',
   backgroundSize: 'cover',
