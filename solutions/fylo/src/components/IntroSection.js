@@ -49,13 +49,19 @@ export function IntroSection() {
 
 const StyledSection = styled('section', {
   width: '100%',
-  backgroundImage: `url("${bgCurvyMobile}")`,
+  backgroundImage: `url("${bgCurvyDesktop}")`,
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center 100%',
-  backgroundSize: 'contain',
+  backgroundPosition: '70% 300px',
+  backgroundSize: 'cover',
   bgC: '$primaryBgSubtle',
+
+  '@sm': {
+    backgroundPosition: '72% 400px',
+  },
 
   '@md': {
     backgroundImage: `url("${bgCurvyDesktop}")`,
+    backgroundPosition: 'center 100%',
+    backgroundSize: 'contain',
   },
 });
