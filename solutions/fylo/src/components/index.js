@@ -1,0 +1,12 @@
+export { FeaturesSection } from './FeaturesSection';
+export { Footer } from './Footer';
+export { HowToSection } from './HowToSection';
+export { TestimonialsSection } from './TestimonialsSection';
+export { SignIn } from './SignIn';
+export { Section } from './Section';
+export { Box } from './Box';
+export { Button } from './Button';
+export { IntroSection } from './IntroSection';
+export { Logo } from './Logo';
+export { Header } from './Header';
+export { Typography } from './Typography';
