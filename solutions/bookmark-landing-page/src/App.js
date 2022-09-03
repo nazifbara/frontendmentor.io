@@ -1,4 +1,16 @@
+import { globalCss } from './stitches.config';
+
+const globalStyles = globalCss({
+  body: {
+    fontFamily: "'$body', sans-serif",
+    fontSize: '$body',
+    fontWeight: '$medium',
+  },
+});
+
 const App = () => {
+  globalStyles();
+
   return (
     <>
       <header>
@@ -176,9 +188,7 @@ const App = () => {
               </p>
             </div>
           </div>
-          <a hrea href="/#">
-            More Info
-          </a>
+          <a href="/#">More Info</a>
         </section>
 
         <section id="contact">
