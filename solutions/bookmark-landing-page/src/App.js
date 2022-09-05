@@ -1,8 +1,10 @@
 import { globalCss } from './stitches.config';
+import { Header } from './components';
 
 const globalStyles = globalCss({
   body: {
     fontFamily: "'$body', sans-serif",
+    color: '$LightContrast',
     fontSize: '$body',
     fontWeight: '$medium',
   },
@@ -13,25 +15,7 @@ const App = () => {
 
   return (
     <>
-      <header>
-        <span>logo</span>
-        <nav>
-          <ul>
-            <li>
-              <a href="/#features">Features</a>
-            </li>
-            <li>
-              <a href="/#">Pricing</a>
-            </li>
-            <li>
-              <a href="/#contact">Contact</a>
-            </li>
-            <li>
-              <a href="/#">Login</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
 
       <main>
         <section>
