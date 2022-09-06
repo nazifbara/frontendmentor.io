@@ -1,6 +1,6 @@
 import { Typography } from './Typography';
 
-export const NavLink = ({ href, children }) => {
+export const NavLink = ({ href, children, ...otherProps }) => {
   return (
     <Typography
       as="a"
@@ -15,6 +15,7 @@ export const NavLink = ({ href, children }) => {
           textDecoration: 'none',
         },
       }}
+      {...otherProps}
     >
       {children}
     </Typography>

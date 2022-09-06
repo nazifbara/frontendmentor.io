@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { ReactComponent as HamburberIcon } from '../images/icon-hamburger.svg';
 import { ReactComponent as CloseIcon } from '../images/icon-close.svg';
 
@@ -34,28 +36,41 @@ export const Header = () => {
 };
 
 const NavMenu = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
-      <StyledMenuButton>
-        <HamburberIcon />
-      </StyledMenuButton>
-      <StyledNavMenu>
+      {!open && (
+        <StyledMenuButton onClick={handleOpen}>
+          <HamburberIcon />
+        </StyledMenuButton>
+      )}
+      <StyledNavMenu open={open}>
         <Container>
           <StyledHeader>
             <Logo inDark />
-            <StyledMenuButton type="close">
+            <StyledMenuButton type="close" onClick={handleClose}>
               <CloseIcon />
             </StyledMenuButton>
           </StyledHeader>
           <ul>
             <li>
-              <NavLink href="/#features">Features</NavLink>
+              <NavLink href="/#features" onClick={handleClose}>
+                Features
+              </NavLink>
             </li>
             <li>
-              <NavLink href="/#">Pricing</NavLink>
+              <NavLink href="/#" onClick={handleClose}>
+                Pricing
+              </NavLink>
             </li>
             <li>
-              <NavLink href="/#contact">Contact</NavLink>
+              <NavLink href="/#contact" onClick={handleClose}>
+                Contact
+              </NavLink>
             </li>
             <li>
               <Button
@@ -66,6 +81,7 @@ const NavMenu = () => {
                   border: '2px solid $darkContrast',
                   bgC: 'transparent',
                 }}
+                onClick={handleClose}
               >
                 Login
               </Button>
@@ -99,6 +115,7 @@ const StyledMenuButton = styled('button', {
 });
 
 const StyledNavMenu = styled('nav', {
+  display: 'none',
   position: 'fixed',
   bgC: '$lightContrastOpaque',
   color: '$darkContrast',
@@ -109,6 +126,18 @@ const StyledNavMenu = styled('nav', {
 
   '@md': {
     display: 'none',
+  },
+
+  variants: {
+    open: {
+      true: {
+        display: 'block',
+
+        '@md': {
+          display: 'none',
+        },
+      },
+    },
   },
 
   ul: {
@@ -147,6 +176,7 @@ const StyledNav = styled('nav', {
     listStyle: 'none',
     display: 'grid',
     justifyContent: 'space-evenly',
+    alignItems: 'center',
     gridTemplateColumns: 'repeat(4, auto)',
     m: 0,
     p: 0,
