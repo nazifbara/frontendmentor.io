@@ -4,7 +4,7 @@ import { Header } from './components';
 const globalStyles = globalCss({
   body: {
     fontFamily: "'$body', sans-serif",
-    color: '$LightContrast',
+    color: '$lightContrast',
     fontSize: '$body',
     fontWeight: '$medium',
   },

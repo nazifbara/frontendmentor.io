@@ -2,6 +2,7 @@ import { styled } from '../stitches.config';
 
 export const Button = styled('button', {
   color: '$darkContrast',
+  display: 'inline-block',
   cursor: 'pointer',
   bgC: '$primary',
   textTransform: 'uppercase',
@@ -16,5 +17,13 @@ export const Button = styled('button', {
     bgC: 'transparent',
     color: '$primary',
     textDecoration: 'none',
+  },
+
+  variants: {
+    fullWidth: {
+      true: {
+        width: '100%',
+      },
+    },
   },
 });

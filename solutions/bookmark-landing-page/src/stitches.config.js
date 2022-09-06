@@ -7,7 +7,8 @@ export const { styled, css, globalCss } = createStitches({
       secondary: 'hsl(231, 69%, 60%)',
 
       grayishLightContrast: 'hsl(229, 8%, 60%)',
-      LightContrast: 'hsl(229, 31%, 21%)',
+      lightContrast: 'hsl(229, 31%, 21%)',
+      lightContrastOpaque: 'rgba(37, 43, 70, 0.94)',
 
       darkContrast: '#fff',
     },
