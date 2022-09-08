@@ -8,7 +8,7 @@ export const NavLink = ({ href, children, ...otherProps }) => {
       css={{
         textTransform: 'uppercase',
         color: '$LightContrast',
-        fontSize: '14px',
+        fontSize: '$nav',
         fontWeight: '$medium',
         '&:hover': {
           color: '$primary',

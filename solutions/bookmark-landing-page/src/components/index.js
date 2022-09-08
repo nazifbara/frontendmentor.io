@@ -1,3 +1,7 @@
+export { BgShapeBox } from './BgShapeBox';
+export { Section } from './Section';
+export { Box } from './Box';
+export { HeroSection } from './HeroSection';
 export { Logo } from './Logo';
 export { Button } from './Button';
 export { NavLink } from './NavLink';

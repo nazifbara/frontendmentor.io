@@ -24,7 +24,7 @@ export const Header = () => {
               <NavLink href="/#contact">Contact</NavLink>
             </li>
             <li>
-              <Button as="a" href="/#">
+              <Button as="a" href="/#" variant="primary">
                 Login
               </Button>
             </li>
@@ -78,6 +78,7 @@ const NavMenu = () => {
                 href="/#"
                 fullWidth
                 css={{
+                  color: '$darkContrast',
                   border: '2px solid $darkContrast',
                   bgC: 'transparent',
                 }}
@@ -162,7 +163,7 @@ const StyledNavMenu = styled('nav', {
     pt: '30px',
   },
   a: {
-    fontSize: '18px',
+    fontSize: '$body',
     '&:hover,&:active': {
       color: '$darkContrast',
     },

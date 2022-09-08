@@ -16,11 +16,16 @@ export const { styled, css, globalCss } = createStitches({
       body: 'Rubik',
     },
     fontSizes: {
-      body: '16px',
+      h1: '48px',
+      h2: '36px',
+      h3: '24px',
+      body: '18px',
+      nav: '15px',
     },
     fontWeights: {
       regular: 400,
       medium: 500,
+      bold: 700,
     },
   },
 

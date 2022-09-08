@@ -1,5 +1,5 @@
 import { globalCss } from './stitches.config';
-import { Header } from './components';
+import { Header, HeroSection } from './components';
 
 const globalStyles = globalCss({
   body: {
@@ -7,6 +7,9 @@ const globalStyles = globalCss({
     color: '$lightContrast',
     fontSize: '$body',
     fontWeight: '$medium',
+  },
+  img: {
+    width: '100%',
   },
 });
 
@@ -18,21 +21,7 @@ const App = () => {
       <Header />
 
       <main>
-        <section>
-          <article>
-            <h1> A Simple Bookmark Manager</h1>
-            <p>
-              A clean and simple interface to organize your favourite websites.
-              Open a new browser tab and see your sites load instantly. Try it
-              for free.
-            </p>
-            <div>
-              <a href="/#">Get it on Chrome</a>
-              <a href="/#">Get it on Firefox</a>
-            </div>
-          </article>
-          <div>illustration </div>
-        </section>
+        <HeroSection />
 
         <section id="features">
           <article>
