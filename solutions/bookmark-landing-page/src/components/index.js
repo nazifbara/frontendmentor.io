@@ -1,3 +1,4 @@
+export { FAQSection } from './FAQSection';
 export { ExtensionSection } from './ExtensionSection';
 export { SectionHeader } from './SectionHeader';
 export { FeatureSection } from './FeatureSection';
