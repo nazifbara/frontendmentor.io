@@ -11,7 +11,7 @@ export const Button = styled('button', {
   fontWeight: '$medium',
   borderRadius: '5px',
   border: '2px solid $darkContrast',
-  boxShadow: '1px 4px 3px rgba(0, 0, 0, 0.2)',
+  boxShadow: '1px 4px 3px $secondary',
   py: '8px',
   px: '15px',
 
