@@ -1,5 +1,10 @@
 import { globalCss } from './stitches.config';
-import { Header, HeroSection, FeatureSection } from './components';
+import {
+  Header,
+  HeroSection,
+  FeatureSection,
+  ExtensionSection,
+} from './components';
 
 const globalStyles = globalCss({
   body: {
@@ -23,38 +28,7 @@ const App = () => {
       <main>
         <HeroSection />
         <FeatureSection />
-
-        <section>
-          <article>
-            <h2>Download the extension</h2>
-            <p>
-              We’ve got more browsers in the pipeline. Please do let us know if
-              you’ve got a favourite you’d like us to prioritize.
-            </p>
-          </article>
-          <div>
-            <article>
-              <span>logo</span>
-              <h3>Add to Chrome</h3>
-              <p>Minimum version 62</p>
-              <button>Add & Install Extension</button>
-            </article>
-
-            <article>
-              <span>logo</span>
-              <h3>Add to Firefox</h3>
-              <p>Minimum version 55</p>
-              <button>Add & Install Extension</button>
-            </article>
-
-            <article>
-              <span>logo</span>
-              <h3>Add to Opera</h3>
-              <p>Minimum version 46</p>
-              <button>Add & Install Extension</button>
-            </article>
-          </div>
-        </section>
+        <ExtensionSection />
 
         <section>
           <div>

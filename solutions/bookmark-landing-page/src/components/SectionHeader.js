@@ -1,12 +1,12 @@
 import { Box, Typography } from '.';
 
-export const SectionHeader = ({ header, body }) => (
+export const SectionHeader = ({ heading, body }) => (
   <Box
     as="header"
     css={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
   >
     <Typography as="h2" textAlign="center">
-      {header}
+      {heading}
     </Typography>
 
     <Typography textAlign="center" css={{ maxWidth: '500px', mb: '40px' }}>

@@ -1,3 +1,4 @@
+export { ExtensionSection } from './ExtensionSection';
 export { SectionHeader } from './SectionHeader';
 export { FeatureSection } from './FeatureSection';
 export { BgShapeBox } from './BgShapeBox';

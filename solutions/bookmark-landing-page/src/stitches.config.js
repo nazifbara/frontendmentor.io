@@ -12,6 +12,9 @@ export const { styled, css, globalCss } = createStitches({
 
       darkContrast: '#fff',
     },
+    shadows: {
+      secondary: 'rgba(83, 104, 223, 0.2)',
+    },
     fonts: {
       body: 'Rubik',
     },

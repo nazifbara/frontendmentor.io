@@ -18,7 +18,7 @@ export const FeatureSection = () => {
   return (
     <Section id="features">
       <SectionHeader
-        header={SECTION_HEADER.header}
+        heading={SECTION_HEADER.heading}
         body={SECTION_HEADER.body}
       />
       <div>
@@ -145,7 +145,7 @@ const StyledTabBtn = styled('button', {
 });
 
 const SECTION_HEADER = {
-  header: 'Features',
+  heading: 'Features',
   body: 'Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.',
 };
 

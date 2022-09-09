@@ -48,7 +48,7 @@ const StyledTypography = styled('p', {
         },
       },
       h3: {
-        fontSize: 'calc($h3 - 12px)',
+        fontSize: 'calc($h3 - 3px)',
         fontWeight: '$bold',
         '@lg': {
           fontSize: '$h3',
