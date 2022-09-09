@@ -24,7 +24,14 @@ export const Typography = ({
 };
 
 const StyledTypography = styled('p', {
+  color: '$lightContrast',
+
   variants: {
+    onDark: {
+      true: {
+        color: '$darkContrast',
+      },
+    },
     variant: {
       body: {
         fontSize: 'calc($body - 2px)',

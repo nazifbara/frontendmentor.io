@@ -5,6 +5,7 @@ import {
   FeatureSection,
   ExtensionSection,
   FAQSection,
+  ContactSection,
 } from './components';
 
 const globalStyles = globalCss({
@@ -31,14 +32,7 @@ const App = () => {
         <FeatureSection />
         <ExtensionSection />
         <FAQSection />
-
-        <section id="contact">
-          <span>35,000+ already joined</span>
-          <h2>Stay up-to-date with what we’re doing</h2>
-          <form>
-            <input /> <button>Contact Us</button>
-          </form>
-        </section>
+        <ContactSection />
       </main>
 
       <footer>

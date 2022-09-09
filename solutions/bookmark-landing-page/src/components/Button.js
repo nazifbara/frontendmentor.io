@@ -29,15 +29,24 @@ export const Button = styled('button', {
   },
 
   variants: {
+    onDark: {
+      true: {
+        '&:hover': {
+          backgroundColor: '$darkContrast',
+        },
+      },
+    },
     textTransform: {
       uppercase: {
         textTransform: 'uppercase',
       },
       capitalize: {
         textTransform: 'capitalize',
+        fontSize: '$nav',
       },
       none: {
         textTransform: 'none',
+        fontSize: '$nav',
       },
     },
     variant: {
