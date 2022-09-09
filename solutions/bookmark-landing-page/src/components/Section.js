@@ -4,7 +4,7 @@ export const Section = ({ children }) => (
   <Container
     as="section"
     css={{
-      py: '40px',
+      py: '20px',
     }}
   >
     {children}

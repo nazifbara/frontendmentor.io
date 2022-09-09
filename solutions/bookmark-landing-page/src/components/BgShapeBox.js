@@ -3,14 +3,14 @@ import { styled } from '../stitches.config';
 export const BgShapeBox = styled('div', {
   overflow: 'visible',
   position: 'relative',
-  mb: '30px',
+  mb: '20%',
   '&::before': {
     position: 'absolute',
     zIndex: -1,
     display: 'block',
     content: '',
-    width: '70%',
-    height: '80%',
+    width: '90%',
+    height: '100%',
     right: '-20px',
     top: '20%',
     borderRadius: '50% 0 0 50%',
@@ -18,9 +18,24 @@ export const BgShapeBox = styled('div', {
 
     '@md': {
       mb: 0,
-      size: '90%',
-      right: '-200px',
-      top: '20%',
+      width: '100%',
+      right: '-150px',
+    },
+  },
+  variants: {
+    left: {
+      true: {
+        '&::before': {
+          left: '-20px',
+          right: 'initial',
+          borderRadius: '0 50% 50% 0',
+
+          '@md': {
+            left: '-150px',
+            right: '0px',
+          },
+        },
+      },
     },
   },
 });

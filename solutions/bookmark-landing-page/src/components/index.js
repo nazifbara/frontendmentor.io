@@ -1,3 +1,5 @@
+export { SectionHeader } from './SectionHeader';
+export { FeatureSection } from './FeatureSection';
 export { BgShapeBox } from './BgShapeBox';
 export { Section } from './Section';
 export { Box } from './Box';

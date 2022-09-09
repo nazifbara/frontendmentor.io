@@ -1,5 +1,5 @@
 import { globalCss } from './stitches.config';
-import { Header, HeroSection } from './components';
+import { Header, HeroSection, FeatureSection } from './components';
 
 const globalStyles = globalCss({
   body: {
@@ -22,60 +22,7 @@ const App = () => {
 
       <main>
         <HeroSection />
-
-        <section id="features">
-          <article>
-            <h2>Features</h2>
-            <p>
-              Our aim is to make it quick and easy for you to access your
-              favourite websites. Your bookmarks sync between your devices so
-              you can access them on the go.
-            </p>
-          </article>
-
-          <div>
-            <nav>
-              <button>Simple Bookmarking</button>
-              <button>Speedy Searching</button>
-              <button>Easy Sharing</button>
-            </nav>
-
-            <div>
-              <div>illustration</div>
-              <article>
-                <h2>Bookmark in one click</h2>
-                <p>
-                  Organize your bookmarks however you like. Our simple
-                  drag-and-drop interface gives you complete control over how
-                  you manage your favourite sites.
-                </p>
-                <a href="/#">More Info</a>
-              </article>
-
-              <div>illustration</div>
-              <article>
-                <h2>Intelligent search</h2>
-                <p>
-                  Our powerful search feature will help you find saved sites in
-                  no time at all. No need to trawl through all of your
-                  bookmarks.
-                </p>
-                <a href="/#">More Info</a>
-              </article>
-
-              <div>illustration</div>
-              <article>
-                <h2>Share your bookmarks</h2>
-                <p>
-                  Easily share your bookmarks and collections with others.
-                  Create a shareable link that you can send at the click of a
-                  button.
-                </p>
-                <a href="/#">More Info</a>
-              </article>
-            </div>
-          </div>
-        </section>
+        <FeatureSection />
 
         <section>
           <article>

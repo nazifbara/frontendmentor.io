@@ -8,7 +8,7 @@ export const Typography = ({
   children,
   ...otherProps
 }) => {
-  const asVariant = as === 'p' ? elementVariantMap[as] : as;
+  const asVariant = elementVariantMap[as] ?? as;
 
   return (
     <StyledTypography
@@ -69,4 +69,5 @@ const StyledTypography = styled('p', {
 
 const elementVariantMap = {
   p: 'body',
+  span: 'body',
 };

@@ -29,6 +29,17 @@ export const Button = styled('button', {
   },
 
   variants: {
+    textTransform: {
+      uppercase: {
+        textTransform: 'uppercase',
+      },
+      capitalize: {
+        textTransform: 'capitalize',
+      },
+      none: {
+        textTransform: 'none',
+      },
+    },
     variant: {
       primary: {
         boxShadow: 'none',

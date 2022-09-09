@@ -120,6 +120,7 @@ const StyledNavMenu = styled('nav', {
   position: 'fixed',
   bgC: '$lightContrastOpaque',
   color: '$darkContrast',
+  zIndex: 100,
   top: 0,
   right: 0,
   bottom: 0,

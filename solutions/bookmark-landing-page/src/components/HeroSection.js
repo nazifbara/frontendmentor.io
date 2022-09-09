@@ -13,9 +13,8 @@ export const HeroSection = () => (
       as="article"
       css={{
         display: 'grid',
-        alignItems: 'center',
-        '@md': { gridTemplateColumns: '1fr 2fr' },
-        '@lg': { gridTemplateColumns: '500px auto', gridColumnGap: '10px' },
+        '@md': { gridTemplateColumns: '1fr 2fr', columnGap: '30px' },
+        '@lg': { gridTemplateColumns: '500px auto', columnGap: '50px' },
       }}
     >
       <BgShapeBox>
@@ -33,11 +32,12 @@ export const HeroSection = () => (
       </BgShapeBox>
 
       <Box
+        as="article"
         css={{
           '@md': {
             gridColumn: '1 / 2',
             gridRow: '1',
-            transform: 'translateY(-8%)',
+            transform: 'translateY(10%)',
           },
         }}
       >
