@@ -108,6 +108,7 @@ const StyledHeader = styled('header', {
 const StyledMenuButton = styled('button', {
   p: '6px',
   border: 'none',
+  cursor: 'pointer',
   bgC: 'transparent',
 
   '@md': {
