@@ -29,7 +29,7 @@ const StyledTypography = styled('p', {
   variants: {
     onDark: {
       true: {
-        color: '$darkContrast',
+        color: '$darkContrast !important',
       },
     },
     variant: {

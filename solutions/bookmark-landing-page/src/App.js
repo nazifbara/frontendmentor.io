@@ -6,6 +6,7 @@ import {
   ExtensionSection,
   FAQSection,
   ContactSection,
+  Footer,
 } from './components';
 
 const globalStyles = globalCss({
@@ -17,6 +18,11 @@ const globalStyles = globalCss({
   },
   img: {
     width: '100%',
+  },
+  ul: {
+    listStyle: 'none',
+    m: 0,
+    p: 0,
   },
 });
 
@@ -35,32 +41,7 @@ const App = () => {
         <ContactSection />
       </main>
 
-      <footer>
-        <div>
-          <span>logo</span>
-          <nav>
-            <ul>
-              <li>
-                <a href="/#features">Features</a>
-              </li>
-              <li>
-                <a href="/#">Pricing</a>
-              </li>
-              <li>
-                <a href="/#contact">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <ul>
-          <li>
-            <a href="/#">facebook</a>
-          </li>
-          <li>
-            <a href="/#">twitter</a>
-          </li>
-        </ul>
-      </footer>
+      <Footer />
     </>
   );
 };

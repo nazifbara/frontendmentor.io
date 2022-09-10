@@ -51,7 +51,7 @@ const NavMenu = () => {
       <StyledNavMenu open={open}>
         <Container>
           <StyledHeader>
-            <Logo inDark />
+            <Logo onDark />
             <StyledMenuButton type="close" onClick={handleClose}>
               <CloseIcon />
             </StyledMenuButton>

@@ -4,7 +4,16 @@ import { styled } from '../stitches.config';
 
 export const Logo = styled(LogoSVG, {
   variants: {
-    inDark: {
+    inFooter: {
+      true: {
+        '& *': {
+          '& path': {
+            fill: '$darkContrast',
+          },
+        },
+      },
+    },
+    onDark: {
       true: {
         '& *': {
           stroke: 'transparent',

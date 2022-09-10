@@ -1,3 +1,4 @@
+export { Footer } from './Footer';
 export { ContactSection } from './ContactSection';
 export { FAQSection } from './FAQSection';
 export { ExtensionSection } from './ExtensionSection';
