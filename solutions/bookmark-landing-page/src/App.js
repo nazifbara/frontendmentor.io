@@ -15,6 +15,7 @@ const globalStyles = globalCss({
     color: '$lightContrast',
     fontSize: '$body',
     fontWeight: '$medium',
+    overflowX: 'hidden',
   },
   img: {
     width: '100%',
