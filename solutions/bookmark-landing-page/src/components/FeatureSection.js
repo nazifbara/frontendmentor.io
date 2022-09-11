@@ -98,6 +98,9 @@ const StyledTabBtn = styled('button', {
   borderBottom: '1px solid $grayishLightContrast',
   cursor: 'pointer',
 
+  '&:focus': {
+    outline: 'none',
+  },
   '&:hover span': {
     color: '$primary',
   },
