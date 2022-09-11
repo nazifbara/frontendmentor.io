@@ -51,6 +51,7 @@ const StyledCardList = styled('div', {
   justifyItems: 'center',
   maxWidth: '800px',
   columnGap: '20px',
+  rowGap: '40px',
   px: '20px',
   mb: '15%',
   mr: 'auto',
