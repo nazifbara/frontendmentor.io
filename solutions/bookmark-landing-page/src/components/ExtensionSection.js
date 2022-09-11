@@ -26,7 +26,7 @@ export const ExtensionSection = () => (
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'bottom',
               height: '75%',
-              px: '20px',
+              px: '15px',
             }}
           >
             <img src={logo} alt="" />
@@ -35,7 +35,7 @@ export const ExtensionSection = () => (
             </Typography>
             <Typography textAlign="center">{requirement}</Typography>
           </Box>
-          <Box css={{ px: '20px' }}>
+          <Box css={{ px: '15px' }}>
             <Button variant="secondary" fullWidth>
               Add & Install Extension
             </Button>
@@ -48,15 +48,14 @@ export const ExtensionSection = () => (
 
 const StyledCardList = styled('div', {
   display: 'grid',
-  rowGap: '40px',
-  columnGap: '20px',
   justifyItems: 'center',
+  maxWidth: '800px',
+  columnGap: '20px',
+  rowGap: '40px',
   px: '20px',
-  mb: '10%',
-
-  '@sm': {
-    gridTemplateColumns: 'repeat(2, 1fr)',
-  },
+  mb: '15%',
+  mr: 'auto',
+  ml: 'auto',
 
   '@md': {
     gridTemplateColumns: 'repeat(3, 1fr)',
@@ -67,10 +66,6 @@ const StyledCardList = styled('div', {
     'article:nth-child(3)': {
       transform: 'translateY(20%)',
     },
-  },
-
-  '@lg': {
-    px: '150px',
   },
 });
 

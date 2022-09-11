@@ -19,8 +19,8 @@ export const { styled, css, globalCss } = createStitches({
       body: 'Rubik',
     },
     fontSizes: {
-      h1: '48px',
-      h2: '36px',
+      h1: '40px',
+      h2: '33px',
       h3: '24px',
       body: '18px',
       nav: '15px',
