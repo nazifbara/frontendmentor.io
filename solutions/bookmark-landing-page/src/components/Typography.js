@@ -34,21 +34,19 @@ const StyledTypography = styled('p', {
     },
     variant: {
       body: {
-        fontSize: 'calc($body - 2px)',
+        fontSize: '$body',
         color: '$grayishLightContrast',
-        '@lg': {
-          fontSize: '$body',
-        },
+        '@lg': {},
       },
       h1: {
-        fontSize: 'calc($h1 - 16px)',
+        fontSize: 'calc($h1 - 3px)',
         fontWeight: '$bold',
         '@lg': {
           fontSize: '$h1',
         },
       },
       h2: {
-        fontSize: 'calc($h2 - 12px)',
+        fontSize: 'calc($h2 - 3px)',
         fontWeight: '$bold',
         '@lg': {
           fontSize: '$h2',
