@@ -1,1 +1,1 @@
-export { StyledNavLink as NavLink } from './styles';
+export { NavLink } from './NavLink';
