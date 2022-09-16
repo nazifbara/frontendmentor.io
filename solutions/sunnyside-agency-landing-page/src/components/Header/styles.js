@@ -44,7 +44,7 @@ export const StyledButton = styled('button', {
   color: '$text !important',
   cursor: 'pointer',
   textTransform: 'none',
-  transition: 'background-color 0.3s ease, color 0.3s ease',
+  transition: 'background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease',
 
   '&:hover': {
     bgC: 'rgba(255, 255, 255, 0.3)',
@@ -61,6 +61,12 @@ export const StyledButton = styled('button', {
     primary: {
       true: {
         bgC: '$primary',
+
+        '&:hover': {
+          bgC: '$primary',
+          color: '$text !important',
+          opacity: 0.7,
+        },
       },
     },
   },
