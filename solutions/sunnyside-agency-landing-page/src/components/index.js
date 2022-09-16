@@ -1,5 +1,7 @@
+export { NavLink } from './NavLink';
+export { Heading } from './Heading';
+export { ColumnGrid } from './ColumnGrid';
 export { Header } from './Header';
-export { Hero } from './Hero';
 export { Services } from './Services';
 export { Gallery } from './Gallery';
 export { Testimonials } from './Testimonials';

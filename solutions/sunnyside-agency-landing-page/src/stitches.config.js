@@ -1,9 +1,13 @@
 import { createStitches } from '@stitches/react';
 
-export const { styled, css, globalCss } = createStitches({
+export const { styled, css, globalCss, createTheme, theme } = createStitches({
   theme: {
     colors: {
+      primary: 'hsl(51, 100%, 49%)',
       text: 'hsl(212, 27%, 19%)',
+      textVeryGray: 'hsl(213, 9%, 39%)',
+      textGray: 'hsl(210, 4%, 67%)',
+      bg: 'white',
     },
     fonts: {
       heading: 'Fraunces',
@@ -11,6 +15,7 @@ export const { styled, css, globalCss } = createStitches({
     },
     fontSizes: {
       body: '18px',
+      h1: '55px',
     },
   },
   media: {
@@ -34,5 +39,12 @@ export const { styled, css, globalCss } = createStitches({
     pr: (value) => ({ paddingRight: value }),
     pb: (value) => ({ paddingBottom: value }),
     px: (value) => ({ paddingLeft: value, paddingRight: value }),
+  },
+});
+
+export const headerTheme = createTheme('intro-theme', {
+  colors: {
+    text: 'white',
+    textGray: 'white',
   },
 });

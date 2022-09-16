@@ -1,13 +1,6 @@
 import { globalCss } from './stitches.config';
 
-import {
-  Header,
-  Hero,
-  Services,
-  Testimonials,
-  Gallery,
-  Footer,
-} from './components';
+import { Header, Services, Testimonials, Gallery, Footer } from './components';
 
 const globalStyles = globalCss({
   '*': {
@@ -16,10 +9,11 @@ const globalStyles = globalCss({
   body: {
     overflowX: 'hidden',
   },
-  img: {
+  'img,svg': {
     width: '100%',
   },
-  'p,span,a': {
+  'p,span,a,button': {
+    color: '$text',
     fontSize: '$body',
     fontFamily: '$body, sans-serif',
     fontWeight: 600,
@@ -35,7 +29,6 @@ export const App = () => {
     <>
       <Header />
       <main>
-        <Hero />
         <Services />
         <Testimonials />
         <Gallery />

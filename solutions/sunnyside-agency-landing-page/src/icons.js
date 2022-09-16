@@ -1,3 +1,4 @@
+export { ReactComponent as MenuArrowIcon } from './images/icon-menu-arrow.svg';
 export { ReactComponent as FacebookIcon } from './images/icon-facebook.svg';
 export { ReactComponent as HamburgerIcon } from './images/icon-hamburger.svg';
 export { ReactComponent as InstagramIcon } from './images/icon-instagram.svg';
