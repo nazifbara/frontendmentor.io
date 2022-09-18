@@ -2,7 +2,6 @@ import { headerTheme, theme } from '../../stitches.config';
 import { ArrowDownIcon } from '../../icons';
 import { Logo, ColumnGrid, Heading, NavLink } from '..';
 import {
-  StyledLogo,
   StyledNav,
   StyledHeader,
   StyledButton,
@@ -15,9 +14,7 @@ import { NAV_ITEMS } from '../../data';
 export const Header = () => (
   <StyledHeader className={headerTheme}>
     <ColumnGrid css={{ height: '100px' }}>
-      <StyledLogo>
-        <Logo />
-      </StyledLogo>
+      <Logo />
 
       <StyledNav>
         {NAV_ITEMS.slice(0, 3).map((item, idx) => (

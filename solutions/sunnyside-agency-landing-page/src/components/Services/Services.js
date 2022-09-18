@@ -47,7 +47,12 @@ export const Services = () => (
         <StyledBgImage
           key={`service-${idx}`}
           className={idx === 0 ? graphicDesignTheme : photographyTheme}
-          css={{ backgroundImage: `url(${s.desktopImage})` }}
+          css={{
+            backgroundImage: `url(${s.mobileImage})`,
+            '@lg': {
+              backgroundImage: `url(${s.desktopImage})`,
+            },
+          }}
         >
           <div>
             <Heading variant="h2" textAlign="center">

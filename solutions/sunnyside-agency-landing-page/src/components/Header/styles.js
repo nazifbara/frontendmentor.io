@@ -2,19 +2,6 @@ import { styled } from '../../stitches.config';
 
 import headerImg from '../../images/desktop/image-header.jpg';
 
-export const StyledLogo = styled('div', {
-  gridColumn: 'wrapper / span 6',
-  '& svg': {
-    width: '137px',
-    height: '37px',
-
-    '@md': {
-      width: '167px',
-      height: '67px',
-    },
-  },
-});
-
 export const StyledNav = styled('nav', {
   display: 'none',
   gridColumn: '9 / span 6',

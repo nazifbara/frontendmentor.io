@@ -6,6 +6,7 @@ export const { styled, css, globalCss, createTheme, theme } = createStitches({
       primary: 'hsl(51, 100%, 49%)',
       secondary: 'hsl(7, 99%, 70%)',
       text: 'hsl(212, 27%, 19%)',
+      hoverText: '$text',
       textVeryGray: 'hsl(213, 9%, 39%)',
       textGray: 'hsl(210, 4%, 67%)',
       bg: 'white',
@@ -55,6 +56,7 @@ export const headerTheme = createTheme('intro-theme', {
   colors: {
     text: 'white',
     textGray: 'white',
+    hoverText: 'white',
   },
 });
 
@@ -67,5 +69,13 @@ export const graphicDesignTheme = createTheme('graphic-design-theme', {
 export const photographyTheme = createTheme('photography-theme', {
   colors: {
     text: 'hsl(198, 62%, 26%)',
+  },
+});
+
+export const footerTheme = createTheme('footer-theme', {
+  colors: {
+    text: 'hsl(167, 40%, 24%)',
+    hoverText: 'white',
+    bg: 'hsl(168, 34%, 67%)',
   },
 });

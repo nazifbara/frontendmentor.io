@@ -38,7 +38,7 @@ export const NavMenuButton = () => {
               <MenuArrowIcon />
             </StyledNavMenuArrow>
             {NAV_ITEMS.slice(0, 3).map((item, idx) => (
-              <NavLink href="/#" key={`nav-item-${idx}`}>
+              <NavLink href="/#" key={`nav-item-${idx}`} gray>
                 {item}
               </NavLink>
             ))}
