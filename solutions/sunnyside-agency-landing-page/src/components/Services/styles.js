@@ -116,6 +116,7 @@ export const StyledBgImage = styled('article', {
   gridColumn: 'span 16',
   backgroundPosition: 'top',
   backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
   position: 'relative',
   display: 'flex',
   justifyContent: 'center',

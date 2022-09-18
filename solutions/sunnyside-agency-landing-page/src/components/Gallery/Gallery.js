@@ -1,9 +1,19 @@
 import { GALLERY_IMAGES } from '../../data';
+import { ColumnGrid } from '../ColumnGrid';
+import { StyledImage } from './styles';
 
 export const Gallery = () => (
-  <section>
+  <ColumnGrid as="section">
     {GALLERY_IMAGES.map((g, idx) => (
-      <img key={`gallery-${idx}`} src={g.desktop} alt="" />
+      <StyledImage
+        key={`gallery-${idx}`}
+        css={{
+          backgroundImage: `url(${g.mobile})`,
+          '@lg': {
+            backgroundImage: `url(${g.desktop})`,
+          },
+        }}
+      />
     ))}
-  </section>
+  </ColumnGrid>
 );
