@@ -16,7 +16,7 @@ const globalStyles = globalCss({
     color: '$text',
     fontSize: '$body',
     fontFamily: '$body, sans-serif',
-    fontWeight: 600,
+    fontWeight: '$semiBold',
   },
   'h1,h2,h3,h4': {
     fontFamily: '$heading, serif',

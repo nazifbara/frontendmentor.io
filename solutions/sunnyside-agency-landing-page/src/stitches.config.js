@@ -4,6 +4,7 @@ export const { styled, css, globalCss, createTheme, theme } = createStitches({
   theme: {
     colors: {
       primary: 'hsl(51, 100%, 49%)',
+      secondary: 'hsl(7, 99%, 70%)',
       text: 'hsl(212, 27%, 19%)',
       textVeryGray: 'hsl(213, 9%, 39%)',
       textGray: 'hsl(210, 4%, 67%)',
@@ -16,11 +17,18 @@ export const { styled, css, globalCss, createTheme, theme } = createStitches({
     fontSizes: {
       body: '18px',
       h1: '55px',
+      h2: '40px',
+    },
+    fontWeights: {
+      semiBold: 600,
+      bold: 700,
+      black: 900,
     },
   },
   media: {
-    xm: '(min-width: 0px)',
+    sm: '(min-width: 480px)',
     md: '(min-width: 760px)',
+    lg: '(min-width: 1025px)',
   },
   utils: {
     size: (value) => ({ width: value, height: value }),
@@ -46,5 +54,17 @@ export const headerTheme = createTheme('intro-theme', {
   colors: {
     text: 'white',
     textGray: 'white',
+  },
+});
+
+export const graphicDesignTheme = createTheme('graphic-design-theme', {
+  colors: {
+    text: 'hsl(167, 40%, 24%)',
+  },
+});
+
+export const photographyTheme = createTheme('photography-theme', {
+  colors: {
+    text: 'hsl(198, 62%, 26%)',
   },
 });

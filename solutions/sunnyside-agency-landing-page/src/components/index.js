@@ -1,3 +1,4 @@
+export { Text } from './Text';
 export { NavLink } from './NavLink';
 export { Heading } from './Heading';
 export { ColumnGrid } from './ColumnGrid';

@@ -5,15 +5,32 @@ export const StyledHeading = styled('h1', {
   fontSize: '$body',
   textAlign: 'left',
   textTransform: 'none',
-
-  '@md': {
-    fontSize: '$h1',
-  },
+  fontWeight: '$black',
+  lineHeight: 1.4,
 
   variants: {
     variant: {
       h1: {
-        fontSize: 'calc($h1 - 10px)',
+        fontSize: 'calc($h1 - 15px)',
+
+        '@sm': {
+          fontSize: 'calc($h1 - 10px)',
+        },
+
+        '@md': {
+          fontSize: '$h1',
+        },
+      },
+      h2: {
+        fontSize: 'calc($h2 - 13px)',
+
+        '@sm': {
+          fontSize: 'calc($h2 - 8px)',
+        },
+
+        '@md': {
+          fontSize: '$h2',
+        },
       },
     },
     textTransform: {
@@ -23,6 +40,9 @@ export const StyledHeading = styled('h1', {
       },
     },
     textAlign: {
+      left: {
+        textAlign: 'left',
+      },
       center: {
         textAlign: 'center',
       },
