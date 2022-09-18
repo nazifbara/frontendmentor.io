@@ -18,6 +18,7 @@ export const { styled, css, globalCss, createTheme, theme } = createStitches({
       body: '18px',
       h1: '55px',
       h2: '40px',
+      h3: '22px',
     },
     fontWeights: {
       semiBold: 600,
@@ -26,9 +27,9 @@ export const { styled, css, globalCss, createTheme, theme } = createStitches({
     },
   },
   media: {
-    sm: '(min-width: 480px)',
-    md: '(min-width: 760px)',
-    lg: '(min-width: 1025px)',
+    sm: '(min-width: 30.063rem)',
+    md: '(min-width: 48.063rem)',
+    lg: '(min-width: 64.063rem)',
   },
   utils: {
     size: (value) => ({ width: value, height: value }),

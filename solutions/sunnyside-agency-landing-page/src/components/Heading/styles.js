@@ -9,6 +9,14 @@ export const StyledHeading = styled('h1', {
   lineHeight: 1.4,
 
   variants: {
+    color: {
+      gray: {
+        color: '$textGray',
+      },
+      veryGray: {
+        color: '$textVeryGray',
+      },
+    },
     variant: {
       h1: {
         fontSize: 'calc($h1 - 15px)',
@@ -31,6 +39,20 @@ export const StyledHeading = styled('h1', {
         '@md': {
           fontSize: '$h2',
         },
+      },
+      h3: {
+        fontSize: 'calc($h3 - 5px)',
+
+        '@sm': {
+          fontSize: 'calc($h3 - 3px)',
+        },
+
+        '@md': {
+          fontSize: '$h3',
+        },
+      },
+      body: {
+        fontSize: '$body',
       },
     },
     textTransform: {
