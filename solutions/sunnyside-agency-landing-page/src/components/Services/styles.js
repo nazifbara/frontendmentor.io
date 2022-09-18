@@ -120,12 +120,15 @@ export const StyledBgImage = styled('article', {
   position: 'relative',
   display: 'flex',
   justifyContent: 'center',
-  height: '600px',
+  height: '700px',
+
+  '@sm': {
+    gridColumn: 'span 8',
+    height: '600px',
+  },
 
   '@md': {
-    gridColumn: 'span 8',
     aspectRatio: '1 / 1.45',
-    p: '0',
     height: 'auto',
   },
 
@@ -144,5 +147,14 @@ export const StyledBgImage = styled('article', {
     position: 'absolute',
     top: '60%',
     p: '20px',
+
+    '@sm': {
+      top: '50%',
+      p: '10px',
+    },
+
+    '@md': {
+      top: '60%',
+    },
   },
 });
