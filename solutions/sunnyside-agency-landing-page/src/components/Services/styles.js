@@ -6,7 +6,7 @@ export const StyledTextImage = styled(ColumnGrid, {
     m: 0,
   },
   '& > div': {
-    gridColumn: 'span 16',
+    gridColumn: 'wrapper',
     display: 'grid',
     justifyItems: 'center',
     rowGap: '40px',
@@ -16,18 +16,18 @@ export const StyledTextImage = styled(ColumnGrid, {
     p: '40px 20px',
 
     '@md': {
-      gridColumn: 'span 8',
+      gridColumn: 'span 6',
       justifyItems: 'start',
       p: '20px',
     },
   },
 
   '& > figure': {
-    gridColumn: 'span 16',
+    gridColumn: 'wrapper',
     order: '1',
 
     '@md': {
-      gridColumn: 'span 8',
+      gridColumn: 'span 6',
     },
   },
 
@@ -113,7 +113,7 @@ export const StyledLink = styled('a', {
 });
 
 export const StyledBgImage = styled('article', {
-  gridColumn: 'span 16',
+  gridColumn: 'wrapper',
   backgroundPosition: 'top',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
@@ -123,7 +123,7 @@ export const StyledBgImage = styled('article', {
   height: '700px',
 
   '@sm': {
-    gridColumn: 'span 8',
+    gridColumn: 'span 6',
     height: '600px',
   },
 

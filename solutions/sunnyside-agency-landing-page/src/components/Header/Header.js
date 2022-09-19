@@ -13,7 +13,10 @@ import { NAV_ITEMS } from '../../data';
 
 export const Header = () => (
   <StyledHeader className={headerTheme}>
-    <ColumnGrid css={{ height: '100px' }}>
+    <ColumnGrid
+      padding
+      css={{ height: '100px', '& > div:first-child': { gridColumn: 'span 6' } }}
+    >
       <Logo />
 
       <StyledNav>

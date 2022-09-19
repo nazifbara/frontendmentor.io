@@ -1,4 +1,4 @@
-import { globalCss } from './stitches.config';
+import { globalCss, styled } from './stitches.config';
 
 import { Header, Services, Testimonials, Gallery, Footer } from './components';
 
@@ -26,7 +26,7 @@ export const App = () => {
   globalStyles();
 
   return (
-    <>
+    <StyledMaxWidth>
       <Header />
       <main>
         <Services />
@@ -34,6 +34,11 @@ export const App = () => {
         <Gallery />
       </main>
       <Footer />
-    </>
+    </StyledMaxWidth>
   );
 };
+
+const StyledMaxWidth = styled('div', {
+  maxWidth: '1440px',
+  m: '0 auto',
+});

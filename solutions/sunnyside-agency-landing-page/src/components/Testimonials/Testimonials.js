@@ -16,9 +16,9 @@ export const Testimonials = () => (
     </Heading>
 
     <ColumnGrid
+      padding
       css={{
         rowGap: '50px',
-        columnGap: '10px',
         alignItems: 'stretch',
         justifyItems: 'center',
       }}

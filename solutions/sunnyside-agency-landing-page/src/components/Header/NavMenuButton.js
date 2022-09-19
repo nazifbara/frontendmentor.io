@@ -27,9 +27,12 @@ export const NavMenuButton = () => {
       </StyledNavMenuButton>
       {open && (
         <ColumnGrid
+          padding
           css={{
             position: 'fixed',
             top: '120px',
+            left: 0,
+            right: 0,
             zIndex: 2,
           }}
         >

@@ -7,14 +7,16 @@ export const StyledTestimonie = styled('article', {
   justifyItems: 'center',
   maxWidth: '400px',
 
-  '@md': {
-    '&:first-child': {
-      gridColumn: 'wrapper / span 4',
-    },
+  '&:not(last-child)': {
+    mr: '10px',
 
-    '&:not(:first-child)': {
-      gridColumn: 'span 4',
+    '@md': {
+      mr: '20px',
     },
+  },
+
+  '@md': {
+    gridColumn: 'span 4',
   },
 });
 
@@ -28,5 +30,9 @@ export const StyledPhoto = styled('img', {
 });
 
 export const StyledContainer = styled('section', {
-  py: '150px',
+  py: '90px',
+
+  '@md': {
+    py: '150px',
+  },
 });

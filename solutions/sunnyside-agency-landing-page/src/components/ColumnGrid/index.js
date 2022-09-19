@@ -1,1 +1,1 @@
-export { ColumnGrid } from './ColumnGrid';
+export { StyledColumnGrid as ColumnGrid } from './styles';

@@ -1,7 +1,7 @@
 import { styled } from '../../stitches.config';
 
 export const StyledImage = styled('figure', {
-  gridColumn: 'span 8',
+  gridColumn: 'span 6',
   backgroundPosition: 'top',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
@@ -10,7 +10,7 @@ export const StyledImage = styled('figure', {
 
   '@md': {
     height: '430px',
-    gridColumn: 'span 4',
+    gridColumn: 'span 3',
     aspectRatio: 'auto',
   },
 });

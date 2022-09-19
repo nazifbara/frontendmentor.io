@@ -1,5 +1,5 @@
 import { styled } from '../../stitches.config';
-import { ColumnGrid } from '../ColumnGrid';
+import { ColumnGrid } from '..';
 
 export const StyledContainer = styled(ColumnGrid, {
   py: '70px',
@@ -7,7 +7,7 @@ export const StyledContainer = styled(ColumnGrid, {
   justifyItems: 'center',
 
   '& > *': {
-    gridColumn: 'span 16',
+    gridColumn: 'wrapper',
   },
 
   '& div': {

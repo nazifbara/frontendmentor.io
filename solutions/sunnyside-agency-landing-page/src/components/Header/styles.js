@@ -4,7 +4,7 @@ import headerImg from '../../images/desktop/image-header.jpg';
 
 export const StyledNav = styled('nav', {
   display: 'none',
-  gridColumn: '9 / span 6',
+  gridColumn: 'span 6',
   justifySelf: 'end',
   columnGap: '40px',
   gridTemplateColumns: 'repeat(4, auto)',
@@ -73,7 +73,7 @@ export const StyledArrowDown = styled('div', {
 });
 
 export const StyledNavMenuButton = styled('button', {
-  gridColumn: '9 / span 6',
+  gridColumn: 'span 6',
   justifySelf: 'end',
   bgC: 'transparent',
   border: 'none',

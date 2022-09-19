@@ -1,5 +1,5 @@
 import { GALLERY_IMAGES } from '../../data';
-import { ColumnGrid } from '../ColumnGrid';
+import { ColumnGrid } from '..';
 import { StyledImage } from './styles';
 
 export const Gallery = () => (
