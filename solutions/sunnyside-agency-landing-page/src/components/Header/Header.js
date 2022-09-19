@@ -43,8 +43,8 @@ export const Header = () => (
           zIndex: 1,
           gridColumn: 'wrapper',
           justifySelf: 'center',
-          mt: '50px',
-          '@md': { mt: '100px' },
+          position: 'absolute',
+          top: '25%',
         }}
       >
         We are creatives

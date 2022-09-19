@@ -18,7 +18,7 @@ export const StyledNav = styled('nav', {
 export const StyledHeader = styled('header', {
   position: 'relative',
   height: '100vh',
-  maxHeight: '900px',
+  maxHeight: '1200px',
   backgroundImage: `url(${headerImg})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
