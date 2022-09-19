@@ -9,7 +9,7 @@ const globalStyles = globalCss({
   body: {
     overflowX: 'hidden',
   },
-  'img,svg': {
+  img: {
     width: '100%',
   },
   'p,span,a,button': {
