@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config';
+import { styled, keyframes } from '../../stitches.config';
 
 import headerImg from '../../images/desktop/image-header.jpg';
 
@@ -59,11 +59,17 @@ export const StyledButton = styled('button', {
   },
 });
 
+const moveUpDown = keyframes({
+  '0%, 100%': { top: '45%' },
+  '50%': { top: '50%' },
+});
+
 export const StyledArrowDown = styled('div', {
   position: 'absolute',
   right: '50%',
   top: '45%',
   transform: 'translateX(50%)',
+  animation: `${moveUpDown} 2s linear infinite`,
 });
 
 export const StyledNavMenuButton = styled('button', {
