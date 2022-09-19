@@ -1,0 +1,10 @@
+export { Text } from './Text';
+export { NavLink } from './NavLink';
+export { Heading } from './Heading';
+export { ColumnGrid } from './ColumnGrid';
+export { Header } from './Header';
+export { Services } from './Services';
+export { Gallery } from './Gallery';
+export { Testimonials } from './Testimonials';
+export { Footer } from './Footer';
+export { Logo } from './Logo';
