@@ -35,21 +35,18 @@ export const Header = () => (
       <NavMenuButton />
     </ColumnGrid>
 
-    <ColumnGrid>
-      <Heading
-        textTransform="uppercase"
-        textAlign="center"
-        css={{
-          zIndex: 1,
-          gridColumn: 'wrapper',
-          justifySelf: 'center',
-          position: 'absolute',
-          top: '25%',
-        }}
-      >
-        We are creatives
-      </Heading>
-    </ColumnGrid>
+    <Heading
+      textTransform="uppercase"
+      textAlign="center"
+      css={{
+        zIndex: 1,
+        width: '100%',
+        position: 'absolute',
+        top: '25%',
+      }}
+    >
+      We are creatives
+    </Heading>
     <StyledArrowDown>
       <ArrowDownIcon />
     </StyledArrowDown>
