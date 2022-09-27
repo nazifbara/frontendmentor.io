@@ -1,11 +1,13 @@
 import { globalCss } from './stitches.config';
+import { StyledMaxWidth } from './containers';
 
 const globalStyles = globalCss({
   '*, *::before, *::after': {
     boxSizing: 'border-box',
+    bgC: '$bg',
   },
   '*': {
-    margin: 0,
+    m: 0,
   },
   body: {
     fontFamily: `'Kumbh Sans', sans-serif`,
@@ -30,9 +32,9 @@ const globalStyles = globalCss({
 const App = () => {
   globalStyles();
   return (
-    <div>
+    <StyledMaxWidth>
       <h1>Hello world</h1>
-    </div>
+    </StyledMaxWidth>
   );
 };
 

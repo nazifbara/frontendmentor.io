@@ -1,0 +1,1 @@
+export { StyledMaxWidth } from './MaxWidth';
