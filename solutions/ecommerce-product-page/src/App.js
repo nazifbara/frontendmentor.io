@@ -1,5 +1,5 @@
 import { globalCss } from './stitches.config';
-import { StyledMaxWidth } from './containers';
+import { StyledMaxWidth, Header } from './containers';
 
 const globalStyles = globalCss({
   '*, *::before, *::after': {
@@ -33,7 +33,7 @@ const App = () => {
   globalStyles();
   return (
     <StyledMaxWidth>
-      <h1>Hello world</h1>
+      <Header />
     </StyledMaxWidth>
   );
 };
