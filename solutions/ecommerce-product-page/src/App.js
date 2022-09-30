@@ -13,6 +13,8 @@ const globalStyles = globalCss({
     fontFamily: `'Kumbh Sans', sans-serif`,
     lineHeight: 1.5,
     '-webkit-font-smoothing': 'antialiased',
+    color: '$text',
+    fontWeight: '$regular',
   },
   'html, body': {
     height: '100%',

@@ -4,7 +4,35 @@ export const { styled, css, globalCss } = createStitches({
   theme: {
     colors: {
       bg: 'hsl(0, 0%, 100%)',
+      text: 'hsl(220, 13%, 13%)',
+      grayishText: 'hsl(219, 9%, 45%)',
+      grayishBorder: 'hsl(220, 14%, 75%)',
+      primary: 'hsl(26, 100%, 55%)',
+      palePrimary: 'hsl(25, 100%, 94%)',
     },
+    space: {
+      1: '5px',
+      2: '10px',
+      3: '15px',
+      4: '20px',
+      5: '25px',
+      6: '30px',
+      7: '35px',
+      8: '40px',
+      9: '45px',
+      10: '50px',
+      11: '55px',
+      12: '60px',
+    },
+    fontWeights: {
+      regular: 400,
+      bold: 700,
+    },
+  },
+  media: {
+    sm: '(min-width: 30.063rem)',
+    md: '(min-width: 48.063rem)',
+    lg: '(min-width: 75rem)',
   },
   utils: {
     size: (value) => ({ width: value, height: value }),
