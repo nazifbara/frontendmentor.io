@@ -4,7 +4,7 @@ import { styled } from '../stitches.config';
 
 const LightboxContext = createContext();
 
-const useLightboxContext = () => {
+export const useLightboxContext = () => {
   const lightboxState = useContext(LightboxContext);
   if (!lightboxState) {
     throw new Error('useLightboxContext must be used within the Lightbox.Root');
@@ -15,8 +15,14 @@ const useLightboxContext = () => {
 export const Root = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const open = () => setIsOpen(true);
-  const close = () => setIsOpen(false);
+  const open = () => {
+    document.body.style.overflow = 'hidden';
+    setIsOpen(true);
+  };
+  const close = () => {
+    document.body.style.overflow = 'auto';
+    setIsOpen(false);
+  };
 
   return (
     <LightboxContext.Provider value={{ isOpen, open, close }}>
@@ -49,12 +55,12 @@ export const Trigger = ({ children, as, css = {} }) => {
   );
 };
 
-export const Close = ({ children, as }) => {
+export const Close = ({ children, as, css = {} }) => {
   const { close, isOpen } = useLightboxContext();
 
   return (
     isOpen && (
-      <StyledIconButton as={as} onClick={close}>
+      <StyledIconButton as={as} onClick={close} css={css}>
         {children}
       </StyledIconButton>
     )

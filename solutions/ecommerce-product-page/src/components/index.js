@@ -3,5 +3,5 @@ export { StyledBox } from './StyledBox';
 export { StyledIconButton } from './StyledIconButton';
 export { CartButton } from './CartButton';
 export { StyledGridColumns } from './StyledGridColumns';
-export { MenuButton } from './MenuButton';
+export { Root as MenuButton } from './MenuButton';
 export { Logo } from './Logo';
