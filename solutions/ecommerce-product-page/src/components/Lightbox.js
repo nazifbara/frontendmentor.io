@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from 'react';
 import { StyledIconButton, StyledBox } from '.';
-import { styled } from '../stitches.config';
+import { styled, keyframes } from '../stitches.config';
 
 const LightboxContext = createContext();
 
@@ -12,8 +12,9 @@ export const useLightboxContext = () => {
   return lightboxState;
 };
 
-export const Root = ({ children }) => {
+export const Root = ({ children, delay = 300 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
 
   const open = () => {
     document.body.style.overflow = 'hidden';
@@ -21,20 +22,34 @@ export const Root = ({ children }) => {
   };
   const close = () => {
     document.body.style.overflow = 'auto';
-    setIsOpen(false);
+    setClosing(true);
+    setTimeout(() => {
+      setIsOpen(false);
+      setClosing(false);
+    }, delay);
   };
 
   return (
-    <LightboxContext.Provider value={{ isOpen, open, close }}>
+    <LightboxContext.Provider value={{ isOpen, open, close, closing }}>
       {children}
     </LightboxContext.Provider>
   );
 };
 
-export const Overlay = () => {
+export const Overlay = (props) => {
   const { isOpen, close } = useLightboxContext();
-  return isOpen && <StyledOverlay onClick={close} />;
+  return isOpen && <StyledOverlay onClick={close} {...props} />;
 };
+
+const fadeIn = keyframes({
+  '0%': { bgC: 'rgba(0, 0, 0, 0)' },
+  '100%': { bgC: 'rgba(0, 0, 0, 0.75)' },
+});
+
+const fadeOut = keyframes({
+  '0%': { bgC: 'rgba(0, 0, 0, 0.75)' },
+  '100%': { bgC: 'rgba(0, 0, 0, 0)' },
+});
 
 export const StyledOverlay = styled('div', {
   position: 'fixed',
@@ -43,6 +58,15 @@ export const StyledOverlay = styled('div', {
   right: 0,
   bottom: 0,
   left: 0,
+  animation: `${fadeIn} 300ms`,
+
+  variants: {
+    closing: {
+      true: {
+        animation: `${fadeOut} 300ms`,
+      },
+    },
+  },
 });
 
 export const Trigger = ({ children, as, css = {} }) => {
@@ -67,8 +91,14 @@ export const Close = ({ children, as, css = {} }) => {
   );
 };
 
-export const Content = ({ children, as }) => {
+export const Content = ({ children, as, ...otherProps }) => {
   const { isOpen } = useLightboxContext();
 
-  return isOpen && <StyledBox as={as}>{children}</StyledBox>;
+  return (
+    isOpen && (
+      <StyledBox as={as} {...otherProps}>
+        {children}
+      </StyledBox>
+    )
+  );
 };
