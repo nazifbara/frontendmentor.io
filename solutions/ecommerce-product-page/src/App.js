@@ -15,6 +15,7 @@ const globalStyles = globalCss({
     '-webkit-font-smoothing': 'antialiased',
     color: '$text',
     fontWeight: '$regular',
+    fontSize: '$body',
   },
   'html, body': {
     height: '100%',

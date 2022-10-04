@@ -4,7 +4,7 @@ import { StyledIconButton, Lightbox } from '.';
 import { styled, keyframes } from '../stitches.config';
 import { NAV_ITEMS } from '../constants';
 
-export const Root = ({ children }) => (
+export const Root = () => (
   <Lightbox.Root>
     <MenuButton />
   </Lightbox.Root>

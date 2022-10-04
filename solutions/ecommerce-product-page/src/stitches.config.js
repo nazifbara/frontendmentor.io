@@ -24,6 +24,12 @@ export const { styled, css, keyframes, globalCss } = createStitches({
       11: '55px',
       12: '60px',
     },
+    fontSizes: {
+      body: '16px',
+      h1: '45px',
+      h2: '30px',
+      h3: '18px',
+    },
     fontWeights: {
       regular: 400,
       bold: 700,
