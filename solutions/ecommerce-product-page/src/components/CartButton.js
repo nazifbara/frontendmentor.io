@@ -1,6 +1,15 @@
 import { ReactComponent as CartIcon } from '../images/icon-cart.svg';
-import { StyledIconButton, Lightbox, StyledBox, Heading, Text } from '.';
+import { ReactComponent as DeleteIcon } from '../images/icon-delete.svg';
+import {
+  StyledIconButton,
+  Lightbox,
+  StyledBox,
+  Heading,
+  Text,
+  Button,
+} from '.';
 import { styled, keyframes } from '../stitches.config';
+import { useCartState } from '../contexts/CartProvider';
 
 export const Root = () => (
   <Lightbox.Root>
@@ -10,32 +19,83 @@ export const Root = () => (
 
 const CartButton = () => {
   const { closing } = Lightbox.useLightboxContext();
+  const { items, count, isEmpty, removeItem } = useCartState();
 
   return (
     <StyledBox css={{ position: 'relative' }}>
       <Lightbox.Trigger as={StyledIconButton}>
         <CartIcon />
+        {!isEmpty && <StyledBadge>{count}</StyledBadge>}
       </Lightbox.Trigger>
       <Lightbox.Content as={CartBox} closing={closing}>
         <header>
           <Heading variant="h3">Cart</Heading>
         </header>
-        <StyledBox
-          css={{
-            width: '100%',
-            height: '65%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Text bold>Your cart is empty.</Text>
-        </StyledBox>
+        {isEmpty ? (
+          <StyledBox
+            css={{
+              width: '100%',
+              height: '65%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Text bold>Your cart is empty.</Text>
+          </StyledBox>
+        ) : (
+          <StyledBox css={{ p: '$4' }}>
+            {items.map((i) => (
+              <StyledCartItem key={i.name}>
+                <img src={i.images[0].thumbnail} alt="product" />
+                <div>
+                  <Text as="h2">{i.name}</Text>
+                  <Text>
+                    {i.price} x {i.qty}{' '}
+                    <Text as="span" grayish={false} bold>
+                      {i.total}
+                    </Text>
+                  </Text>
+                </div>
+                <StyledIconButton onClick={() => removeItem(i.name)}>
+                  <DeleteIcon />
+                </StyledIconButton>
+              </StyledCartItem>
+            ))}
+            <Button fullWidth>Checkout</Button>
+          </StyledBox>
+        )}
       </Lightbox.Content>
       <Lightbox.Overlay css={{ bgC: 'transparent', animation: 'none' }} />
     </StyledBox>
   );
 };
+
+const StyledCartItem = styled('article', {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, auto)',
+  alignItems: 'center',
+  maxWidth: '360px',
+  gap: '$1',
+  mb: '$4',
+
+  '& img': {
+    size: '60px',
+    borderRadius: '5px',
+  },
+});
+
+const StyledBadge = styled('span', {
+  bgC: '$primary',
+  position: 'absolute',
+  color: 'white',
+  right: '3px',
+  top: '-$1',
+  borderRadius: '50px',
+  fontSize: '10px',
+  fontWeight: '$bold',
+  px: '8px',
+});
 
 const moveUpFadeIn = keyframes({
   '0%': {
@@ -96,7 +156,7 @@ const CartBox = styled('article', {
   borderRadius: '10px',
   zIndex: 5,
   transform: 'translate(0, 35px)',
-  boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.6)',
+  boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.3)',
   animation: `${moveUpFadeIn} 300ms`,
 
   '& > header': {

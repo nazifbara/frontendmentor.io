@@ -1,5 +1,6 @@
 import { globalCss } from './stitches.config';
 import { StyledMaxWidth, Header, ProductSection } from './containers';
+import { CartProvider } from './contexts/CartProvider';
 
 const globalStyles = globalCss({
   '*, *::before, *::after': {
@@ -35,12 +36,14 @@ const globalStyles = globalCss({
 const App = () => {
   globalStyles();
   return (
-    <StyledMaxWidth>
-      <Header />
-      <main>
-        <ProductSection />
-      </main>
-    </StyledMaxWidth>
+    <CartProvider>
+      <StyledMaxWidth>
+        <Header />
+        <main>
+          <ProductSection />
+        </main>
+      </StyledMaxWidth>
+    </CartProvider>
   );
 };
 
