@@ -10,6 +10,10 @@ export const StyledHeading = styled('h1', {
   textTransform: 'none',
   fontWeight: '$bold',
 
+  '@lg': {
+    lineHeight: 1.25,
+  },
+
   variants: {
     color: {
       gray: {
@@ -21,10 +25,18 @@ export const StyledHeading = styled('h1', {
     },
     variant: {
       h1: {
-        fontSize: '$h1',
+        fontSize: 'calc($h1 - 10px)',
+
+        '@lg': {
+          fontSize: '$h1',
+        },
       },
       h2: {
-        fontSize: '$h2',
+        fontSize: 'calc($h2 - 10px)',
+
+        '@lg': {
+          fontSize: '$h2',
+        },
       },
       h3: {
         fontSize: '$h3',

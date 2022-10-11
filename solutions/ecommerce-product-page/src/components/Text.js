@@ -6,10 +6,24 @@ export const Text = ({ grayish = true, bold = false, as, ...otherProps }) => (
 
 const StyledText = styled('span', {
   color: '$text',
-  fontSize: '$body',
+  fontSize: 'calc($body - 1px)',
   fontWeight: '$regular',
 
+  '@lg': {
+    fontSize: '$body',
+  },
+
   variants: {
+    primaryColor: {
+      true: {
+        color: '$primary',
+      },
+    },
+    textTransform: {
+      uppercase: {
+        textTransform: 'uppercase',
+      },
+    },
     grayish: {
       true: {
         color: '$grayishText',

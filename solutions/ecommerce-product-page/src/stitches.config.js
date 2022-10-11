@@ -6,6 +6,7 @@ export const { styled, css, keyframes, globalCss } = createStitches({
       bg: 'hsl(0, 0%, 100%)',
       text: 'hsl(220, 13%, 13%)',
       grayishText: 'hsl(219, 9%, 45%)',
+      grayishBlue: 'hsl(220, 14%, 75%)',
       grayishBorder: 'hsl(220, 14%, 75%)',
       primary: 'hsl(26, 100%, 55%)',
       palePrimary: 'hsl(25, 100%, 94%)',
@@ -25,10 +26,11 @@ export const { styled, css, keyframes, globalCss } = createStitches({
       12: '60px',
     },
     fontSizes: {
-      body: '16px',
-      h1: '45px',
-      h2: '30px',
+      body: '17px',
+      h1: '55px',
+      h2: '40px',
       h3: '18px',
+      subh: '14px',
     },
     fontWeights: {
       regular: 400,

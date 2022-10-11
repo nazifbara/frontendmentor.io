@@ -21,12 +21,12 @@ export const PRODUCT = {
       thumbnail: productImgThumb1,
     },
     {
-      big: productImgThumb2,
-      thumbnail: productImg2,
+      big: productImg2,
+      thumbnail: productImgThumb2,
     },
     {
-      big: productImgThumb3,
-      thumbnail: productImg3,
+      big: productImg3,
+      thumbnail: productImgThumb3,
     },
     {
       big: productImg4,

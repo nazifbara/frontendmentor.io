@@ -14,6 +14,17 @@ export const Button = styled('button', {
     opacity: 0.6,
   },
 
+  '& svg': {
+    bgC: 'transparent',
+    display: 'inline-block',
+    mr: '$2',
+    transform: 'translateY(20%)',
+  },
+
+  '& path': {
+    fill: 'white',
+  },
+
   variants: {
     fullWidth: {
       true: {

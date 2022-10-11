@@ -58,6 +58,7 @@ export const StyledOverlay = styled('div', {
   right: 0,
   bottom: 0,
   left: 0,
+  zIndex: 2,
   animation: `${fadeIn} 300ms`,
 
   variants: {
@@ -91,12 +92,12 @@ export const Close = ({ children, as, css = {} }) => {
   );
 };
 
-export const Content = ({ children, as, ...otherProps }) => {
+export const Content = ({ children, as, css, ...otherProps }) => {
   const { isOpen } = useLightboxContext();
 
   return (
     isOpen && (
-      <StyledBox as={as} {...otherProps}>
+      <StyledBox as={as} css={{ zIndex: 3, ...css }} {...otherProps}>
         {children}
       </StyledBox>
     )
