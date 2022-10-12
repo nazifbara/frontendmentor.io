@@ -20,6 +20,7 @@ export const ProductSection = () => {
     setCurrentImgIdx(
       currentImgIdx === 0 ? images.length - 1 : currentImgIdx - 1
     );
+  const selectImg = (idx) => () => setCurrentImgIdx(idx);
 
   return (
     <StyledBox
@@ -44,7 +45,7 @@ export const ProductSection = () => {
         </StyledNavBtn>
         <StyledThumnailsWrapper>
           {images.map((img, i) => (
-            <StyledThumnail active={i === currentImgIdx}>
+            <StyledThumnail active={i === currentImgIdx} onClick={selectImg(i)}>
               <img src={img.thumbnail} alt="" />
             </StyledThumnail>
           ))}
@@ -79,6 +80,11 @@ export const ProductSection = () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             mb: '$4',
+
+            '@lg': {
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+            },
           }}
         >
           <StyledBox
