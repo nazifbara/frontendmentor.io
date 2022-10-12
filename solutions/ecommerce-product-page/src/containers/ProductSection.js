@@ -1,27 +1,15 @@
 import { useState } from 'react';
 import { PRODUCT } from '../constants';
 import { styled } from '../stitches.config';
-import { Text, Heading, StyledBox, Button } from '../components';
+import { Text, Heading, StyledBox, Button, Lightbox } from '../components';
 import { ReactComponent as PreviousIcon } from '../images/icon-previous.svg';
 import { ReactComponent as NextIcon } from '../images/icon-next.svg';
 import { ReactComponent as MinusIcon } from '../images/icon-minus.svg';
 import { ReactComponent as PlusIcon } from '../images/icon-plus.svg';
 import { ReactComponent as CartIcon } from '../images/icon-cart.svg';
+import { ReactComponent as CloseIcon } from '../images/icon-close.svg';
 
 export const ProductSection = () => {
-  const [images] = useState(PRODUCT.images);
-  const [currentImgIdx, setCurrentImgIdx] = useState(0);
-
-  const next = () =>
-    setCurrentImgIdx(
-      currentImgIdx === images.length - 1 ? 0 : currentImgIdx + 1
-    );
-  const previous = () =>
-    setCurrentImgIdx(
-      currentImgIdx === 0 ? images.length - 1 : currentImgIdx - 1
-    );
-  const selectImg = (idx) => () => setCurrentImgIdx(idx);
-
   return (
     <StyledBox
       as="section"
@@ -35,22 +23,25 @@ export const ProductSection = () => {
         },
       }}
     >
-      <StyledImgBox>
-        <img src={images[currentImgIdx].big} alt="" />
-        <StyledNavBtn position="left" onClick={previous}>
-          <PreviousIcon />
-        </StyledNavBtn>
-        <StyledNavBtn position="right" onClick={next}>
-          <NextIcon />
-        </StyledNavBtn>
-        <StyledThumnailsWrapper>
-          {images.map((img, i) => (
-            <StyledThumnail active={i === currentImgIdx} onClick={selectImg(i)}>
-              <img src={img.thumbnail} alt="" />
-            </StyledThumnail>
-          ))}
-        </StyledThumnailsWrapper>
-      </StyledImgBox>
+      <Lightbox.Root delay={0}>
+        <ImageBox />
+        <Lightbox.Overlay />
+        <Lightbox.Content
+          css={{
+            position: 'fixed',
+            right: '50%',
+            top: '50%',
+            transform: 'translate(50%, -50%)',
+          }}
+        >
+          <Lightbox.Close
+            css={{ position: 'absolute', p: 0, right: 0, top: '-$7' }}
+          >
+            <CloseIcon />
+          </Lightbox.Close>
+          <ImageBox ligthboxMode />
+        </Lightbox.Content>
+      </Lightbox.Root>
 
       <StyledInfo>
         <Text
@@ -133,6 +124,50 @@ export const ProductSection = () => {
   );
 };
 
+const ImageBox = ({ ligthboxMode = false }) => {
+  const [images] = useState(PRODUCT.images);
+  const [currentImgIdx, setCurrentImgIdx] = useState(0);
+
+  const next = () =>
+    setCurrentImgIdx(
+      currentImgIdx === images.length - 1 ? 0 : currentImgIdx + 1
+    );
+  const previous = () =>
+    setCurrentImgIdx(
+      currentImgIdx === 0 ? images.length - 1 : currentImgIdx - 1
+    );
+  const selectImg = (idx) => () => setCurrentImgIdx(idx);
+
+  return (
+    <StyledImgBox ligthboxMode={ligthboxMode}>
+      <Lightbox.Trigger css={{ p: 0 }}>
+        <img src={images[currentImgIdx].big} alt="" />
+      </Lightbox.Trigger>
+      <StyledNavBtn
+        ligthboxMode={ligthboxMode}
+        position="left"
+        onClick={previous}
+      >
+        <PreviousIcon />
+      </StyledNavBtn>
+      <StyledNavBtn ligthboxMode={ligthboxMode} position="right" onClick={next}>
+        <NextIcon />
+      </StyledNavBtn>
+      <StyledThumnailsWrapper>
+        {images.map((img, i) => (
+          <StyledThumnail
+            key={`thumbnail-${i}`}
+            active={i === currentImgIdx}
+            onClick={selectImg(i)}
+          >
+            <img src={img.thumbnail} alt="" />
+          </StyledThumnail>
+        ))}
+      </StyledThumnailsWrapper>
+    </StyledImgBox>
+  );
+};
+
 const StyledQtyPicker = styled('div', {
   display: 'flex',
   alignItems: 'center',
@@ -170,7 +205,7 @@ const StyledInfo = styled('article', {
 const StyledNavBtn = styled('button', {
   position: 'absolute',
   top: '50%',
-  transform: 'translateY(-50%)',
+  transform: 'translate(-50%, 0)',
   size: '40px',
   display: 'flex',
   alignItems: 'center',
@@ -180,11 +215,25 @@ const StyledNavBtn = styled('button', {
   border: 'none',
   cursor: 'pointer',
 
+  '& path': {
+    transition: 'stroke ease-out 0.3s',
+  },
+
+  '&:hover path': {
+    stroke: '$primary',
+  },
+
   '@lg': {
     display: 'none',
+    size: '50px',
   },
 
   variants: {
+    ligthboxMode: {
+      true: {
+        display: 'flex',
+      },
+    },
     position: {
       left: {
         left: '$2',
@@ -194,14 +243,31 @@ const StyledNavBtn = styled('button', {
       },
     },
   },
+
+  compoundVariants: [
+    {
+      ligthboxMode: true,
+      position: 'left',
+      css: { left: 0, transform: 'translate(-50%, -200%)' },
+    },
+    {
+      ligthboxMode: true,
+      position: 'right',
+      css: { right: 0, transform: 'translate(50%, -200%)' },
+    },
+  ],
 });
 
 const StyledThumnailsWrapper = styled('div', {
   display: 'none',
+  bgC: 'transparent',
+  maxWidth: '450px',
+  m: '0 auto',
+
   '@lg': {
     display: 'grid',
     gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '$4',
+    gap: '$5',
   },
 });
 
@@ -236,15 +302,25 @@ const StyledImgBox = styled('figure', {
   position: 'relative',
   maxWidth: '450px',
   m: '0 auto',
+  bgC: 'transparent',
 
   '& img': {
     cursor: 'pointer',
   },
 
   '@lg': {
-    '& > img': {
+    '& > button:first-child': {
       mb: '$5',
       borderRadius: '10px',
+      overflow: 'hidden',
+    },
+  },
+
+  variants: {
+    ligthboxMode: {
+      true: {
+        maxWidth: '550px',
+      },
     },
   },
 });

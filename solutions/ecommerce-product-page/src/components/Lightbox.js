@@ -51,7 +51,7 @@ const fadeOut = keyframes({
   '100%': { bgC: 'rgba(0, 0, 0, 0)' },
 });
 
-export const StyledOverlay = styled('div', {
+const StyledOverlay = styled('div', {
   position: 'fixed',
   bgC: 'rgba(0, 0, 0, 0.75)',
   top: 0,
@@ -70,11 +70,11 @@ export const StyledOverlay = styled('div', {
   },
 });
 
-export const Trigger = ({ children, as, css = {} }) => {
+export const Trigger = ({ children, as, css = {}, ...otherProps }) => {
   const { open } = useLightboxContext();
 
   return (
-    <StyledIconButton as={as} onClick={open} css={css}>
+    <StyledIconButton as={as} onClick={open} css={css} {...otherProps}>
       {children}
     </StyledIconButton>
   );
@@ -85,7 +85,27 @@ export const Close = ({ children, as, css = {} }) => {
 
   return (
     isOpen && (
-      <StyledIconButton as={as} onClick={close} css={css}>
+      <StyledIconButton
+        as={as}
+        onClick={close}
+        css={{
+          color: 'white',
+          transform: 'scale(1.5)',
+
+          svg: {
+            bgC: 'transparent',
+          },
+          '& path': {
+            fill: 'white',
+            transition: 'fill ease-out 0.3s',
+          },
+
+          '&:hover path': {
+            fill: '$primary',
+          },
+          ...css,
+        }}
+      >
         {children}
       </StyledIconButton>
     )
@@ -97,7 +117,11 @@ export const Content = ({ children, as, css, ...otherProps }) => {
 
   return (
     isOpen && (
-      <StyledBox as={as} css={{ zIndex: 3, ...css }} {...otherProps}>
+      <StyledBox
+        as={as}
+        css={{ zIndex: 3, bgC: 'transparent', ...css }}
+        {...otherProps}
+      >
         {children}
       </StyledBox>
     )
