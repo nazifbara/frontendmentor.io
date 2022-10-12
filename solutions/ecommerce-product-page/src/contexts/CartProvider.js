@@ -1,13 +1,7 @@
 import { createContext, useState, useContext } from 'react';
-import { PRODUCT } from '../constants';
-import { removeCartItemByName } from '../utils';
+import { removeCartItemByName, addItemToCart } from '../utils';
 
 const CartContext = createContext({});
-
-let dollarUSLocale = Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-});
 
 const useCartState = () => {
   const context = useContext(CartContext);
@@ -20,23 +14,19 @@ const useCartState = () => {
 };
 
 const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState({
-    [`${PRODUCT.name}`]: {
-      ...PRODUCT,
-      price: dollarUSLocale.format(PRODUCT.price),
-      total: dollarUSLocale.format(375),
-      qty: 3,
-    },
-  });
+  const [cart, setCart] = useState({});
 
   const removeItem = (name) => setCart(removeCartItemByName(cart, name));
+  const addItem = (product, qty) => setCart(addItemToCart(cart, product, qty));
 
   const items = Object.entries(cart).map((i) => ({ ...i[1] }));
   const count = items.reduce((count, item) => item.qty + count, 0);
   const isEmpty = count <= 0;
 
   return (
-    <CartContext.Provider value={{ cart, count, isEmpty, items, removeItem }}>
+    <CartContext.Provider
+      value={{ cart, count, isEmpty, items, removeItem, addItem }}
+    >
       {children}
     </CartContext.Provider>
   );

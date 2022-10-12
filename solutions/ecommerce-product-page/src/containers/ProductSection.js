@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PRODUCT } from '../constants';
 import { styled } from '../stitches.config';
 import { Text, Heading, StyledBox, Button, Lightbox } from '../components';
+import { useCartState } from '../contexts/CartProvider';
 import { ReactComponent as PreviousIcon } from '../images/icon-previous.svg';
 import { ReactComponent as NextIcon } from '../images/icon-next.svg';
 import { ReactComponent as MinusIcon } from '../images/icon-minus.svg';
@@ -10,6 +11,14 @@ import { ReactComponent as CartIcon } from '../images/icon-cart.svg';
 import { ReactComponent as CloseIcon } from '../images/icon-close.svg';
 
 export const ProductSection = () => {
+  const [qty, setQty] = useState(0);
+  const { addItem } = useCartState();
+
+  const handlePlus = () => setQty((s) => s + 1);
+  const handleMinus = () => setQty((s) => (s - 1 < 0 ? s : s - 1));
+
+  const handleAddToCart = () => addItem(PRODUCT, qty);
+
   return (
     <StyledBox
       as="section"
@@ -105,17 +114,17 @@ export const ProductSection = () => {
           }}
         >
           <StyledQtyPicker>
-            <button>
+            <button onClick={handleMinus}>
               <MinusIcon />
             </button>
             <Text grayish={false} bold>
-              0
+              {qty}
             </Text>
-            <button>
+            <button onClick={handlePlus}>
               <PlusIcon />
             </button>
           </StyledQtyPicker>
-          <Button fullWidth>
+          <Button fullWidth onClick={handleAddToCart}>
             <CartIcon /> Add to cart
           </Button>
         </StyledBox>

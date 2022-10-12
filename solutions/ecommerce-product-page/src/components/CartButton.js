@@ -10,6 +10,7 @@ import {
 } from '.';
 import { styled, keyframes } from '../stitches.config';
 import { useCartState } from '../contexts/CartProvider';
+import { formatPrice } from '../utils';
 
 export const Root = () => (
   <Lightbox.Root>
@@ -25,7 +26,7 @@ const CartButton = () => {
     <StyledBox css={{ position: 'relative' }}>
       <Lightbox.Trigger as={StyledIconButton}>
         <CartIcon />
-        {!isEmpty && <StyledBadge>{count}</StyledBadge>}
+        {!isEmpty && <StyledBadge>{count > 9 ? '9+' : count}</StyledBadge>}
       </Lightbox.Trigger>
       <Lightbox.Content as={CartBox} closing={closing}>
         <header>
@@ -51,9 +52,9 @@ const CartButton = () => {
                 <div>
                   <Text as="h2">{i.name}</Text>
                   <Text>
-                    {i.price} x {i.qty}{' '}
+                    {formatPrice(i.price)} x {i.qty}{' '}
                     <Text as="span" grayish={false} bold>
-                      {i.total}
+                      {formatPrice(i.total)}
                     </Text>
                   </Text>
                 </div>
