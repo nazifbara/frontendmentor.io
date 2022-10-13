@@ -48,7 +48,13 @@ export const ProductSection = () => {
           }}
         >
           <Lightbox.Close
-            css={{ position: 'absolute', p: 0, right: 0, top: '-$7' }}
+            css={{
+              position: 'absolute',
+              p: 0,
+              right: '$1',
+              top: '-$7',
+              '@md': { right: 0 },
+            }}
           >
             <CloseIcon />
           </Lightbox.Close>
@@ -261,12 +267,12 @@ const StyledNavBtn = styled('button', {
     {
       ligthboxMode: true,
       position: 'left',
-      css: { left: 0, transform: 'translate(-50%, -200%)' },
+      css: { '@md': { left: 0, transform: 'translate(-50%, -200%)' } },
     },
     {
       ligthboxMode: true,
       position: 'right',
-      css: { right: 0, transform: 'translate(50%, -200%)' },
+      css: { '@md': { right: 0, transform: 'translate(50%, -200%)' } },
     },
   ],
 });
@@ -333,6 +339,7 @@ const StyledImgBox = styled('figure', {
     ligthboxMode: {
       true: {
         maxWidth: '550px',
+        width: '100vw',
       },
     },
   },
