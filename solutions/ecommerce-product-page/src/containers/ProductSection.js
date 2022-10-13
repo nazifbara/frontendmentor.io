@@ -17,7 +17,10 @@ export const ProductSection = () => {
   const handlePlus = () => setQty((s) => s + 1);
   const handleMinus = () => setQty((s) => (s - 1 < 0 ? s : s - 1));
 
-  const handleAddToCart = () => addItem(PRODUCT, qty);
+  const handleAddToCart = () => {
+    if (qty <= 0) return;
+    addItem(PRODUCT, qty);
+  };
 
   return (
     <StyledBox
@@ -40,6 +43,7 @@ export const ProductSection = () => {
             position: 'fixed',
             right: '50%',
             top: '50%',
+            bgC: 'transparent',
             transform: 'translate(50%, -50%)',
           }}
         >

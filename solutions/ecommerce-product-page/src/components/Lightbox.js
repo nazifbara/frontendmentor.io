@@ -117,11 +117,7 @@ export const Content = ({ children, as, css, ...otherProps }) => {
 
   return (
     isOpen && (
-      <StyledBox
-        as={as}
-        css={{ zIndex: 3, bgC: 'transparent', ...css }}
-        {...otherProps}
-      >
+      <StyledBox as={as} css={{ zIndex: 3, ...css }} {...otherProps}>
         {children}
       </StyledBox>
     )
