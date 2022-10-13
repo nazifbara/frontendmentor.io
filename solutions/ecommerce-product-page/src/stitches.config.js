@@ -1,0 +1,63 @@
+import { createStitches } from '@stitches/react';
+
+export const { styled, css, keyframes, globalCss } = createStitches({
+  theme: {
+    colors: {
+      bg: 'hsl(0, 0%, 100%)',
+      text: 'hsl(220, 13%, 13%)',
+      grayishText: 'hsl(219, 9%, 45%)',
+      grayishBlue: 'hsl(220, 14%, 75%)',
+      grayishBorder: 'hsl(220, 14%, 75%)',
+      primary: 'hsl(26, 100%, 55%)',
+      palePrimary: 'hsl(25, 100%, 94%)',
+    },
+    space: {
+      1: '5px',
+      2: '10px',
+      3: '15px',
+      4: '20px',
+      5: '25px',
+      6: '30px',
+      7: '35px',
+      8: '40px',
+      9: '45px',
+      10: '50px',
+      11: '55px',
+      12: '60px',
+    },
+    fontSizes: {
+      body: '17px',
+      h1: '55px',
+      h2: '40px',
+      h3: '18px',
+      subh: '14px',
+    },
+    fontWeights: {
+      regular: 400,
+      bold: 700,
+    },
+  },
+  media: {
+    sm: '(min-width: 30.063rem)',
+    md: '(min-width: 48.063rem)',
+    lg: '(min-width: 75rem)',
+  },
+  utils: {
+    size: (value) => ({ width: value, height: value }),
+    bgC: (value) => ({ backgroundColor: value }),
+    m: (value) => ({ margin: value }),
+    mx: (value) => ({ marginLeft: value, marginRight: value }),
+    my: (value) => ({ marginTop: value, marginBottom: value }),
+    mt: (value) => ({ marginTop: value }),
+    ml: (value) => ({ marginLeft: value }),
+    mr: (value) => ({ marginRight: value }),
+    mb: (value) => ({ marginBottom: value }),
+    p: (value) => ({ padding: value }),
+    py: (value) => ({ paddingTop: value, paddingBottom: value }),
+    pt: (value) => ({ paddingTop: value }),
+    pl: (value) => ({ paddingLeft: value }),
+    pr: (value) => ({ paddingRight: value }),
+    pb: (value) => ({ paddingBottom: value }),
+    px: (value) => ({ paddingLeft: value, paddingRight: value }),
+  },
+});
