@@ -21,7 +21,7 @@ const MenuButton = () => {
       >
         <MenuIcon />
       </Lightbox.Trigger>
-      <Lightbox.Overlay closing={closing} />
+      <Lightbox.Overlay closing={closing} css={{ mr: '0 !important' }} />
       <Lightbox.Content as={StyledNavMenuWrapper} closing={closing}>
         <Lightbox.Close as={StyledIconButton} css={{ px: 0, mb: '$10' }}>
           <CloseIcon />

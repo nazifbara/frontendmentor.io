@@ -1,19 +1,26 @@
 import {
   Logo,
   MenuButton,
-  StyledGridColumns,
   CartButton,
   StyledIconButton,
+  StyledBox,
 } from '../components';
 import { styled } from '../stitches.config';
 import avatarImg from '../images/image-avatar.png';
 import { NAV_ITEMS } from '../constants';
 
 export const Header = () => (
-  <StyledGridColumns
+  <StyledBox
     as="header"
     padding={{ '@initial': true, '@lg': false }}
-    css={{ borderBottom: '1px solid $grayishBorder', minHeight: '70px' }}
+    css={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      borderBottom: '1px solid $grayishBorder',
+      px: '$4',
+      minHeight: '70px',
+    }}
   >
     <StyledNavigation>
       <MenuButton />
@@ -33,18 +40,21 @@ export const Header = () => (
         <img src={avatarImg} alt="" />
       </StyledAvatar>
     </StyledActions>
-  </StyledGridColumns>
+  </StyledBox>
 );
 
 const StyledNav = styled('nav', {
   display: 'none',
   '@md': {
-    display: 'grid',
-    gap: '$4',
-    gridTemplateColumns: 'repeat(5, auto)',
+    display: 'flex',
+    '& > a:not(:last-child)': {
+      mr: '$4',
+    },
   },
   '@lg': {
-    gap: '$8',
+    '& > a:not(:last-child)': {
+      mr: '$8',
+    },
   },
 });
 
@@ -80,30 +90,39 @@ const StyledAvatar = styled(StyledIconButton, {
 });
 
 const StyledActions = styled('div', {
-  gridColumn: 'span 3',
-  display: 'grid',
-  gap: '$1',
+  display: 'flex',
   alignItems: 'center',
-  justifySelf: 'end',
-  gridTemplateColumns: 'repeat(2, auto)',
+
+  '& > *:first-child': {
+    mr: '$1',
+  },
 
   '@md': {
-    gap: '$3',
+    '& > *:first-child': {
+      mr: '$3',
+    },
   },
 });
 
 const StyledNavigation = styled(StyledActions, {
-  gridColumn: 'span 9',
   justifySelf: 'start',
-  gap: '$1',
   alignItems: 'end',
 
+  '& > *:not(:last-child)': {
+    mr: '$1',
+  },
+
   '@md': {
-    gap: '$6',
     alignItems: 'center',
+
+    '& > *:not(:last-child)': {
+      mr: '$6',
+    },
   },
 
   '@lg': {
-    gap: '$11',
+    '& > *:not(:last-child)': {
+      mr: '$11',
+    },
   },
 });
