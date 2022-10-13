@@ -218,7 +218,7 @@ const StyledInfo = styled('article', {
 const StyledNavBtn = styled('button', {
   position: 'absolute',
   top: '50%',
-  transform: 'translate(-50%, 0)',
+  transform: 'translate(0, -50%)',
   size: '40px',
   display: 'flex',
   alignItems: 'center',
