@@ -1,4 +1,6 @@
 import { globalCss } from './stitches.config';
+import { Header } from './Header';
+import { HomeSection } from './HomeSection';
 
 const globalStyles = globalCss({
   '*, *::before, *::after': {
@@ -33,7 +35,15 @@ const globalStyles = globalCss({
 function App() {
   globalStyles();
 
-  return <h1>News Homepage</h1>;
+  return (
+    <>
+      <Header />
+
+      <main>
+        <HomeSection />
+      </main>
+    </>
+  );
 }
 
 export default App;
