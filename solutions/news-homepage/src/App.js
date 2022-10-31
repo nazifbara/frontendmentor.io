@@ -1,4 +1,4 @@
-import { globalCss } from './stitches.config';
+import { globalCss, styled } from './stitches.config';
 import { Header } from './Header';
 import { HomeSection } from './HomeSection';
 
@@ -8,6 +8,17 @@ const globalStyles = globalCss({
   },
   '*': {
     m: 0,
+  },
+  'ul, ol': {
+    listStyle: 'none',
+    p: 0,
+  },
+  a: {
+    color: '$text',
+
+    '&:hover': {
+      color: '$text',
+    },
   },
   body: {
     fontFamily: `'Inter', sans-serif`,
@@ -36,14 +47,20 @@ function App() {
   globalStyles();
 
   return (
-    <>
+    <MaxWidth>
       <Header />
 
       <main>
         <HomeSection />
       </main>
-    </>
+    </MaxWidth>
   );
 }
+
+const MaxWidth = styled('div', {
+  maxWidth: '1110px',
+  m: '0 auto',
+  px: '15px',
+});
 
 export default App;
