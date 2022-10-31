@@ -115,6 +115,23 @@ const Nav = styled('nav', {
   '@md': {
     display: 'block',
   },
+
+  '& ul': {
+    display: 'flex',
+    width: '450px',
+    justifyContent: 'space-between',
+  },
+
+  '& a': {
+    textDecoration: 'none',
+    color: '$grayishText',
+    fontWeight: '$medium',
+    transition: 'color ease-out 0.3s',
+
+    '&:hover': {
+      color: '$primary',
+    },
+  },
 });
 
 const MenuButton = styled('button', {
@@ -132,4 +149,8 @@ const Wrapper = styled('header', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+
+  '@md': {
+    height: '150px',
+  },
 });
