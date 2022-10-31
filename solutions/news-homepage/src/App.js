@@ -24,7 +24,7 @@ const globalStyles = globalCss({
     fontFamily: `'Inter', sans-serif`,
     lineHeight: 1.5,
     '-webkit-font-smoothing': 'antialiased',
-    color: '$text',
+    color: '$grayishText',
     fontWeight: '$regular',
     fontSize: '$body',
   },
