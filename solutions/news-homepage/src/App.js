@@ -30,6 +30,10 @@ const globalStyles = globalCss({
     fontWeight: '$regular',
     fontSize: '$body',
     bgC: '$white',
+
+    '@md': {
+      fontSize: 'calc($body + 1px)',
+    },
   },
   'html, body': {
     height: '100%',

@@ -101,6 +101,7 @@ const BottomNews = styled('ol', {
     gridTemplateRows: 'repeat(3, auto)',
     columnGap: '25px',
     rowGap: '5px',
+    alignItems: 'center',
 
     img: {
       gridRow: 'span 3',
