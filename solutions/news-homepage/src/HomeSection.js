@@ -210,6 +210,7 @@ const Featured = styled('article', {
     textDecoration: 'none',
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    fontSize: '15px',
     letterSpacing: '4px',
     bgC: '$primary',
     color: '$white',
