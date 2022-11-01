@@ -14,10 +14,12 @@ const globalStyles = globalCss({
     p: 0,
   },
   a: {
-    color: '$text',
+    color: 'inherit',
+    textDecoration: 'none',
+    transition: 'color ease-out 0.3s',
 
     '&:hover': {
-      color: '$text',
+      color: '$primary',
     },
   },
   body: {

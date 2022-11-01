@@ -72,7 +72,6 @@ const NavMenu = styled('nav', {
   },
 
   '& a': {
-    textDecoration: 'none',
     fontWeight: '$medium',
   },
 
@@ -123,14 +122,7 @@ const Nav = styled('nav', {
   },
 
   '& a': {
-    textDecoration: 'none',
-    color: '$grayishText',
     fontWeight: '$medium',
-    transition: 'color ease-out 0.3s',
-
-    '&:hover': {
-      color: '$primary',
-    },
   },
 });
 

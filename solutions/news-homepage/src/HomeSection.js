@@ -74,7 +74,9 @@ export const HomeSection = () => (
           <article>
             <img alt="" src={n.img} />
             <span>{`0${idx + 1}`}</span>
-            <h3>{n.heading}</h3>
+            <h3>
+              <a href="/#">{n.heading}</a>
+            </h3>
             <p>{n.body}</p>
           </article>
         </li>
