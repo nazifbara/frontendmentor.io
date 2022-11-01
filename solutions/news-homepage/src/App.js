@@ -27,6 +27,7 @@ const globalStyles = globalCss({
     color: '$grayishText',
     fontWeight: '$regular',
     fontSize: '$body',
+    bgC: '$white',
   },
   'html, body': {
     height: '100%',
@@ -40,6 +41,14 @@ const globalStyles = globalCss({
   },
   ' p, h1, h2, h3, h4, h5, h6': {
     overflowWrap: 'break-word',
+  },
+  'h1, h2, h3': {
+    fontWeight: '$extraBold',
+    color: '$text',
+    lineHeight: 1.25,
+  },
+  p: {
+    color: '$grayishText',
   },
 });
 

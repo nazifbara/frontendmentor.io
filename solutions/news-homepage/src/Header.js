@@ -58,7 +58,7 @@ const NavMenu = styled('nav', {
   right: 0,
   top: 0,
   bottom: 0,
-  bgC: 'white',
+  bgC: '$white',
 
   '& button': {
     alignSelf: 'flex-end',
@@ -138,6 +138,7 @@ const MenuButton = styled('button', {
   p: '10px 0',
   border: 'none',
   bgC: 'transparent',
+  cursor: 'pointer',
 
   '@md': {
     display: 'none',
@@ -151,6 +152,6 @@ const Wrapper = styled('header', {
   justifyContent: 'space-between',
 
   '@md': {
-    height: '150px',
+    height: '120px',
   },
 });
