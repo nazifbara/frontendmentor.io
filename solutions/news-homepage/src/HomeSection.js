@@ -115,6 +115,10 @@ const BottomNews = styled('ol', {
       fontWeight: '$bold',
       lineHeight: 1,
       opacity: 0.5,
+
+      '@lg': {
+        fontSize: '30px',
+      },
     },
 
     'span, h3, p': {
