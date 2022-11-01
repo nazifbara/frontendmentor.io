@@ -60,7 +60,9 @@ export const HomeSection = () => (
         {SIDE_NEWS.map((n, idx) => (
           <li key={`news-${idx}`}>
             <article>
-              <h3>{n.heading}</h3>
+              <h3>
+                <a href="/#">{n.heading}</a>
+              </h3>
               <p>{n.body}</p>
             </article>
           </li>

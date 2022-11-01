@@ -50,5 +50,6 @@ export const darkTheme = createTheme('dark-theme', {
   colors: {
     text: '$white',
     grayishText: 'hsl(233, 8%, 79%)',
+    primary: 'hsl(35, 77%, 62%)',
   },
 });
