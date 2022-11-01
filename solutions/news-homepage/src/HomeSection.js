@@ -90,8 +90,9 @@ export const HomeSection = () => (
 const BottomNews = styled('ol', {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-  gap: '35px',
+  gap: '30px',
   justifyContent: 'center',
+  justifyItems: 'start',
 
   '@md': {
     gridColumn: 'span 3',
@@ -103,7 +104,7 @@ const BottomNews = styled('ol', {
     gridTemplateRows: 'repeat(3, auto)',
     columnGap: '25px',
     rowGap: '5px',
-    alignItems: 'center',
+    alignItems: 'start',
 
     img: {
       gridRow: 'span 3',
