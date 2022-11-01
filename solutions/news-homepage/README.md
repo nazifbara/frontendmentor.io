@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution]([https://your-solution-url.com](https://www.frontendmentor.io/solutions/responsive-news-homepage-using-react-stitches-css-grid-and-flexbox-K5hzYWCoXA))
+- [Solution]([https://your-solution-url.com](https://www.frontendmentor.io/solutions/responsive-news-homepage-using-react-stitches-css-grid-and-flexbox-K5hzYWCoXA)
 - [Live Site](https://news-homepage-nazif.netlify.app/)
 
 ## Built with
