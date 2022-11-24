@@ -1,0 +1,69 @@
+:root {
+  /* primary colors */
+  --moderateBlue: hsl(238, 40%, 52%);
+  --softRed: hsl(358, 79%, 66%);
+  --lightGrayishBlue: hsl(239, 57%, 85%);
+  --paleRed: hsl(357, 100%, 86%);
+
+  /* neutral colors */
+  --darkBlue: hsl(212, 24%, 26%);
+  --grayishBlue: hsl(211, 10%, 45%);
+  --lightGray: hsl(223, 19%, 93%);
+  --veryLightGray: hsl(228, 33%, 97%);
+  --white: hsl(0, 0%, 100%);
+
+  /* font */
+  --fontFamily: 'Rubic';
+  --fontRegular: 400;
+  --fontMedium: 500;
+  --fontBold: 700;
+
+  /* breakpoints */
+  --brpSm: 23.4375rem;
+  --brpLg: 90rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: var(--fontFamily), sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--lightGray);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
