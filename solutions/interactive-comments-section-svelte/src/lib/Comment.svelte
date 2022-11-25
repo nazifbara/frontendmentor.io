@@ -1,14 +1,8 @@
 <script>
-  import { onMount } from "svelte";
-
   import Avatar from "./Avatar.svelte";
   import Icon from "./Icon.svelte";
 
   export let comment;
-
-  onMount(() => {
-    console.log(comment.replies);
-  });
 </script>
 
 <article class="comment">
@@ -61,7 +55,7 @@
     gap: 0.938rem;
     background-color: var(--white);
     padding: 1.25rem;
-    border-radius: 0.313rem;
+    border-radius: 0.625rem;
   }
 
   .header {

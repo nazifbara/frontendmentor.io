@@ -1,7 +1,6 @@
 <script>
   import Comment from "./Comment.svelte";
-  import Avatar from "./Avatar.svelte";
-  import { currentUser } from '../data.json'
+  import Form from "./Form.svelte";
 
   export let comments;
 </script>
@@ -13,13 +12,8 @@
   </li>
 {/each}
 </ul>
-<form>
-  <textarea></textarea>
-  <div>
-    <Avatar src="{currentUser.image.webp}" alt="Avatar of {currentUser.username}"/>
-    <button>send</button>
-  </div>
-</form>
+
+<Form/>
 
 <style>
   .list {
