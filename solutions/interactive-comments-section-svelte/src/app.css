@@ -19,7 +19,7 @@
   --fontBold: 700;
 
   /* breakpoints */
-  --brpSm: 23.4375rem;
+  --brpMd: 46.875rem;
   --brpLg: 90rem;
 }
 
@@ -52,11 +52,16 @@ svg {
   max-width: 100%;
 }
 
+button {
+  cursor: pointer;
+  font-weight: var(--fontBold);
+}
+
 input,
 button,
 textarea,
 select {
-  font: inherit;
+  font-size: inherit;
 }
 
 p,
@@ -67,4 +72,10 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
