@@ -1,8 +1,14 @@
 <script>
+  import { onMount } from "svelte";
+
   import Avatar from "./Avatar.svelte";
   import Icon from "./Icon.svelte";
 
   export let comment;
+
+  onMount(() => {
+    console.log(comment.replies);
+  });
 </script>
 
 <article class="comment">
@@ -35,13 +41,18 @@
   </div>
 </article>
 
-<ul>
-  {#each comment.replies ?? [] as reply }
+{#if comment.replies && comment.replies.length !== 0 }
+<div class="replies">
+  <hr/>
+  <ul>
+    {#each comment.replies as reply }
     <li>
       <svelte:self comment={reply} />
     </li>
   {/each}
-</ul>
+  </ul>
+</div>
+{/if}
 
 
 <style>
@@ -50,7 +61,6 @@
     gap: 0.938rem;
     background-color: var(--white);
     padding: 1.25rem;
-    margin-bottom: 1.25rem;
     border-radius: 0.313rem;
   }
 
@@ -122,6 +132,23 @@
     opacity: 0.5;
   }
 
+  .replies {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .replies ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.938rem;
+  }
+
+  .replies hr {
+    border-color: var(--lightGray);
+    border-width: 0.031rem;
+  }
+
   @media screen and (min-width:  46.875rem) {
     .comment {
       grid-template-columns: 3.125rem 1fr;
@@ -129,6 +156,11 @@
       align-items: start;
       justify-items: center;
     }
+
+    .replies {
+    gap: 30px;
+    padding: 15px 0 15px 30px;
+  }
     .header .right {
       display: initial;
     }
