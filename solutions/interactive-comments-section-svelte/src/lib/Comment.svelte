@@ -12,11 +12,7 @@
     data.showReplyForm(comment.id)
   }
 
-  function handleReply(e) {
-    const textarea = e.target[0]
-    data.reply(comment.id, textarea.value);
-    textarea.value = '';
-  }
+  const  handleReply = (content) => data.reply(comment.id, content)
 </script>
 
 <article class="comment">
@@ -50,7 +46,7 @@
 </article>
 
 {#if replyCommentId === comment.id} 
-  <Form on:submit={handleReply} isReply />
+  <Form onSubmit={handleReply} isReply />
 {/if}
 
 {#if comment.replies && comment.replies.length !== 0 }

@@ -3,9 +3,16 @@
   import Avatar from "./Avatar.svelte";
 
   export let isReply = false;
+  export let onSubmit;
+
+  function handleSubmit(e) {
+    const textarea = e.target[0]
+    onSubmit(textarea.value)
+    textarea.value = '';
+  }
 </script>
 
-<form style:margin-top={isReply ? "0.438rem" : "0.938rem"} on:submit|preventDefault class="comment-form">
+<form style:margin-top={isReply ? "0.438rem" : "0.938rem"} on:submit|preventDefault={handleSubmit} class="comment-form">
   <textarea placeholder="Add a comment..."></textarea>
     <Avatar src="{$data.currentUser.image.webp}" alt="Avatar of {$data.currentUser.username}"/>
     <button>{isReply ? 'reply' : 'send'}</button>

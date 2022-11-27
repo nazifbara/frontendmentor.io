@@ -5,11 +5,7 @@
 
   export let comments;
 
-  function handleFormSubmit(e) {
-    const textarea = e.target[0]
-    data.addComment(textarea.value);
-    textarea.value = '';
-  }
+  const handleFormSubmit = (content) => data.addComment(content)
 </script>
 
 <ul class="list">
@@ -20,7 +16,7 @@
 {/each}
 </ul>
 
-<Form on:submit={handleFormSubmit}/>
+<Form onSubmit={handleFormSubmit} />
 
 <style>
   .list {
