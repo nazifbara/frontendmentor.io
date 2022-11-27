@@ -1,11 +1,10 @@
 <script>
-  import { comments } from './data.json'
-
+  import { data } from './stores';
   import List from './lib/List.svelte';
 </script>
 
 <main class="container">
-  <List {comments} />
+  <List comments={$data.comments} />
 </main>
 
 <style>

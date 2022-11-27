@@ -1,11 +1,11 @@
 <script>
-  import { currentUser } from '../data.json';
+  import { data } from "../stores";
   import Avatar from "./Avatar.svelte";
 </script>
 
 <form on:submit|preventDefault={() => {}} class="comment-form">
   <textarea placeholder="Add a comment..."></textarea>
-    <Avatar src="{currentUser.image.webp}" alt="Avatar of {currentUser.username}"/>
+    <Avatar src="{$data.currentUser.image.webp}" alt="Avatar of {$data.currentUser.username}"/>
     <button>send</button>
 </form>
 
