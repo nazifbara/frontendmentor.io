@@ -1,8 +1,7 @@
-import { v4 as uuid } from 'uuid';
-
 import { writable } from 'svelte/store';
 import d from '../data.json';
 import { voteTypes } from '../utils/constants';
+import { findCommentByIdPath, makeComment } from '../utils/helpers';
 
 function createData() {
   const { subscribe, set, update } = writable({
@@ -46,23 +45,5 @@ function createData() {
       }),
   };
 }
-
-const findCommentByIdPath = (idPath, comments) => {
-  let comment = comments.find((c) => idPath[0] === c.id);
-  if (idPath.length === 1) {
-    return comment;
-  }
-  return findCommentByIdPath(idPath.slice(1), comment.replies);
-};
-
-const makeComment = (content, user, parentIds = []) => ({
-  id: uuid(),
-  content,
-  createdAt: 'just now',
-  score: 0,
-  user: user,
-  replies: [],
-  parentIds,
-});
 
 export const data = createData();
