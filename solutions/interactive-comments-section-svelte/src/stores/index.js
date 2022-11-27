@@ -1,4 +1,10 @@
 import { writable } from 'svelte/store';
 import d from '../data.json';
 
-export const data = writable(d);
+function createData() {
+  const { subscribe, set, update } = writable(d);
+
+  return { subscribe };
+}
+
+export const data = createData();
