@@ -1,12 +1,14 @@
 <script>
   import { data } from "../stores";
   import Avatar from "./Avatar.svelte";
+
+  export let isReply = false;
 </script>
 
-<form on:submit|preventDefault={() => {}} class="comment-form">
+<form style:margin-top={isReply ? "0.438rem" : 0} on:submit|preventDefault={() => {}} class="comment-form">
   <textarea placeholder="Add a comment..."></textarea>
     <Avatar src="{$data.currentUser.image.webp}" alt="Avatar of {$data.currentUser.username}"/>
-    <button>send</button>
+    <button>{isReply ? 'reply' : 'send'}</button>
 </form>
 
 <style>
@@ -51,7 +53,7 @@
     text-transform: uppercase;
     border: 1px solid var(--moderateBlue);
     border-radius: 0.625rem;
-    padding: 0.938rem 1.875rem;
+    padding: 0.625rem 1.25rem;
     transition: opacity 0.3s ease-in;
   }
 

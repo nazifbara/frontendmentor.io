@@ -1,8 +1,16 @@
 <script>
   import Avatar from "./Avatar.svelte";
   import Icon from "./Icon.svelte";
+  import Form from "./Form.svelte";
+  import { data } from "../stores";
 
   export let comment;
+
+  $: replyCommentId = $data.replyCommentId;
+
+  function handleReplyButtonClick() {
+    data.showReplyForm(comment.id)
+  }
 </script>
 
 <article class="comment">
@@ -13,7 +21,7 @@
         <time class='time'>{comment.createdAt}</time></div>
   
       <div class="right">
-        <button class="reply-btn"><Icon name='reply'/> Reply</button>
+        <button on:click={handleReplyButtonClick} class="reply-btn"><Icon name='reply'/> Reply</button>
       </div>
     </header>
     
@@ -31,9 +39,13 @@
       </button>
     </div>
 
-    <button class="reply-btn"><Icon name='reply'/> Reply</button>
+    <button on:click={handleReplyButtonClick} class="reply-btn"><Icon name='reply'/> Reply</button>
   </div>
 </article>
+
+{#if replyCommentId === comment.id} 
+  <Form isReply />
+{/if}
 
 {#if comment.replies && comment.replies.length !== 0 }
 <div class="replies">
