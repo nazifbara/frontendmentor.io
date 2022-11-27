@@ -3,6 +3,7 @@
 
   import { data } from "../stores";
   import Avatar from "./Avatar.svelte";
+  import PrimaryButton from "./PrimaryButton.svelte";
 
   export let isReply = false;
   export let onSubmit;
@@ -21,7 +22,7 @@
 <form style:margin-top={isReply ? "0.438rem" : "0.938rem"} on:submit|preventDefault={handleSubmit} class="comment-form">
   <textarea bind:this={textarea} placeholder="Add a comment..."></textarea>
     <Avatar src="{$data.currentUser.image.webp}" alt="Avatar of {$data.currentUser.username}"/>
-    <button>{isReply ? 'reply' : 'send'}</button>
+    <PrimaryButton>{isReply ? 'reply' : 'send'}</PrimaryButton>
 </form>
 
 <style>
@@ -58,22 +59,6 @@
     grid-row: 2;
   }
 
-  .comment-form button {
-    grid-row: 2;
-    justify-self: end;
-    background-color: var(--moderateBlue);
-    color: var(--white);
-    text-transform: uppercase;
-    border: 1px solid var(--moderateBlue);
-    border-radius: 0.625rem;
-    padding: 0.625rem 1.25rem;
-    transition: opacity 0.3s ease-in;
-  }
-
-  .comment-form button:hover {
-    opacity: .5;
-  }
-
   @media screen and (min-width:  46.875rem) {
     .comment-form {
       grid-template-columns: auto 1fr auto;
@@ -90,7 +75,7 @@
       grid-row: 1;
     }
 
-    .comment-form button {
+    .comment-form :global(button) {
       grid-column: 3;
       grid-row: 1;
     }

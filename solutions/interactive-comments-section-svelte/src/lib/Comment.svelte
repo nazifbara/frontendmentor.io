@@ -2,6 +2,7 @@
   import Avatar from "./Avatar.svelte";
   import Icon from "./Icon.svelte";
   import Form from "./Form.svelte";
+  import PrimaryButton from "./PrimaryButton.svelte";
   import { data } from "../stores";
   import { voteTypes } from "../utils/constants";
 
@@ -9,12 +10,19 @@
 
   const isAuthor = $data.currentUser.username === comment.user.username;
   const idPath = [...comment.parentIds, comment.id];
+  let content;
 
-  $: replyCommentId = $data.replyCommentId;
+  $: replying = $data.replyCommentId === comment.id;
+  $: editing = $data.editCommentId === comment.id;
   $: votes = $data.votes;
 
   function handleReplyButtonClick() {
     data.showReplyForm(comment.id)
+  }
+
+  function toggleEdit() {
+    data.editComment(comment.id)
+    content.focus()
   }
 
   const  handleReply = (content) => data.reply(content, idPath)
@@ -33,15 +41,20 @@
       <div class="right">
         {#if isAuthor}
           <button class="btn delete"><Icon name='delete'/> Delete</button>
-          <button class="btn edit"><Icon name='edit'/> Edit</button>
+          <button on:click={toggleEdit} class="btn edit"><Icon name='edit'/> Edit</button>
         {:else}
           <button on:click={handleReplyButtonClick} class="btn reply"><Icon name='reply'/> Reply</button>
         {/if}
       </div>
     </header>
     
-    <p>{comment.content}</p>
+    <p bind:this={content} contenteditable={editing} class='content' class:edit={editing}>{comment.content}</p>
   
+    {#if editing}
+      <div style:text-align='right' style:margin-top="0.938rem">
+        <PrimaryButton>update</PrimaryButton>
+      </div>
+    {/if}
   </div>
   <div class="action">
     <div class="score">
@@ -60,11 +73,18 @@
       </button>
     </div>
 
-    <button on:click={handleReplyButtonClick} class="btn reply"><Icon name='reply'/> Reply</button>
+    <div class="right">
+      {#if isAuthor}
+        <button class="btn delete"><Icon name='delete'/> Delete</button>
+        <button on:click={toggleEdit} class="btn edit"><Icon name='edit'/> Edit</button>
+      {:else}
+        <button on:click={handleReplyButtonClick} class="btn reply"><Icon name='reply'/> Reply</button>
+      {/if}
+    </div>
   </div>
 </article>
 
-{#if replyCommentId === comment.id} 
+{#if replying} 
   <Form onSubmit={handleReply} isReply />
 {/if}
 
@@ -89,6 +109,13 @@
     background-color: var(--white);
     padding: 1.25rem;
     border-radius: 0.625rem;
+  }
+
+  .content.edit {
+    border: 1px solid var(--moderateBlue);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--darkBlue);
   }
 
   .header {
@@ -127,6 +154,10 @@
   .action {
     display: flex;
     justify-content: space-between;
+  }
+
+  .action .right {
+    display: flex;
   }
 
   .score {
@@ -226,7 +257,7 @@
       justify-content: center;
     }
 
-    .action .reply {
+    .action .right {
       display: none;
     }
 

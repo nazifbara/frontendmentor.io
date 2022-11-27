@@ -8,6 +8,7 @@ function createData() {
   const { subscribe, set, update } = writable({
     ...d,
     replyCommentId: null,
+    editCommentId: null,
     votes: {},
   });
 
@@ -15,6 +16,9 @@ function createData() {
     subscribe,
     showReplyForm: (commentId) =>
       update((data) => ({ ...data, replyCommentId: commentId })),
+
+    editComment: (commentId) =>
+      update((data) => ({ ...data, editCommentId: commentId })),
 
     reply: (content, idPath = []) =>
       update((data) => {
