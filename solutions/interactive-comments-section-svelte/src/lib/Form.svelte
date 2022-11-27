@@ -1,9 +1,15 @@
 <script>
+  import { onMount } from "svelte";
+
   import { data } from "../stores";
   import Avatar from "./Avatar.svelte";
 
   export let isReply = false;
   export let onSubmit;
+  
+  let textarea;
+
+  onMount(() => textarea.focus())
 
   function handleSubmit(e) {
     const textarea = e.target[0]
@@ -13,7 +19,7 @@
 </script>
 
 <form style:margin-top={isReply ? "0.438rem" : "0.938rem"} on:submit|preventDefault={handleSubmit} class="comment-form">
-  <textarea placeholder="Add a comment..."></textarea>
+  <textarea bind:this={textarea} placeholder="Add a comment..."></textarea>
     <Avatar src="{$data.currentUser.image.webp}" alt="Avatar of {$data.currentUser.username}"/>
     <button>{isReply ? 'reply' : 'send'}</button>
 </form>
