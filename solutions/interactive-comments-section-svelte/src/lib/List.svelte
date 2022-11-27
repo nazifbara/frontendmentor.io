@@ -5,7 +5,7 @@
 
   export let comments;
 
-  const handleFormSubmit = (content) => data.addComment(content)
+  const handleFormSubmit = (content) => data.reply(content)
 </script>
 
 <ul class="list">

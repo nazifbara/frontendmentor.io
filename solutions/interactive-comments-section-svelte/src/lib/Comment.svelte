@@ -12,7 +12,7 @@
     data.showReplyForm(comment.id)
   }
 
-  const  handleReply = (content) => data.reply(comment.id, content)
+  const  handleReply = (content) => data.reply(content, [...comment.parentIds, comment.id])
 </script>
 
 <article class="comment">
@@ -49,7 +49,7 @@
   <Form onSubmit={handleReply} isReply />
 {/if}
 
-{#if comment.replies && comment.replies.length !== 0 }
+{#if comment.replies.length !== 0 }
 <div class="replies">
   <hr/>
   <ul>

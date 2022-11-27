@@ -11,32 +11,38 @@ function createData() {
     showReplyForm: (commentId) =>
       update((data) => ({ ...data, replyCommentId: commentId })),
 
-    addComment: (content) =>
+    reply: (content, idPath = []) =>
       update((data) => {
-        data.comments.push(makeComment(content, data.currentUser));
+        const newComment = makeComment(content, data.currentUser, idPath);
 
-        return data;
-      }),
+        if (idPath.length === 0) {
+          data.comments.push(newComment);
+        } else {
+          let comment = findCommentByIdPath(idPath, data.comments);
+          comment.replies = [newComment, ...comment.replies];
+        }
 
-    reply: (commentId, content) =>
-      update((data) => {
-        const comment = data.comments.find(({ id }) => id === commentId);
-        comment.replies = [
-          makeComment(content, data.currentUser),
-          ...comment.replies,
-        ];
         return data;
       }),
   };
 }
 
-const makeComment = (content, user) => ({
+const findCommentByIdPath = (idPath, comments) => {
+  let comment = comments.find((c) => idPath[0] === c.id);
+  if (idPath.length === 1) {
+    return comment;
+  }
+  return findCommentByIdPath(idPath.slice(1), comment.replies);
+};
+
+const makeComment = (content, user, parentIds = []) => ({
   id: uuid(),
   content,
   createdAt: 'just now',
   score: 0,
   user: user,
   replies: [],
+  parentIds,
 });
 
 export const data = createData();
