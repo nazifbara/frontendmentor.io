@@ -11,6 +11,12 @@
   function handleReplyButtonClick() {
     data.showReplyForm(comment.id)
   }
+
+  function handleReply(e) {
+    const textarea = e.target[0]
+    data.reply(comment.id, textarea.value);
+    textarea.value = '';
+  }
 </script>
 
 <article class="comment">
@@ -44,7 +50,7 @@
 </article>
 
 {#if replyCommentId === comment.id} 
-  <Form isReply />
+  <Form on:submit={handleReply} isReply />
 {/if}
 
 {#if comment.replies && comment.replies.length !== 0 }
@@ -148,6 +154,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.938rem;
+    width: 100%;
   }
 
   .replies hr {

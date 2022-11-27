@@ -10,20 +10,33 @@ function createData() {
     subscribe,
     showReplyForm: (commentId) =>
       update((data) => ({ ...data, replyCommentId: commentId })),
-    addComment: (textValue) =>
-      update((data) => {
-        data.comments.push({
-          id: uuid(),
-          content: textValue,
-          createdAt: 'just now',
-          score: 0,
-          user: data.currentUser,
-          replies: [],
-        });
 
+    addComment: (content) =>
+      update((data) => {
+        data.comments.push(makeComment(content, data.currentUser));
+
+        return data;
+      }),
+
+    reply: (commentId, content) =>
+      update((data) => {
+        const comment = data.comments.find(({ id }) => id === commentId);
+        comment.replies = [
+          makeComment(content, data.currentUser),
+          ...comment.replies,
+        ];
         return data;
       }),
   };
 }
+
+const makeComment = (content, user) => ({
+  id: uuid(),
+  content,
+  createdAt: 'just now',
+  score: 0,
+  user: user,
+  replies: [],
+});
 
 export const data = createData();
