@@ -2,9 +2,14 @@ import { v4 as uuid } from 'uuid';
 
 import { writable } from 'svelte/store';
 import d from '../data.json';
+import { voteTypes } from '../utils/constants';
 
 function createData() {
-  const { subscribe, set, update } = writable({ ...d, replyCommentId: null });
+  const { subscribe, set, update } = writable({
+    ...d,
+    replyCommentId: null,
+    votes: {},
+  });
 
   return {
     subscribe,
@@ -22,6 +27,17 @@ function createData() {
           comment.replies = [newComment, ...comment.replies];
         }
 
+        return data;
+      }),
+
+    vote: (type, idPath) =>
+      update((data) => {
+        let comment = findCommentByIdPath(idPath, data.comments);
+        if (data.votes[comment.id]) {
+          return;
+        }
+        voteTypes.UP === type ? comment.score++ : comment.score--;
+        data.votes[comment.id] = type;
         return data;
       }),
   };

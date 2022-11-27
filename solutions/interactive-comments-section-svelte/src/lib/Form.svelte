@@ -9,7 +9,7 @@
   
   let textarea;
 
-  onMount(() => textarea.focus())
+  onMount(() => isReply && textarea.focus())
 
   function handleSubmit(e) {
     const textarea = e.target[0]

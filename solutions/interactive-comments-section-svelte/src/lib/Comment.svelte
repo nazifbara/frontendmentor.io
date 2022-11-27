@@ -3,18 +3,21 @@
   import Icon from "./Icon.svelte";
   import Form from "./Form.svelte";
   import { data } from "../stores";
+  import { voteTypes } from "../utils/constants";
 
   export let comment;
 
-  let isAuthor = $data.currentUser.username === comment.user.username;
+  const isAuthor = $data.currentUser.username === comment.user.username;
+  const idPath = [...comment.parentIds, comment.id];
 
   $: replyCommentId = $data.replyCommentId;
+  $: votes = $data.votes;
 
   function handleReplyButtonClick() {
     data.showReplyForm(comment.id)
   }
 
-  const  handleReply = (content) => data.reply(content, [...comment.parentIds, comment.id])
+  const  handleReply = (content) => data.reply(content, idPath)
 </script>
 
 <article class="comment">
@@ -42,11 +45,17 @@
   </div>
   <div class="action">
     <div class="score">
-      <button>
+      <button 
+        on:click={() => data.vote(voteTypes.UP, idPath)} 
+        class:active={votes[comment.id] === voteTypes.UP}
+      >
         <Icon name='plus'/>
       </button>
       <span>{comment.score}</span>
-      <button>
+      <button 
+        on:click={() => data.vote(voteTypes.DOWN, idPath)} 
+        class:active={votes[comment.id] === voteTypes.DOWN}
+      >
         <Icon name='minus'/>
       </button>
     </div>
@@ -100,7 +109,7 @@
     font-weight: var(--fontMedium);
     padding-inline: 0.313rem;
   }
-  
+
   .header .right {
     display: none;
   }
@@ -133,6 +142,10 @@
   .score button {
     border: none;
     background-color: transparent;
+  }
+
+  .score button.active :global(path) {
+    fill: var(--moderateBlue);
   }
 
   .score button:hover :global(path) {
