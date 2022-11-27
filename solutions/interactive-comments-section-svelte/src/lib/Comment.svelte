@@ -160,7 +160,6 @@
       grid-template-columns: 3.125rem 1fr;
       grid-template-rows: repeat(1, 1fr);
       align-items: start;
-      justify-items: center;
     }
 
     .replies {
@@ -178,6 +177,7 @@
     .action {
       grid-column: 1;
       grid-row: 1;
+      justify-content: center;
     }
 
     .action .reply-btn {

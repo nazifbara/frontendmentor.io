@@ -5,7 +5,7 @@
   export let isReply = false;
 </script>
 
-<form style:margin-top={isReply ? "0.438rem" : 0} on:submit|preventDefault={() => {}} class="comment-form">
+<form style:margin-top={isReply ? "0.438rem" : "0.938rem"} on:submit|preventDefault class="comment-form">
   <textarea placeholder="Add a comment..."></textarea>
     <Avatar src="{$data.currentUser.image.webp}" alt="Avatar of {$data.currentUser.username}"/>
     <button>{isReply ? 'reply' : 'send'}</button>
