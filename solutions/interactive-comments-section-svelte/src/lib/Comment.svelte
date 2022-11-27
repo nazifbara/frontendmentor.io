@@ -6,6 +6,8 @@
 
   export let comment;
 
+  let isAuthor = $data.currentUser.username === comment.user.username;
+
   $: replyCommentId = $data.replyCommentId;
 
   function handleReplyButtonClick() {
@@ -20,10 +22,18 @@
     <header class="header">
       <div class="left"><Avatar src={comment.user.image.webp} alt="Avatar of {comment.user.username}" />
         <h1 class="username">{comment.user.username}</h1>
+        {#if isAuthor}
+          <span class="you">you</span>
+        {/if}
         <time class='time'>{comment.createdAt}</time></div>
   
       <div class="right">
-        <button on:click={handleReplyButtonClick} class="reply-btn"><Icon name='reply'/> Reply</button>
+        {#if isAuthor}
+          <button class="btn delete"><Icon name='delete'/> Delete</button>
+          <button class="btn edit"><Icon name='edit'/> Edit</button>
+        {:else}
+          <button on:click={handleReplyButtonClick} class="btn reply"><Icon name='reply'/> Reply</button>
+        {/if}
       </div>
     </header>
     
@@ -41,7 +51,7 @@
       </button>
     </div>
 
-    <button on:click={handleReplyButtonClick} class="reply-btn"><Icon name='reply'/> Reply</button>
+    <button on:click={handleReplyButtonClick} class="btn reply"><Icon name='reply'/> Reply</button>
   </div>
 </article>
 
@@ -83,6 +93,14 @@
     align-items: center;
     gap: 0.938rem;
   }
+
+  .you {
+    background-color: var(--moderateBlue);
+    color: var(--white);
+    font-weight: var(--fontMedium);
+    padding-inline: 0.313rem;
+  }
+  
   .header .right {
     display: none;
   }
@@ -106,7 +124,7 @@
     display: flex;
     align-items: stretch;
     background-color: var(--veryLightGray);
-    border-radius: 10px;
+    border-radius: 0.625rem;
     font-weight: var(--fontBold);
     color: var(--moderateBlue);
     cursor: pointer;
@@ -123,27 +141,38 @@
   }
 
   .score > * {
-    padding: 10px;
+    padding: 0.625rem;
   }
 
-  .reply-btn {
+  .btn {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
     border: none;
     background-color: transparent;
-    color: var(--moderateBlue);
     transition: opacity ease-in 0.3s;
   }
 
-  .reply-btn:hover {
+  .btn:hover {
     opacity: 0.5;
+  }
+
+  .btn.reply {
+    color: var(--moderateBlue);
+  }
+
+  .btn.delete {
+    color: var(--softRed);
+  }
+
+  .btn.edit {
+    color: var(--moderateBlue);
   }
 
   .replies {
     display: flex;
-    gap: 15px;
-    padding: 15px 0;
+    gap: 0.938rem;
+    padding: 0.938rem 0;
   }
 
   .replies ul {
@@ -166,11 +195,12 @@
     }
 
     .replies {
-    gap: 30px;
-    padding: 15px 0 15px 30px;
+    gap: 1.875rem;
+    padding: 0.938rem 0 0.938rem 1.875rem;
   }
     .header .right {
-      display: initial;
+      display: flex;
+      gap: 0.625rem;
     }
 
     .header, .comment p {
@@ -183,7 +213,7 @@
       justify-content: center;
     }
 
-    .action .reply-btn {
+    .action .reply {
       display: none;
     }
 
