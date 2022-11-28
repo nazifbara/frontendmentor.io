@@ -60,7 +60,9 @@
       </div>
     </header>
     
-    <p bind:this={content} contenteditable={editing} class='content' class:edit={editing}>{comment.content}</p>
+    <p bind:this={content} contenteditable={editing} class='content' class:edit={editing}>
+      {@html comment.content.replace(/(^|\s)(@\w+)\b/g, "$1<strong>$2</strong>")}
+    </p>
   
     {#if editing}
       <div style:text-align='right' style:margin-top="0.938rem">
@@ -130,6 +132,11 @@
     padding: 10px 20px;
     border-radius: 10px;
     color: var(--darkBlue);
+  }
+
+  .content :global(strong) {
+    color: var(--moderateBlue);
+    cursor: pointer;
   }
 
   .header {
