@@ -1,5 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { fly, fade } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 
   import Button from './Button.svelte';
 
@@ -14,12 +16,10 @@
 
   function open() {
     isOpen = true
-    document.body.style.overflowY = 'hidden';
   }
 
   function close() {
     isOpen = false
-    document.body.style.overflowY = 'scroll';
   }
 </script>
 
@@ -28,9 +28,9 @@
 </div>
 
 {#if isOpen}
-  <div class="overlay" on:click={close} on:keydown={close}/>
+  <div transition:fade="{{easing: cubicOut, duration: 400}}" class="overlay" on:click={close} on:keydown={close}/>
 
-  <article class="content">
+  <article transition:fly="{{y: 200, easing: cubicOut, duration: 400}}" class="content">
     <h2 class="heading">Delete comment</h2>
     <p>
       Are you sure you want to delete is comment? This will remove the comment and can't be undone.
