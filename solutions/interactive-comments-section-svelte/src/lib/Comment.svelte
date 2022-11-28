@@ -20,6 +20,11 @@
     data.showReplyForm(comment.id)
   }
 
+  function updateContent() {
+    if (content.textContent.length === 0) return;
+    data.updateComment(content.textContent, [...comment.parentIds, comment.id])
+  }
+
   function toggleEdit() {
     data.editComment(comment.id)
     content.focus()
@@ -52,7 +57,7 @@
   
     {#if editing}
       <div style:text-align='right' style:margin-top="0.938rem">
-        <PrimaryButton>update</PrimaryButton>
+        <PrimaryButton on:click={updateContent} >update</PrimaryButton>
       </div>
     {/if}
   </div>

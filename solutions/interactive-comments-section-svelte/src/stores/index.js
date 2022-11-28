@@ -19,6 +19,14 @@ function createData() {
     editComment: (commentId) =>
       update((data) => ({ ...data, editCommentId: commentId })),
 
+    updateComment: (content, idPath) =>
+      update((data) => {
+        let comment = findCommentByIdPath(idPath, data.comments);
+        comment.content = content;
+        data.editCommentId = null;
+        return data;
+      }),
+
     reply: (content, idPath = []) =>
       update((data) => {
         const newComment = makeComment(content, data.currentUser, idPath);
