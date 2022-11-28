@@ -19,7 +19,8 @@
         },
         "username": "amyrobson"
       },
-      "replies": []
+      "replies": [],
+      "parentIds": []
     },
     {
       "id": 2,
@@ -46,7 +47,9 @@
               "webp": "/images/avatars/image-ramsesmiron.webp"
             },
             "username": "ramsesmiron"
-          }
+          },
+          "replies": [],
+          "parentIds": [2]
         },
         {
           "id": 4,
@@ -60,9 +63,12 @@
               "webp": "/images/avatars/image-juliusomo.webp"
             },
             "username": "juliusomo"
-          }
+          },
+          "replies": [],
+          "parentIds": [2]
         }
-      ]
+      ],
+      "parentIds": []
     }
   ]
 }
