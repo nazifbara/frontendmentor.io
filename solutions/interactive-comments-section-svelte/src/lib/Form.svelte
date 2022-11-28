@@ -3,7 +3,7 @@
 
   import { data } from "../stores";
   import Avatar from "./Avatar.svelte";
-  import PrimaryButton from "./PrimaryButton.svelte";
+  import Button from "./Button.svelte";
 
   export let isReply = false;
   export let onSubmit;
@@ -22,7 +22,7 @@
 <form style:margin-top={isReply ? "0.438rem" : "0.938rem"} on:submit|preventDefault={handleSubmit} class="comment-form">
   <textarea bind:this={textarea} placeholder="Add a comment..."></textarea>
     <Avatar src="{$data.currentUser.image.webp}" alt="Avatar of {$data.currentUser.username}"/>
-    <PrimaryButton>{isReply ? 'reply' : 'send'}</PrimaryButton>
+    <Button variant='primary'>{isReply ? 'reply' : 'send'}</Button>
 </form>
 
 <style>

@@ -2,7 +2,8 @@
   import Avatar from "./Avatar.svelte";
   import Icon from "./Icon.svelte";
   import Form from "./Form.svelte";
-  import PrimaryButton from "./PrimaryButton.svelte";
+  import Button from "./Button.svelte";
+  import ConfirmationDialog from "./ConfirmationDialog.svelte";
   import { data } from "../stores";
   import { voteTypes } from "../utils/constants";
 
@@ -45,7 +46,9 @@
   
       <div class="right">
         {#if isAuthor}
-          <button class="btn delete"><Icon name='delete'/> Delete</button>
+          <ConfirmationDialog> 
+            <button class="btn delete"><Icon name='delete'/> Delete</button>
+          </ConfirmationDialog>
           <button on:click={toggleEdit} class="btn edit"><Icon name='edit'/> Edit</button>
         {:else}
           <button on:click={handleReplyButtonClick} class="btn reply"><Icon name='reply'/> Reply</button>
@@ -57,7 +60,7 @@
   
     {#if editing}
       <div style:text-align='right' style:margin-top="0.938rem">
-        <PrimaryButton on:click={updateContent} >update</PrimaryButton>
+        <Button variant='primary' on:click={updateContent} >update</Button>
       </div>
     {/if}
   </div>
@@ -80,7 +83,9 @@
 
     <div class="right">
       {#if isAuthor}
+      <ConfirmationDialog> 
         <button class="btn delete"><Icon name='delete'/> Delete</button>
+      </ConfirmationDialog>
         <button on:click={toggleEdit} class="btn edit"><Icon name='edit'/> Edit</button>
       {:else}
         <button on:click={handleReplyButtonClick} class="btn reply"><Icon name='reply'/> Reply</button>
@@ -163,6 +168,7 @@
 
   .action .right {
     display: flex;
+    align-items: center;
   }
 
   .score {
@@ -250,6 +256,7 @@
     .header .right {
       display: flex;
       gap: 0.625rem;
+      align-items: center;
     }
 
     .header, .comment p {
