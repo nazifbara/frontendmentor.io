@@ -19,6 +19,9 @@
 
   function handleSubmit(e) {
     const textarea = e.target[0]
+    if (textarea.value.length === 0) {
+      return;
+    }
     onSubmit(textarea.value)
     textarea.value = '';
   }
