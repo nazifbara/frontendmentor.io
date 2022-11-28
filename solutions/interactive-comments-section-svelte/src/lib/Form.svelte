@@ -10,7 +10,12 @@
   
   let textarea;
 
-  onMount(() => isReply && textarea.focus())
+  onMount(() => {
+    if (isReply) {
+      textarea.value = $data.replyHandle
+      textarea.focus()
+    }
+  })
 
   function handleSubmit(e) {
     const textarea = e.target[0]

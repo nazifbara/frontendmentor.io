@@ -7,14 +7,19 @@ function createData() {
   const { subscribe, set, update } = writable({
     ...d,
     replyCommentId: null,
+    replyHandle: null,
     editCommentId: null,
     votes: {},
   });
 
   return {
     subscribe,
-    showReplyForm: (commentId) =>
-      update((data) => ({ ...data, replyCommentId: commentId })),
+    showReplyForm: (comment) =>
+      update((data) => ({
+        ...data,
+        replyCommentId: comment.id,
+        replyHandle: `@${comment.user.username}`,
+      })),
 
     editComment: (commentId) =>
       update((data) => ({ ...data, editCommentId: commentId })),

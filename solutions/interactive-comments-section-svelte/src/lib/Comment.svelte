@@ -18,7 +18,7 @@
   $: votes = $data.votes;
 
   function handleReplyButtonClick() {
-    data.showReplyForm(comment.id)
+    data.showReplyForm(comment)
   }
 
   function updateContent() {
