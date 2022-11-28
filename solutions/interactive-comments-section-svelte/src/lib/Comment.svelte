@@ -1,4 +1,8 @@
 <script>
+  import { flip } from 'svelte/animate';
+  import { cubicOut } from 'svelte/easing';
+  import { crossfade } from 'svelte/transition';
+  
   import Avatar from "./Avatar.svelte";
   import Icon from "./Icon.svelte";
   import Form from "./Form.svelte";
@@ -6,6 +10,14 @@
   import ConfirmationDialog from "./ConfirmationDialog.svelte";
   import { data } from "../stores";
   import { voteTypes } from "../utils/constants";
+  import { getCustomTransition } from '../utils/helpers';
+
+
+
+  const [send, receive] = crossfade({
+  fallback: getCustomTransition
+});
+
 
   export let comment;
 
@@ -108,8 +120,12 @@
 <div class="replies">
   <hr/>
   <ul>
-    {#each comment.replies as reply (reply)}
-    <li>
+    {#each comment.replies as reply (reply.id)}
+    <li
+      in:receive="{{key: reply.id}}"
+      out:send="{{key: reply.id}}"
+      animate:flip="{{duration: 600, easing: cubicOut}}"
+      >
       <svelte:self comment={reply} />
     </li>
   {/each}

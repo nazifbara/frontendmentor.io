@@ -1,4 +1,5 @@
 import { v4 as uuid } from 'uuid';
+import { quintOut } from 'svelte/easing';
 
 export const findCommentByIdPath = (idPath, comments) => {
   let comment = comments.find((c) => idPath[0] === c.id);
@@ -17,3 +18,17 @@ export const makeComment = (content, user, parentIds = []) => ({
   replies: [],
   parentIds,
 });
+
+export const getCustomTransition = (node, params) => {
+  const style = getComputedStyle(node);
+  const transform = style.transform === 'none' ? '' : style.transform;
+
+  return {
+    duration: 600,
+    easing: quintOut,
+    css: (t) => `
+      transform: ${transform} scale(${t});
+      opacity: ${t}
+    `,
+  };
+};
