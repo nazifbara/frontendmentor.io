@@ -1,7 +1,16 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
+
   import Button from './Button.svelte';
 
+  const dispatch = createEventDispatcher();
+
   let isOpen = false;
+
+  function confirm() {
+    dispatch('confirm');
+    close()
+  }
 
   function open() {
     isOpen = true
@@ -26,7 +35,7 @@
     <p>
       Are you sure you want to delete is comment? This will remove the comment and can't be undone.
     </p>
-    <div class="action"><Button on:click={close}>no, cancel</Button><Button variant='danger'>yes, delete</Button></div>
+    <div class="action"><Button on:click={close}>no, cancel</Button><Button on:click={confirm} variant='danger'>yes, delete</Button></div>
   </article>
 {/if}
 

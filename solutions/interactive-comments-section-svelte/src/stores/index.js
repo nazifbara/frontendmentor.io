@@ -19,6 +19,31 @@ function createData() {
     editComment: (commentId) =>
       update((data) => ({ ...data, editCommentId: commentId })),
 
+    deleteComment: (commentId, parentIds) =>
+      update((data) => {
+        let comments = null;
+        let parentComment = null;
+
+        if (parentIds.length === 0) {
+          comments = data.comments;
+        } else {
+          parentComment = findCommentByIdPath(parentIds, data.comments);
+          comments = parentComment.replies;
+        }
+
+        const commentIndex = comments.findIndex((c) => c.id === commentId);
+        comments = [
+          ...comments.slice(0, commentIndex),
+          ...comments.slice(commentIndex + 1),
+        ];
+
+        parentComment
+          ? (parentComment.replies = comments)
+          : (data.comments = comments);
+
+        return data;
+      }),
+
     updateComment: (content, idPath) =>
       update((data) => {
         let comment = findCommentByIdPath(idPath, data.comments);

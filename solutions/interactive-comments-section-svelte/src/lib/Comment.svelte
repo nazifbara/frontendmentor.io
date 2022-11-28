@@ -26,6 +26,10 @@
     data.updateComment(content.textContent, [...comment.parentIds, comment.id])
   }
 
+  function deleteComment() {
+    data.deleteComment(comment.id, comment.parentIds)
+  }
+
   function toggleEdit() {
     data.editComment(comment.id)
     content.focus()
@@ -46,9 +50,9 @@
   
       <div class="right">
         {#if isAuthor}
-          <ConfirmationDialog> 
+          <ConfirmationDialog on:confirm={deleteComment}> 
             <button class="btn delete"><Icon name='delete'/> Delete</button>
-          </ConfirmationDialog>
+          </ConfirmationDialog >
           <button on:click={toggleEdit} class="btn edit"><Icon name='edit'/> Edit</button>
         {:else}
           <button on:click={handleReplyButtonClick} class="btn reply"><Icon name='reply'/> Reply</button>
@@ -83,7 +87,7 @@
 
     <div class="right">
       {#if isAuthor}
-      <ConfirmationDialog> 
+      <ConfirmationDialog on:confirm={deleteComment}> 
         <button class="btn delete"><Icon name='delete'/> Delete</button>
       </ConfirmationDialog>
         <button on:click={toggleEdit} class="btn edit"><Icon name='edit'/> Edit</button>
@@ -102,7 +106,7 @@
 <div class="replies">
   <hr/>
   <ul>
-    {#each comment.replies as reply }
+    {#each comment.replies as reply (reply)}
     <li>
       <svelte:self comment={reply} />
     </li>

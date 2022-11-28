@@ -9,7 +9,7 @@
 </script>
 
 <ul class="list">
-  {#each comments as comment}
+  {#each comments as comment (comment)}
   <li>
     <Comment {comment} />
   </li>
