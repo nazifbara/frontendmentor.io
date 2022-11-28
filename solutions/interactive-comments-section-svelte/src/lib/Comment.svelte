@@ -265,7 +265,7 @@
   }
 
   .replies hr {
-    border-color: var(--lightGray);
+    border-color: var(--veryLightGray);
     border-width: 0.031rem;
   }
 

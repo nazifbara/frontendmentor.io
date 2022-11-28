@@ -37,7 +37,7 @@ body {
   font-family: var(--fontFamily), sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--lightGray);
+  background-color: var(--veryLightGray);
   color: var(--grayishBlue);
 }
 
