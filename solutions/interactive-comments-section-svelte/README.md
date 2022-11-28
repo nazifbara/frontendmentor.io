@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution]()
-- [Live site](interactive-comments-section-svelte.netlify.com)
+- [Solution](https://www.frontendmentor.io/solutions/interactive-comments-section-using-svelte-kqGZ6rD7kb)
+- [Live site](https://interactive-comments-svelte.netlify.app/)
 
 ## Built with
 
