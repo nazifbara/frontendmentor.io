@@ -12,17 +12,13 @@
   import { voteTypes } from "../utils/constants";
   import { getCustomTransition } from '../utils/helpers';
 
-
-
   const [send, receive] = crossfade({
   fallback: getCustomTransition
 });
 
-
   export let comment;
 
   const isAuthor = $data.currentUser.username === comment.user.username;
-  const idPath = [...comment.parentIds, comment.id];
   let content;
 
   $: replying = $data.replyCommentId === comment.id;
@@ -35,19 +31,19 @@
 
   function updateContent() {
     if (content.textContent.length === 0) return;
-    data.updateComment(content.textContent, [...comment.parentIds, comment.id])
+    data.updateComment(content.textContent, comment)
   }
 
   function deleteComment() {
-    data.deleteComment(comment.id, comment.parentIds)
+    data.deleteComment(comment)
   }
 
   function toggleEdit() {
-    data.editComment(comment.id)
+    data.editComment(comment)
     content.focus()
   }
 
-  const  handleReply = (content) => data.reply(content, idPath)
+  const  handleReply = (content) => data.reply(content, comment)
 </script>
 
 <article class="comment">
@@ -85,14 +81,14 @@
   <div class="action">
     <div class="score">
       <button 
-        on:click={() => data.vote(voteTypes.UP, idPath)} 
+        on:click={() => data.vote(voteTypes.UP, comment)} 
         class:active={votes[comment.id] === voteTypes.UP}
       >
         <Icon name='plus'/>
       </button>
       <span>{comment.score}</span>
       <button 
-        on:click={() => data.vote(voteTypes.DOWN, idPath)} 
+        on:click={() => data.vote(voteTypes.DOWN, comment)} 
         class:active={votes[comment.id] === voteTypes.DOWN}
       >
         <Icon name='minus'/>

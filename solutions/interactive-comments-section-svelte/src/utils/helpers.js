@@ -1,6 +1,8 @@
 import { v4 as uuid } from 'uuid';
 import { quintOut } from 'svelte/easing';
 
+export const getIdPath = (comment) => [...comment.parentIds, comment.id];
+
 export const findCommentByIdPath = (idPath, comments) => {
   let comment = comments.find((c) => idPath[0] === c.id);
   if (idPath.length === 1) {
