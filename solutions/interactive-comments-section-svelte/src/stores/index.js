@@ -77,7 +77,7 @@ function createData() {
       update((data) => {
         let _comment = findCommentByIdPath(getIdPath(comment), data.comments);
         if (data.votes[_comment.id]) {
-          return;
+          return data;
         }
         voteTypes.UP === type ? _comment.score++ : _comment.score--;
         data.votes[_comment.id] = type;
