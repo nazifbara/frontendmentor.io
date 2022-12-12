@@ -4,11 +4,14 @@
 	--text: hsl(0 0% 100%);
 	--opacity-50: 0.7;
 	--opacity-20: 0.2;
-	--ff-antonio: 'Antonio', sans-serif;
-	--ff-spartan: 'League Spartan', sans-serif;
-	--fw-regular: 300;
+	--ff-1: 'League Spartan', sans-serif;
+	--ff-2: 'Antonio', sans-serif;
+	--fw-regular: 400;
 	--fw-medium: 500;
+	--fw-semibold: 600;
 	--fw-bold: 700;
+	--fs-body: 0.875rem;
+	--fs-body-sm: 0.6875rem;
 	--fs-h1-lg: 5rem;
 	--fs-h1-md: 3rem;
 	--fs-h1-sm: 2.5rem;
@@ -27,5 +30,18 @@ body {
 	background-size: cover;
 	background-position: center;
 	color: var(--text);
-	font-family: var(--ff-spartan);
+	font-family: var(--ff-1);
+	font-size: var(--fs-body);
+}
+
+a,
+a:hover,
+a:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+.max-width {
+	width: 90rem;
+	margin-inline: auto;
 }
