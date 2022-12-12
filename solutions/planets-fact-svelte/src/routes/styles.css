@@ -1,0 +1,31 @@
+:root {
+	--bg-body: hsl(240 67% 8%);
+	--bg-hover: hsl(240 17% 26%);
+	--text: hsl(0 0% 100%);
+	--opacity-50: 0.7;
+	--opacity-20: 0.2;
+	--ff-antonio: 'Antonio', sans-serif;
+	--ff-spartan: 'League Spartan', sans-serif;
+	--fw-regular: 300;
+	--fw-medium: 500;
+	--fw-bold: 700;
+	--fs-h1-lg: 5rem;
+	--fs-h1-md: 3rem;
+	--fs-h1-sm: 2.5rem;
+	--fs-h2-lg: 2.5rem;
+	--fs-h2-md: 1.5rem;
+	--fs-h2-sm: 1.25rem;
+	--fs-h3-lg: 0.75rem;
+	--fs-h3-sm: 0.5625rem;
+	--fs-h4-md: 0.9375rem;
+	--fs-h4-sm: 0.6875rem;
+}
+
+body {
+	background-color: var(--bg-body);
+	background-image: url(/assets/background-stars.svg);
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	font-family: var(--ff-spartan);
+}
