@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import NavMenu from './NavMenu.svelte';
 	import data from '../data.json';
 </script>
@@ -9,9 +10,9 @@
 	<nav class="nav">
 		{#each data as planet}
 			<a
-				href={planet.name.toLowerCase()}
+				href="/planet/{planet.name.toLowerCase()}"
 				style:--planet-color={planet.color}
-				class:active={false}
+				class:active={planet.name.toLowerCase() === $page.params.name}
 				class="nav-item"
 			>
 				{planet.name}

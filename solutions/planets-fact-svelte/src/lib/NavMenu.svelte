@@ -12,7 +12,7 @@
 {#if opened}
 	<nav transition:fade={{ easing: cubicOut }} class="nav-menu">
 		{#each data as planet}
-			<a href={planet.name.toLowerCase()}>
+			<a href="/planet/{planet.name.toLowerCase()}">
 				<span>
 					<span style:background-color={planet.color} class="circle" />
 					{planet.name}
