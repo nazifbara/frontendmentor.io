@@ -8,7 +8,12 @@
 	<NavMenu />
 	<nav class="nav">
 		{#each data as planet}
-			<a href={planet.name.toLowerCase()} style:--planet-color={planet.color} class="nav-item">
+			<a
+				href={planet.name.toLowerCase()}
+				style:--planet-color={planet.color}
+				class:active={false}
+				class="nav-item"
+			>
 				{planet.name}
 			</a>
 		{/each}
@@ -61,6 +66,24 @@
 		}
 		.nav {
 			display: flex;
+		}
+	}
+
+	@media (min-width: 69.375rem) {
+		.header {
+			height: 5.313rem;
+			/* align-items: stretch; */
+			flex-direction: row;
+			justify-content: space-between;
+			padding-inline: 2rem;
+		}
+
+		.nav {
+			height: 100%;
+		}
+
+		.nav-item {
+			padding-block: 33px;
 		}
 	}
 </style>
