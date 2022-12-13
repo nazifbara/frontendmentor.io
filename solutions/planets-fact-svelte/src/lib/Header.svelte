@@ -1,10 +1,18 @@
 <script lang="ts">
 	import NavMenu from './NavMenu.svelte';
+	import data from '../data.json';
 </script>
 
 <header class="header">
 	<span class="appName">the planets</span>
 	<NavMenu />
+	<nav class="nav">
+		{#each data as planet}
+			<a href={planet.name.toLowerCase()} style:--planet-color={planet.color} class="nav-item">
+				{planet.name}
+			</a>
+		{/each}
+	</nav>
 </header>
 
 <style>
@@ -23,5 +31,36 @@
 		font-weight: var(--fw-semibold);
 		letter-spacing: -0.0656rem;
 		text-transform: uppercase;
+	}
+
+	.nav {
+		display: none;
+		gap: 2.063rem;
+		text-transform: uppercase;
+		font-weight: var(--fw-bold);
+		letter-spacing: 0.063rem;
+	}
+
+	.nav-item {
+		opacity: var(--opacity-50);
+		border-top: 4px solid transparent;
+		padding-block: 0.875rem 0;
+	}
+
+	.nav-item.active,
+	.nav-item:hover {
+		opacity: 1;
+		border-color: var(--planet-color);
+	}
+
+	@media (min-width: 48rem) {
+		.header {
+			height: 10rem;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+		.nav {
+			display: flex;
+		}
 	}
 </style>

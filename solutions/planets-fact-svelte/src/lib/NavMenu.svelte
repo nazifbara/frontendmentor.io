@@ -69,4 +69,11 @@
 		align-items: center;
 		line-height: 1.78;
 	}
+
+	@media (min-width: 768px) {
+		button,
+		.nav-menu {
+			display: none;
+		}
+	}
 </style>
