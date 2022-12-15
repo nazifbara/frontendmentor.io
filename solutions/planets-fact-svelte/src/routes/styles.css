@@ -1,17 +1,25 @@
 :root {
 	--bg-body: hsl(240 67% 8%);
 	--bg-hover: hsl(240 17% 26%);
+
 	--text: hsl(0 0% 100%);
+
 	--opacity-50: 0.7;
 	--opacity-20: 0.2;
+
 	--ff-1: 'League Spartan', sans-serif;
 	--ff-2: 'Antonio', sans-serif;
+
 	--fw-regular: 400;
 	--fw-medium: 500;
 	--fw-semibold: 600;
 	--fw-bold: 700;
-	--fs-body: 0.875rem;
+
+	--fs-body-lg: 1rem;
+	--fs-body-md: 0.875rem;
 	--fs-body-sm: 0.6875rem;
+	--fs-btn-lg: 0.75rem;
+	--fs-btn-sm: 0.563rem;
 	--fs-h1-lg: 5rem;
 	--fs-h1-md: 3rem;
 	--fs-h1-sm: 2.5rem;
@@ -32,6 +40,10 @@ body {
 	color: var(--text);
 	font-family: var(--ff-1);
 	font-size: var(--fs-body);
+}
+
+button {
+	color: inherit;
 }
 
 a,
