@@ -1,18 +1,17 @@
 # Frontend Mentor - Planets fact site solution
 
+![](./screenshot.jpg)
+
 This is a solution to the [Planets fact site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+- [The challenge](#the-challenge)
+- [Links](#links)
 - [Built with](#built-with)
 - [Author](#author)
 
-## Overview
-
-### The challenge
+## The challenge
 
 Users should be able to:
 
@@ -20,14 +19,10 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - View each planet page and toggle between "Overview", "Internal Structure", and "Surface Geology"
 
-### Screenshot
+## Links
 
-![](./screenshot.jpg)
-
-### Links
-
-- [Live Site](https://your-live-site-url.com)
-- [Solution](https://your-solution-url.com)
+- [Live Site](https://planets-fact-svelte.netlify.app)
+- [Solution](https://www.frontendmentor.io/solutions/planets-fact-site--3iXCh5fbT)
 
 ## Built with
 
