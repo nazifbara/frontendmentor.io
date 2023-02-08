@@ -15,11 +15,14 @@ module.exports = {
 			textBaseDark: 'hsl(0deg 0% 100% / 0.6)',
 
 			text: 'hsl(0deg 0% 0%)',
-			textDark: 'hsl(0deg 0% 100%)'
+			textDark: 'hsl(0deg 0% 100%)',
+
+			bg: 'hsl(0deg 0% 100%)',
+			bgDark: 'hsl(0deg 0% 0%)'
 		},
 		extend: {
 			fontSize: {
-				h1: 'clamp(2rem, 2rem + 3vw, 2.5rem)',
+				h1: 'clamp(2rem, 0.33rem + 7.11vw, 2.5rem)',
 				h2: '1.5rem',
 				h3: '1.125rem',
 				h4: '0.75rem',
