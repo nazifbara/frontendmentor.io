@@ -6,6 +6,9 @@
 
 <style lang="postcss">
 	:global(body) {
-		font-family: 'DM Sans', sans-serif;
+		font-family: theme(fontFamily.sans);
+		fontweigth: theme(fontWeight.regular);
+		font-size: theme(fontSize.p);
+		color: theme(colors.textBase);
 	}
 </style>
