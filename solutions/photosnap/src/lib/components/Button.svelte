@@ -33,7 +33,7 @@
     uppercase 
     font-bold 
     text-h4 
-    tracking-[.2em] 
+    tracking-[.25em] 
     transition-colors
     duration-300
   `}
