@@ -10,16 +10,6 @@ module.exports = {
 			regular: 400,
 			bold: 700
 		},
-		colors: {
-			textBase: 'hsl(0deg 0% 0% / 0.6)',
-			textBaseDark: 'hsl(0deg 0% 100% / 0.6)',
-
-			text: 'hsl(0deg 0% 0%)',
-			textDark: 'hsl(0deg 0% 100%)',
-
-			bg: 'hsl(0deg 0% 100%)',
-			bgDark: 'hsl(0deg 0% 0%)'
-		},
 		extend: {
 			fontSize: {
 				h1: 'clamp(2rem, 0.33rem + 7.11vw, 2.5rem)',
@@ -37,6 +27,18 @@ module.exports = {
 			maxWidth: {
 				body: '1440px',
 				container: '1110px'
+			},
+			colors: {
+				textBase: 'hsl(0deg 0% 0% / 0.6)',
+				textBaseDark: 'hsl(0deg 0% 100% / 0.6)',
+
+				text: 'hsl(0deg 0% 0%)',
+				textDark: 'hsl(0deg 0% 100%)',
+
+				bg: 'hsl(0deg 0% 100%)',
+				bgDark: 'hsl(0deg 0% 0%)',
+
+				gray: 'hsl(0deg 0% 87%)'
 			}
 		}
 	},

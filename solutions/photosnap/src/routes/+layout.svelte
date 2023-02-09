@@ -11,4 +11,8 @@
 		font-size: theme(fontSize.p);
 		color: theme(colors.textBase);
 	}
+
+	:global(.dark svg > g) {
+		stroke: theme(colors.textDark);
+	}
 </style>
