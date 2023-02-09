@@ -1,7 +1,7 @@
 <script lang="ts">
 	type HeadingType = keyof typeof variants;
 
-	export let type: HeadingType = 'h1';
+	export let variant: HeadingType = 'h1';
 	export let as: string | null = null;
 
 	const variants = {
@@ -25,8 +25,8 @@
 </script>
 
 <svelte:element
-	this={as ?? type}
-	class={`${variants[type].size} ${variants[type].lineHeight} text-text dark:text-textDark`}
+	this={as ?? variant}
+	class={`${variants[variant].size} ${variants[variant].lineHeight} text-text dark:text-textDark`}
 >
 	<slot />
 </svelte:element>
