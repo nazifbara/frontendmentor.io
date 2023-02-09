@@ -12,7 +12,7 @@
 		color: theme(colors.textBase);
 	}
 
-	:global(.dark svg > g) {
+	:global(.dark svg g) {
 		stroke: theme(colors.textDark);
 	}
 </style>
