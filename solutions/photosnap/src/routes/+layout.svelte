@@ -15,4 +15,8 @@
 	:global(.dark svg g) {
 		stroke: theme(colors.textDark);
 	}
+
+	:global(.dark p) {
+		color: theme(colors.textBaseDark);
+	}
 </style>

@@ -19,10 +19,12 @@ module.exports = {
 				p: '0.938rem'
 			},
 			screens: {
-				xs: '375px'
+				xs: '375px',
+				'2xl': '1440px'
 			},
 			backgroundImage: {
-				mainGradientTop: 'linear-gradient(to top, #FFC593, #BC7198, #5A77FF)'
+				mainGradientTop: 'linear-gradient(to top, #FFC593, #BC7198, #5A77FF)',
+				mainGradientRight: 'linear-gradient(to right, #FFC593, #BC7198, #5A77FF)'
 			},
 			maxWidth: {
 				body: '1440px',
