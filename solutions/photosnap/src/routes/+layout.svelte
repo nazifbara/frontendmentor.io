@@ -16,7 +16,7 @@
 		stroke: theme(colors.textDark);
 	}
 
-	:global(.dark p) {
+	:global(.dark :is(p)) {
 		color: theme(colors.textBaseDark);
 	}
 </style>

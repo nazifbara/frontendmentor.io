@@ -38,7 +38,7 @@
     duration-300
   `}
 >
-	<span class="flex gap-4 items-center">
+	<span class="grid grid-cols-[repeat(2,_auto)] justify-items-start gap-4">
 		<slot />
 
 		{#if variant === 'arrow'}
