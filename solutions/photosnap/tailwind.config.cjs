@@ -24,7 +24,8 @@ module.exports = {
 			},
 			backgroundImage: {
 				mainGradientTop: 'linear-gradient(to top, #FFC593, #BC7198, #5A77FF)',
-				mainGradientRight: 'linear-gradient(to right, #FFC593, #BC7198, #5A77FF)'
+				mainGradientRight: 'linear-gradient(to right, #FFC593, #BC7198, #5A77FF)',
+				storyGradient: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent 70%)'
 			},
 			maxWidth: {
 				body: '1440px',

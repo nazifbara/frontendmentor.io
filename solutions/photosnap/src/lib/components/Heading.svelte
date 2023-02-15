@@ -3,6 +3,7 @@
 
 	export let variant: HeadingType = 'h1';
 	export let as: string | null = null;
+	export let toUppercase = true;
 
 	const variants = {
 		h1: {
@@ -22,6 +23,8 @@
 			lineHeight: 'leading-[1.2] md:leading-[1.3]'
 		}
 	};
+
+	const uppercase = toUppercase ? 'uppercase' : '';
 </script>
 
 <svelte:element
@@ -32,7 +35,7 @@
 		text-text 
 		dark:text-textDark
 		font-bold
-		uppercase
+		${uppercase}
 		tracking-wider
 	`}
 >

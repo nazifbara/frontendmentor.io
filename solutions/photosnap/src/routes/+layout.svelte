@@ -7,7 +7,7 @@
 <style lang="postcss">
 	:global(body) {
 		font-family: theme(fontFamily.sans);
-		fontweigth: theme(fontWeight.regular);
+		font-weight: theme(fontWeight.regular);
 		font-size: theme(fontSize.p);
 		color: theme(colors.textBase);
 	}
