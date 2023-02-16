@@ -1,5 +1,6 @@
 <script lang="ts">
 	import FeatuesGrid from '$lib/components/FeatuesGrid.svelte';
+	import Wrapper from '$lib/components/Wrapper.svelte';
 
 	const features = [
 		{
@@ -35,6 +36,6 @@
 	];
 </script>
 
-<div class="max-w-[1110px]">
+<Wrapper as="section">
 	<FeatuesGrid {features} />
-</div>
+</Wrapper>
