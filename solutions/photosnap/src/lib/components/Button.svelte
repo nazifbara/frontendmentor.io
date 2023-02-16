@@ -29,19 +29,19 @@
     ${variants[variant].decoration} 
     ${variants[variant].px} 
     cursor-pointer
-    py-3 
-    uppercase 
+    uppercase
     font-bold 
-    text-h4 
+    text-h4
     tracking-[.25em]
     transition-colors
     duration-300
 		inline-block
 		text-center
   `}
+	class:py-3={variant === 'base'}
 >
 	{#if variant === 'arrow'}
-		<span class="grid grid-cols-[repeat(2,_auto)] justify-items-start gap-4">
+		<span class="grid grid-cols-[repeat(2,_auto)] items-center justify-items-start gap-4">
 			<slot />
 
 			<Icon name="arrow" />
