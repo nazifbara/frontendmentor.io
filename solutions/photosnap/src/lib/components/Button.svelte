@@ -36,13 +36,17 @@
     tracking-[.25em]
     transition-colors
     duration-300
+		inline-block
+		text-center
   `}
 >
-	<span class="grid grid-cols-[repeat(2,_auto)] justify-items-start gap-4">
-		<slot />
+	{#if variant === 'arrow'}
+		<span class="grid grid-cols-[repeat(2,_auto)] justify-items-start gap-4">
+			<slot />
 
-		{#if variant === 'arrow'}
 			<Icon name="arrow" />
-		{/if}
-	</span>
+		</span>
+	{:else}
+		<slot />
+	{/if}
 </svelte:element>

@@ -2,24 +2,24 @@
 	export let as = 'div';
 </script>
 
-<svelte:element this={as} class="container">
+<svelte:element this={as} class="wrapper">
 	<slot />
 </svelte:element>
 
 <style lang="postcss">
-	.container {
+	.wrapper {
 		width: min(100% - 1.5rem, 69.375rem);
 		margin-inline: auto;
 	}
 
-	@media screen(md) {
-		.container {
+	@media screen(sm) {
+		.wrapper {
 			width: min(100% - 2.5rem, 69.375rem);
 		}
 	}
 
 	@media screen(xl) {
-		.container {
+		.wrapper {
 			width: min(100%, 69.375rem);
 		}
 	}
