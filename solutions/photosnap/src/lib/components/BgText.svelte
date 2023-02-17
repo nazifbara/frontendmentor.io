@@ -43,7 +43,7 @@
 		}
 	}
 
-	:global(a::before) {
+	article :global(a::before) {
 		content: '';
 		position: absolute;
 		display: block;
@@ -57,7 +57,7 @@
 		overflow: hidden;
 	}
 
-	:global(a:hover::before) {
+	article :global(a:hover::before) {
 		box-shadow: 0 0 150px 150px hsla(28, 100%, 79%, 0.3), 0 0 200px 200px hsla(329, 36%, 59%, 0.35),
 			0 0 350px 350px hsla(229, 100%, 68%, 0.3);
 	}
