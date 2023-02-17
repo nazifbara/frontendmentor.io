@@ -43,7 +43,7 @@
 	{#if isMenuOpen}
 		<nav
 			transition:fade={{ easing: cubicOut }}
-			class="absolute py-8 top-full inset-x-0 bg-bg px-2 md:hidden"
+			class="absolute z-10 py-8 top-full inset-x-0 bg-bg px-2 md:hidden"
 		>
 			<div class="grid text-center justify-items-stretch max-w-sm mx-auto gap-5">
 				{#each navlinks as { href, text }}

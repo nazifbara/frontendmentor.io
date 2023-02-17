@@ -13,7 +13,7 @@
 	export let stories: Story[] = [];
 </script>
 
-<ul class="grid grid-cols-[repeat(auto-fit,_minmax(20rem,_1fr))]">
+<ul class="grid grid-cols-[repeat(auto-fit,_minmax(18rem,_1fr))]">
 	{#each stories as story}
 		<li>
 			<a

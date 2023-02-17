@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let dark = false;
-	export let imgPosition: 'left' | 'right' = 'left';
+	export let imgPosition: string = 'left';
 	export let picture = {
 		mobile: '',
 		tablet: '',
