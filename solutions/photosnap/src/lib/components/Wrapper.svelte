@@ -14,7 +14,7 @@
 
 	@media screen(sm) {
 		.wrapper {
-			width: min(100% - 2.5rem, 69.375rem);
+			width: min(100% - 4.5rem, 69.375rem);
 		}
 	}
 
