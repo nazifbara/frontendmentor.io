@@ -4,7 +4,7 @@
 	import Wrapper from './Wrapper.svelte';
 </script>
 
-<div class="dark grid">
+<section class="dark grid">
 	<picture class="col-span-full row-span-full">
 		<source media="(min-width:1110px)" srcset="/assets/shared/desktop/bg-beta.jpg" />
 		<source media="(min-width:768px)" srcset="/assets/shared/tablet/bg-beta.jpg" />
@@ -43,4 +43,4 @@
 			</div>
 		</Wrapper>
 	</div>
-</div>
+</section>
