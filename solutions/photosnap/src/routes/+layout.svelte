@@ -20,7 +20,7 @@
 		stroke: theme(colors.textDark);
 	}
 
-	:global(.dark :is(p)) {
+	:global(.dark :is(p, span)) {
 		color: theme(colors.textBaseDark);
 	}
 </style>
