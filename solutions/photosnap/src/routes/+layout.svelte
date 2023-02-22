@@ -4,6 +4,10 @@
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 
+<svelte:head>
+	<title>Photosnap</title>
+</svelte:head>
+
 <div class="max-w-[90rem] mx-auto">
 	<Header />
 	<main>
