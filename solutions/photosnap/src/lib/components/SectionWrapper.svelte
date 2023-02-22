@@ -1,3 +1,3 @@
-<section class="py-20 md:py-24">
+<section class="py-20 md:py-32">
 	<slot />
 </section>

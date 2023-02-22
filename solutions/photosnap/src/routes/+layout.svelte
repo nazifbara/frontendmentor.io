@@ -4,9 +4,13 @@
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<Header />
-<slot />
-<Footer />
+<div class="max-w-[90rem] mx-auto">
+	<Header />
+	<main>
+		<slot />
+	</main>
+	<Footer />
+</div>
 
 <style lang="postcss">
 	:global(body) {
