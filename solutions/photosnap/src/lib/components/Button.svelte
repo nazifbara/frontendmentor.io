@@ -41,11 +41,11 @@
 	class:py-3={variant === 'base'}
 >
 	{#if variant === 'arrow'}
-		<span class="grid grid-cols-[repeat(2,_auto)] items-center justify-items-start gap-4">
+		<div class="grid grid-cols-[repeat(2,_auto)] items-center justify-items-start gap-4">
 			<slot />
 
 			<Icon name="arrow" />
-		</span>
+		</div>
 	{:else}
 		<slot />
 	{/if}
