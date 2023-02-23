@@ -47,10 +47,10 @@
 		>
 			<div class="grid text-center justify-items-stretch max-w-sm mx-auto gap-5">
 				{#each navlinks as { href, text }}
-					<NavLink {href} variant="menu">{text}</NavLink>
+					<NavLink {href} on:click={() => (isMenuOpen = false)} variant="menu">{text}</NavLink>
 				{/each}
 				<hr class="opacity-25" />
-				<Button as="a" href="/#">get an invite</Button>
+				<Button as="a" on:click={() => (isMenuOpen = false)} href="/#">get an invite</Button>
 			</div>
 		</nav>
 	{/if}

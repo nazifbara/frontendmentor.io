@@ -38,6 +38,7 @@
 		inline-block
 		text-center
   `}
+	on:click
 	class:py-3={variant === 'base'}
 >
 	{#if variant === 'arrow'}

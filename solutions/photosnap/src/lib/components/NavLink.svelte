@@ -16,6 +16,7 @@
     transition-opacity
     duration-300
   `}
+	on:click
 	class:text-p={variant === 'menu'}
 >
 	<slot />
