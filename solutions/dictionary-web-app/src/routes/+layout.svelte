@@ -5,5 +5,6 @@
 </script>
 
 <div class={font}>
+	<header>HEADER</header>
 	<slot />
 </div>
