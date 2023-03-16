@@ -1,18 +1,17 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
+	import FontSelect from './FontSelect.svelte';
+	import ThemeSwitcher from './ThemeSwitcher.svelte';
 </script>
 
-<header>
-	<div>
+<header class="my-6 md:my-14">
+	<div class="flex justify-between">
 		<Icon name="logo" />
 
-		<div>
-			<button>
-				Sans Serif <Icon name="arrowDown" />
-			</button>
-			<hr />
-			<button>switch</button>
-			<button><Icon name="moon" /></button>
+		<div class="flex items-center">
+			<FontSelect />
+			<hr class="h-8 w-[1px] mx-4 border-l border-[#E9E9E9]" />
+			<ThemeSwitcher />
 		</div>
 	</div>
 </header>
