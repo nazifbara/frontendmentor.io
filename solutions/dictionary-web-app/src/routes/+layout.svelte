@@ -2,11 +2,10 @@
 	import '../app.css';
 	import Header from '$lib/components/Header.svelte';
 	import Container from '$lib/components/Container.svelte';
-
-	let font = 'font-sans';
+	import { font as storeFont } from '$lib/stores';
 </script>
 
-<div class={`${font}`}>
+<div class={`${$storeFont}`}>
 	<Container>
 		<Header />
 
