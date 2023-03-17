@@ -4,7 +4,7 @@
 	import ThemeSwitcher from './ThemeSwitcher.svelte';
 </script>
 
-<header class="my-6 md:my-14">
+<header class="py-6 md:py-14">
 	<div class="flex justify-between">
 		<Icon name="logo" />
 

@@ -1,12 +1,13 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
+	import { theme } from '$lib/stores';
 
-	let checked = false;
+	$: checked = $theme === 'dark';
 </script>
 
-<div class="flex gap-2.5 md:gap-5 items-center cursor-pointer">
+<div class="flex gap-2.5 md:gap-5 items-center cursor-pointer switcher">
 	<label
-		on:click|preventDefault
+		on:click|preventDefault={theme.toggle}
 		on:keydown|preventDefault
 		class="w-10 h-5 rounded-xl relative inline-block overflow-hidden"
 	>
@@ -14,10 +15,12 @@
 		<span
 			class={`
       bg-text2
-        block absolute 
+        block 
+        absolute 
         inset-0
         cursor-pointer
-        before:content-[''] 
+        before:content-['']
+        hover:bg-primary
         before:w-3.5 
         before:h-3.5 
       before:bg-body
@@ -26,9 +29,17 @@
         before:absolute
         before:bottom-[3px]
         before:top-[3px]
-        before:left-[3px]
       `}
+			class:before:left-[3px]={!checked}
+			class:before:right-[3px]={checked}
+			class:bg-primary={checked}
 		/>
 	</label>
-	<Icon name="moon" />
+	<span class:active-moon={checked}><Icon name="moon" /></span>
 </div>
+
+<style lang="postcss">
+	.switcher .active-moon :global(path) {
+		stroke: theme(colors.primary);
+	}
+</style>
