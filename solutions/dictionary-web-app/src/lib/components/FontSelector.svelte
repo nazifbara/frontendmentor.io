@@ -27,13 +27,17 @@
         flex-col 
         gap-2 
         p-6 
-        shadow-[0px_5px_30px_rgba(0,_0,_0,_0.1)] 
+        shadow-[0px_5px_30px_rgba(0,_0,_0,_0.1)]
+				bg-body
         w-[11.438rem] 
         h-[9.5rem] 
         rounded-2xl 
         absolute 
         -left-12
         top-[calc(100%_+_1rem)]
+
+			dark:bg-body2-dark
+				dark:shadow-[0px_5px_30px_#A445ED]
       `}
 		>
 			{#each [{ label: 'Sans Serif', font: 'font-sans' }, { label: 'Serif', font: 'font-serif' }, { label: 'Mono', font: 'font-mono' }] as font}
