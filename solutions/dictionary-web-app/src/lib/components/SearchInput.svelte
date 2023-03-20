@@ -13,7 +13,7 @@
       rounded-2xl 
       font-bold 
       w-full 
-      px-6 
+      px-6
       py-3.5
       border 
       border-transparent 
