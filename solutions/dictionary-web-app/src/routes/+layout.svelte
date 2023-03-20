@@ -2,6 +2,7 @@
 	import '../app.css';
 	import Header from '$lib/components/Header.svelte';
 	import Container from '$lib/components/Container.svelte';
+	import SearchInput from '$lib/components/SearchInput.svelte';
 	import { font as storeFont } from '$lib/stores';
 	import { theme } from '$lib/stores';
 </script>
@@ -12,7 +13,7 @@
 	>
 		<Container>
 			<Header />
-
+			<SearchInput />
 			<main>
 				<slot />
 			</main>

@@ -3,7 +3,7 @@
 
 	export let data: PageServerData;
 
-	const definition = data.definition[0];
+	$: definition = data.definition[0];
 </script>
 
 <h1>{definition.word}</h1>
