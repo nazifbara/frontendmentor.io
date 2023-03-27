@@ -2,10 +2,11 @@
 	export let element: string = 'p';
 	export let variant = 'bodym';
 	export let color = 'text';
+	export let underline = false;
 
 	let variantMap: { [any: string]: string } = {
 		headingL: 'text-[2rem] md:text-[4rem] text-bold',
-		headingM: 'text-lg md:text-2xl',
+		headingM: 'text-lg md:text-2xl font-sans',
 		headingS: 'text-base md:text-xl',
 		bodyM: 'text-[0.938rem] md:text-lg',
 		bodyS: 'text-sm'
@@ -20,8 +21,7 @@
 
 <svelte:element
 	this={element}
-	class={`${variantMap[variant]} ${colorMap[color]}
-`}
+	class={`${variantMap[variant]} ${colorMap[color]} ${underline ? 'underline' : ''}`}
 >
 	<slot />
 </svelte:element>

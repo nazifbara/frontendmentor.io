@@ -9,12 +9,12 @@
 
 <div class={`${$theme}`}>
 	<div
-		class={`${$storeFont} min-w-screen min-h-screen bg-body text-text dark:bg-body-dark dark:text-text-dark`}
+		class={`${$storeFont} grid min-h-screen bg-body text-text dark:bg-body-dark dark:text-text-dark`}
 	>
 		<Container>
 			<Header />
 			<SearchInput />
-			<main>
+			<main class="pb-20">
 				<slot />
 			</main>
 		</Container>

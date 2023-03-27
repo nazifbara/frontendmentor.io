@@ -14,6 +14,8 @@ module.exports = {
 				body2: '#F4F4F4',
 				text: '#2D2D2D',
 				text2: '#757575',
+				border: '#E9E9E9',
+				'border-dark': '#3A3A3A',
 				'body-dark': '#050505',
 				'body2-dark': '#1F1F1F',
 				'text-dark': '#FFF',
