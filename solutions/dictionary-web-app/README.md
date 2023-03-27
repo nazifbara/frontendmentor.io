@@ -1,38 +1,50 @@
-# create-svelte
+# Frontend Mentor - Dictionary web app solution
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+![](./screenshot.jpg)
 
-## Creating a project
+This is a solution to the [Dictionary web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Table of contents
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [Built with](#built-with)
+- [Author](#author)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Overview
 
-## Developing
+### The challenge
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Users should be able to:
 
-```bash
-npm run dev
+- Search for words using the input field
+- See the Free Dictionary API's response for the searched word
+- See a form validation message when trying to submit a blank form
+- Play the audio file for a word when it's available
+- Switch between serif, sans serif, and monospace fonts
+- Switch between light and dark themes
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- Have the correct color scheme chosen for them based on their computer preferences.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### Links
 
-## Building
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-To create a production version of your app:
+## Built with
 
-```bash
-npm run build
-```
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [SvelteKit](https://kit.svelte.dev/) - JS library
+- [Free Dictionary API](https://dictionaryapi.dev/)
 
-You can preview the production build with `npm run preview`.
+## Author
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- Website - [nazifbara.com](https://www.nazifbara.com)
+- Twitter - [@nazifbara](https://www.twitter.com/nazifbara)
+- Frontend Mentor - [@nazifbara](https://www.frontendmentor.io/profile/nazifbara)
