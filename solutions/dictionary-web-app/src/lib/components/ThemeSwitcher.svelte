@@ -8,10 +8,10 @@
 <div class="flex gap-2.5 md:gap-5 items-center cursor-pointer switcher">
 	<label
 		on:click|preventDefault={theme.toggle}
-		on:keydown|preventDefault
+		on:keydown={(e) => e.key === 'Enter' && theme.toggle()}
 		class="w-10 h-5 rounded-xl relative inline-block overflow-hidden"
 	>
-		<input {checked} class="opacity-0 w-0 h-0" type="checkbox" />
+		<input {checked} class="opacity-0 w-full h-full" type="checkbox" />
 		<span
 			class={`
       bg-text2
