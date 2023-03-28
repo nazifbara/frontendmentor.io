@@ -13,7 +13,6 @@
 		audio.load();
 		audio.play();
 	};
-	console.log(data.definition[0]);
 </script>
 
 <svelte:head>
@@ -82,13 +81,13 @@
 
 <hr class="border-border mb-5 dark:border-border-dark" />
 
-<div class="flex gap-5">
-	<Text element="h3" variant="headingS" color="text2" underline>Source</Text>
+<div class="md:flex gap-5">
+	<Text element="h3" variant="bodyS" color="text2" underline>Source</Text>
 	<a
 		target="_blank"
 		rel="noreferrer"
 		href={definition.sourceUrls[0]}
-		class="underline flex items-center gap-2"
+		class="underline flex items-center gap-2 text-sm break-all"
 	>
 		{definition.sourceUrls[0]}
 		<Icon name="newWindow" />
