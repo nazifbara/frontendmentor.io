@@ -11,7 +11,7 @@ export const theme = (() => {
 	if (
 		browser &&
 		!localStorage.getItem('theme') &&
-		window.matchMedia('(prefers-color-scheme: dark)')
+		window.matchMedia('(prefers-color-scheme: dark)').matches
 	) {
 		initialValue = 'dark';
 	}
