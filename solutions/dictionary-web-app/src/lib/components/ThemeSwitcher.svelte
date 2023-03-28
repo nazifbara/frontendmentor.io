@@ -3,6 +3,8 @@
 	import { theme } from '$lib/stores';
 
 	$: checked = $theme === 'dark';
+
+	$: bgColor = checked ? 'bg-primary' : 'bg-primary';
 </script>
 
 <div class="flex gap-2.5 md:gap-5 items-center cursor-pointer switcher">
@@ -14,7 +16,7 @@
 		<input {checked} class="opacity-0 w-full h-full" type="checkbox" />
 		<span
 			class={`
-      bg-text2
+				${bgColor}
         block 
         absolute 
         inset-0
@@ -32,7 +34,6 @@
       `}
 			class:before:left-[3px]={!checked}
 			class:before:right-[3px]={checked}
-			class:bg-primary={checked}
 		/>
 	</label>
 	<span class:active-moon={checked}><Icon name="moon" /></span>
