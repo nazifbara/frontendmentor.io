@@ -7,6 +7,7 @@
 	class={`
     px-6
     mx-auto
+    w-full
     md:w-[min(46rem,_100%)]
     md:px-0
 `}
