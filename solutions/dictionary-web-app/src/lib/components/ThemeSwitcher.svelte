@@ -4,7 +4,7 @@
 
 	$: checked = $theme === 'dark';
 
-	$: bgColor = checked ? 'bg-primary' : 'bg-primary';
+	$: bgColor = checked ? 'bg-primary' : 'bg-text2';
 </script>
 
 <div class="flex gap-2.5 md:gap-5 items-center cursor-pointer switcher">
